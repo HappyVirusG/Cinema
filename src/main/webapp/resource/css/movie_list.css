@@ -1,0 +1,116 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+/* style reset */
+
+
+
+.movieList{
+	width: 980px;
+	margin: auto;
+}
+
+h3{
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 500;
+}
+.movieChartLine{
+    width: 100%;
+    height: 3px;
+    background-color: rgb(39, 39, 39);
+    margin-bottom: 30px;
+}
+.movieList ul{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.movieListInside ul{
+    display: flex;
+}
+
+.movieList li{
+    padding: 10px;
+}
+
+.movieList img{
+    width: 205px;
+    box-shadow: 2px 2px 2px #ccc;
+}
+
+.movieChartTitle{
+    /* background-color: aquamarine; */
+    line-height: 25px;
+    margin-top: 10px;
+}
+
+.movieTitle{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.movieList .bookingBtn{
+    background-color: rgb(229, 37, 60);
+    color: rgb(236, 236, 236);
+    border: none;
+    width: 205px;
+    
+    height: 40px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.bookingBtn:hover{
+    background-color: rgb(159, 24, 40);
+    cursor: pointer;
+}
+
+.rating{
+    display: inline-block;
+    width: 24px;
+    border-radius: 100%;
+    height: 24px;
+    text-align: center;
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+#rating12{
+    background-color: rgb(66, 74, 199);
+    color: white;
+}
+
+#rating15{
+    background-color: rgb(255, 225, 54);
+}
+
+#ratingAll{
+    background-color: green;
+    color: white;
+}
+
+#rating19{
+    background-color: rgb(186, 14, 14);
+    color: white;
+}
+
+.boxOffice{
+    font-size: 18px;
+}
+
+/* movie_list */
