@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="movieTitle">엑시트</title>
     
-	<link rel="stylesheet" href="./resource/css/header_footer.css?ver=3">
-    <link rel="stylesheet" href="./resource/css/movie_detail.css">
+	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=6">
+    <link rel="stylesheet" href="../resource/css/movie_detail.css">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,16 +18,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<%@include file="header.jsp"%>   
+<%@include file="../main/header.jsp" %>
 <iframe width="100%" height="600" src="https://www.youtube.com/embed/li4jOV5j7SI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <!-- 예고편 -->
 
    <div id="wrap">
+	
        <div id="contents" class="contentsMovieDetail">
            <div class="movieSummary">
                <h3>엑시트</h3>
                <p class="subTitle">Exit, 2019</p>
-               <img src="./resource/img/poster/엑시트.jpg" alt="">
+               <img src="../resource/img/poster/엑시트.jpg" alt="">
 
                <div class="nowScreen">현재상영중</div>
 
@@ -91,8 +92,7 @@
                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
-     <%@include file="footer.jsp" %>
-       
+<%@include file="../main/footer.jsp" %>
 </div>
 
 

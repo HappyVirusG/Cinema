@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 - 그린 시네마</title>
-    <link rel="stylesheet" href="./resource/css/header_footer.css?ver=4">
-    <link rel="stylesheet" href="./resource/css/movie_list.css?ver=3">
+    <link rel="stylesheet" href="../resource/css/header_footer.css?ver=5">
+    <link rel="stylesheet" href="../resource/css/movie_list.css?ver=3">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<%@include file="header.jsp" %> 
+<%@include file="../main/header.jsp" %> 
 
 <div id="wrap">
     <div class="movieList">
@@ -25,8 +25,8 @@
     <div class="movieChartLine"></div>
         <ul>
             <li>
-                <a href="">
-                    <img src="./resource/img/poster/엑시트.jpg" alt=""><br/>
+                <a href="movieDetail.jsp">
+                    <img src="../resource/img/poster/엑시트.jpg" alt=""><br/>
                     <p class="movieChartTitle">
                         <span class="rating" id="rating12">12</span>
                         <span class="movieTitle">엑시트</span>
@@ -39,7 +39,7 @@
             </li>
             <li>
                 <a href="">
-                    <img src="./resource/img/poster/기생충.jpg" alt=""><br/>
+                    <img src="../resource/img/poster/기생충.jpg" alt=""><br/>
                     <p class="movieChartTitle">
                         <span class="rating" id="rating15">15</span>
                         <span class="movieTitle">기생충</span>
@@ -51,7 +51,7 @@
             </li>
             <li>
                 <a href="">
-                    <img src="./resource/img/poster/겨울왕국.jpg" alt=""><br/>
+                    <img src="../resource/img/poster/겨울왕국.jpg" alt=""><br/>
                     <p class="movieChartTitle">
                         <span class="rating" id="ratingAll">All</span>
                         <span class="movieTitle">겨울왕국</span>
@@ -64,7 +64,7 @@
             </li>
             <li>
                 <a href="">
-                    <img src="./resource/img/poster/다크나이트.jpg" alt=""><br/>
+                    <img src="../resource/img/poster/다크나이트.jpg" alt=""><br/>
                     <p class="movieChartTitle">
                         <span class="rating" id="rating15">15</span>
                         <span class="movieTitle">다크나이트</span>
@@ -79,7 +79,7 @@
         <ul>
             <li>
                 <a href="">
-                    <img src="./resource/img/poster/엑시트.jpg" alt=""><br/>
+                    <img src="../resource/img/poster/엑시트.jpg" alt=""><br/>
                     <p class="movieChartTitle">
                         <span class="rating" id="rating12">12</span>
                         <span class="movieTitle">엑시트</span>
@@ -92,7 +92,7 @@
             </li>
             <li>
                 <a href="">
-                    <img src="./resource/img/poster/기생충.jpg" alt=""><br/>
+                    <img src="../resource/img/poster/기생충.jpg" alt=""><br/>
                     <p class="movieChartTitle">
                         <span class="rating" id="rating15">15</span>
                         <span class="movieTitle">기생충</span>
@@ -104,7 +104,7 @@
             </li>
             <li>
                 <a href="">
-                    <img src="./resource/img/poster/겨울왕국.jpg" alt=""><br/>
+                    <img src="../resource/img/poster/겨울왕국.jpg" alt=""><br/>
                     <p class="movieChartTitle">
                         <span class="rating" id="ratingAll">All</span>
                         <span class="movieTitle">겨울왕국</span>
@@ -117,7 +117,7 @@
             </li>
             <li>
                 <a href="">
-                    <img src="./resource/img/poster/다크나이트.jpg" alt=""><br/>
+                    <img src="../resource/img/poster/다크나이트.jpg" alt=""><br/>
                     <p class="movieChartTitle">
                         <span class="rating" id="rating15">15</span>
                         <span class="movieTitle">다크나이트</span>
@@ -131,7 +131,7 @@
     </div>
 </div> <!-- wrap -->
 
-<%@include file="footer.jsp" %>
+<%@include file="../main/footer.jsp" %>
     
 </body>
 </html>

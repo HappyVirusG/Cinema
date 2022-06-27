@@ -3,7 +3,7 @@
 
 <header id="header">
     <div class="title">
-        <h1><a href=""><img src="" alt="">그린 시네마</a></h1>
+        <h1><a href="../main/main.jsp"><img src="" alt="">그린 시네마</a></h1>
     </div>
     <div class="headerSide">
         <div class="SNS">
@@ -17,8 +17,8 @@
         </div>
         <div class="myPage">
             <ul>
-                <li><a href="">로그인</a></li>
-                <li><a href="">회원가입</a></li>
+                <li><a href="../member/login.jsp">로그인</a></li>
+                <li><a href="../member/join.jsp">회원가입</a></li>
                 <li><a href="">MY PAGE</a></li>
                 <li><a href="">고객센터</a></li>
             </ul>
@@ -27,11 +27,10 @@
     <div class="headerLine"></div>
     <div class="menu">
         <ul>
-            <li><a href="">영화</a></li>
-            <li><a href="">예매</a></li>
+            <li><a href="../movie/movieList.jsp">영화</a></li>
+            <li><a href="../movie/booking.jsp">예매</a></li>
             <li><a href="">스토어</a></li>
             <li><a href="">멤버십</a></li>
-            <li><a href="">회원가입</a></li>
         </ul>
     </div>
     <div class="headerLine2"></div>
