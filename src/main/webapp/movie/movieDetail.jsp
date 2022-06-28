@@ -9,8 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="movieTitle">탑건-매버릭</title>
     
-	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=6">
-    <link rel="stylesheet" href="../resource/css/movie_detail.css?ver=2">
+	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=5">
+    <link rel="stylesheet" href="../resource/css/movie_detail.css?ver=3">
+    <link rel="stylesheet" href="../resource/css/review.css">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,7 +79,7 @@
                    <ul>
                        <li><button>주요정보</button></li>
                        <li><button>포스터/스틸컷</button></li>
-                       <li><button>평점/관람평</button></li>
+                       <li><button type="button" onclick="location.href='#review'">평점/관람평</button></li>
                        <li><button>상영시간표</button></li>
                    </ul>
                </div> <!-- .movieInfoBtns -->
@@ -95,6 +96,9 @@
 매버릭은 자신이 가르친 동료들과 함께 마지막이 될 지 모를 하늘 위 비행에 나서는데… 
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
+<section >
+<%@include file="review.jsp" %>
+</section>       
 <%@include file="../main/footer.jsp" %>
 </div>
 
