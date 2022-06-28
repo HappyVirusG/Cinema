@@ -16,6 +16,7 @@ a{
 
 #contents{
     margin: auto;
+    margin-bottom: 50px;
     width: 980px;
     position: relative;
 }
@@ -115,9 +116,7 @@ a{
 
 #contents .movieInfoBtns ul{
     display: flex;
-    
     margin-top: 20px;
-
 }
 
 #contents .movieInfoBtns li{
@@ -129,6 +128,10 @@ a{
     color: white;
     width: 100px;
     height: 40px;
+    cursor: pointer;
+}
+#contents .movieInfoBtns button:hover{
+	background-color: rgb(19, 19, 19);
 }
 
 #contents .movieInfoDetail{
