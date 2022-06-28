@@ -1,0 +1,130 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+/* style reset */
+
+
+#wrap{
+    margin: auto;
+    width: 1240px;
+}
+
+#header .title{
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+}
+#header .title a:hover{
+    color: #ff2841;
+}
+#header .headerSide{
+    display: flex;
+    justify-content: space-between;
+}
+
+#header .SNS ul, .myPage ul{
+    display: flex;
+    /* background-color: aqua; */
+    padding: 10px 5px;
+    line-height: 15px;
+}
+#header .SNS li, .myPage li{
+    line-height: 15px;
+    padding: 0px 10px;
+}
+#header .SNS li a, .myPage li a{
+    font-size: 15px;
+}
+#header .SNS li a:hover, .myPage li a:hover{
+    color: #ff2841;
+}
+#header .SNS li img{
+    width: 15px;
+}
+
+#header .headerLine{
+    width: 100%;
+    height: 2px;
+    background-color: #eaeaea;
+}
+#header .headerLine2{
+    width: 100%;
+    height: 4px;
+    background-color: #ff2841;
+}
+
+#header .menu{
+    /* background-color: pink; */
+    width: 100%;
+    margin: auto;
+}
+#header .menu ul{
+    display: flex;
+    justify-content: center;
+}
+#header .menu ul li{
+    padding: 10px 30px;
+}
+#header .menu ul a{
+    font-size: 18px;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    cursor: pointer;
+}
+#header .menu ul a:hover{
+	color: #ff2841;
+}
+#footer{
+    bottom: 0;
+    left: 0;
+    width: 1240px;
+    margin: auto;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+#footer .footerButton{
+    display: flex;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+
+#footer .footerButton a{
+    color: rgb(69, 69, 69);
+    font-size: 15px;
+}
+
+#footer .businessInfo{
+    font-size: 12px;
+}
+
+#footer .infoBtnLine{
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background-color: rgb(69, 69, 69);
+    margin-left: 3px;
+    margin-right: 8px;
+}
+#footer .infoLine{
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: rgb(69, 69, 69);
+}
+
+/* header_footer */
+

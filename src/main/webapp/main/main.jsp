@@ -8,15 +8,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>그린시네마</title>
+    
+    
+    <link rel="stylesheet" href="../resource/css/header_footer.css?ver=1">
+    <link rel="stylesheet" href="../resource/css/minji_main.css?ver=2">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../resource/css/header_footer.css?ver=2">
-    <link rel="stylesheet" href="../resource/css/minji_main.css">
-        <!-- font-family -->
+    <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <%@include file="header.jsp" %>
     <div id = "container">
 
@@ -47,10 +50,7 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-
-            </section><!--.main_slide(포스터부분)--> 
-
-            <section class = "booking">
+			<section class = "booking">
                 <form action="#">
                     <input type="text" class="movieName" id="movieName">
                     <button id="sharch" type="button" onclick="newRegister()">검색</button>
@@ -62,6 +62,9 @@
                 <img id="icon3" src="./img/icon34.png" alt="">
                 <a><p>빠른예매</p></a>
             </section><!--.booking(빠른예매부분)--> 
+            </section><!--.main_slide(포스터부분)--> 
+
+            
 
         </div>
 
@@ -173,7 +176,9 @@
 
     </div> <!--container끝-->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <%@include file="footer.jsp" %>
+
 </body>
 </html>

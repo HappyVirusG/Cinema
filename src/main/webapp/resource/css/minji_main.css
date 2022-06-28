@@ -1,14 +1,7 @@
 @charset "utf-8";
+#header 
 
-* {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    color: black;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-.carousel-inner img{
+#container .carousel-inner img{
     height: 700px;
 }
 
@@ -16,14 +9,14 @@
     width: 1903px;
     height: 700px;
     position: relative;
-} */
+}  */
 
-#main_slide{
+#container #main_slide{
     position: relative;
     height: 600px;
 }
 
-.carousel-control-next {
+#container .carousel-control-next {
     background-color: #383838;
     position: absolute;
     top: 50%;
@@ -32,7 +25,7 @@
     border-radius: 100%;
 }
 
-.carousel-control-prev {
+#container .carousel-control-prev {
     background-color: #383838;
     position: absolute;
     top: 50%;
@@ -47,16 +40,16 @@
 
 
 
-.booking {
+#container .booking {
     width: 59%;
     height: 120px;
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
     margin-top: 100px;
-    background-color: rgba(65, 64, 64, 0.8);
+    background-color: rgba(65, 64, 64);
     position: absolute;
-    bottom: 180px;
+    bottom: -160px;
     left: 20.5%;
     z-index: 100;
     line-height: 120px;
@@ -78,11 +71,11 @@
     border-radius: 10px;
 }
 
-.movieName:focus {
+#container .movieName:focus {
     outline: none;
 }
 
-button {
+#container button {
     width: 70px;
     height: 35px;
     line-height: 30px;
@@ -95,12 +88,12 @@ button {
     margin-right: 70px;
 }
 
-button:hover {
+#container button:hover {
     background-color: #d83030;
     color: #fff;
 }
 
-#sharch:hover {
+#container #sharch:hover {
     background-color: #919191;
     color: #fff;
 }
@@ -121,21 +114,21 @@ button:hover {
     margin-top: 32px;
 }
 
-.booking p {
+#container .booking p {
     height: 50px;
     line-height: 120px;
     color: #fff;
     margin: 0 30px 0 10px;
 }
 
-.booking img {
+#container .booking img {
     margin-top: 30px;
 }
 
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ빠른예매 부분 끝 */
 
-.movie_info_title {
+#container .movie_info_title {
     display: flex;
     justify-content: space-around;
     width: 103%;
@@ -158,19 +151,19 @@ button:hover {
     margin-top: 50px;
 }
 
-.movie_info_title a {
+#container .movie_info_title a {
     font-size: 30px;
     text-decoration: none;
 }
 
-.box_office{
+#container .box_office{
     border-bottom: 3px solid #d83030;
     margin-top: 40px;
     position: absolute;
     left: 380px;
 }
 
-.movie_info {
+#container .movie_info {
     margin-top: 100px;
 }
 
@@ -180,14 +173,14 @@ button:hover {
     position: relative;
 }
 
-.sub_img {
+#container .sub_img {
     width: 250px;
     position: relative;
     margin: 30px 20px 10px 20px;
     border: 1px solid rgb(187, 187, 187);
 }
 
-.sub_img img {
+#container .sub_img img {
     width: 250px;
     height: 350px;
     position: relative;
@@ -202,7 +195,7 @@ button:hover {
     left: 20%;
 }
 
-.sub_img .over {
+#container .sub_img .over {
     position: absolute;
     top: 0;
     left: 0;
@@ -214,7 +207,7 @@ button:hover {
     display: none;
 }
 
-.sub_img .over span {
+#container .sub_img .over span {
     display : block;
     display : flex;
     align-items: center;
@@ -222,7 +215,7 @@ button:hover {
     height: 100%;
 }
 
-.sub_img:hover .over {
+#container .sub_img:hover .over {
     display: block;
 }
 
@@ -239,14 +232,14 @@ button:hover {
     font-size: 13px;
 }
 
-.star {
+#container .star {
     width: 20px;
     height: 20px;
 }
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ영화정보소개 부분 끝 */
 
-.event_title {
+#container .event_title {
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -266,12 +259,12 @@ button:hover {
     margin-top: 20px;
 }
 
-.event_title a {
+#container .event_title a {
     font-size: 30px;
     text-decoration: none;
 }
 
-.EVENT{
+#container .EVENT{
     border-bottom: 3px solid #d83030;
 }
 
@@ -294,26 +287,26 @@ button:hover {
     border-radius: 10%;
 }
 
-.eventin {
+#container .eventin {
     margin: 30px;
     overflow: hidden;
 }
 
-.eventin:hover img{
+#container .eventin:hover img{
     transform: scale(1.1);
     transition: transform 1s;
 }
 
-.eventin img {
+#container .eventin img {
     transition: transform 0.2s;
 }
 
-.eventin p {
+#container .eventin p {
     margin-top: 20px;
 }
 
 
-.advertisement {
+#container .advertisement {
     display: flex;
     justify-content: center;
     margin-top: 30px;
