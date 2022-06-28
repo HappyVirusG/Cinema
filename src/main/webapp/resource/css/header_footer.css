@@ -4,15 +4,21 @@
     padding: 0;
     font-family: 'Noto Sans KR', sans-serif;
 }
-ul{
+#ul1{
     list-style: none;
 }
-a{
+#a1{
     text-decoration: none;
     color: black;
 }
 /* style reset */
 
+#title_name{
+	text-decoration: none;
+    color: black;
+    font-size : 32px;
+    font-weight : 600;
+}
 
 #wrap{
     margin: auto;
