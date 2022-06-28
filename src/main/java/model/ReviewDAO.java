@@ -126,6 +126,56 @@ public class ReviewDAO extends JDBConnect{
 		return dto;
 	}
 	
+	//조회수를 1씩 증가시키는 메서드
+	public void updateHit(String num) {
+		String query = "UPDATE review "
+				+ "SET hit = hit+1 "
+				+ "WHERE num=? ";
+		try {
+			psmt=con.prepareStatement(query);
+			psmt.setString(1, num);
+			psmt.executeUpdate();
+		}catch(Exception e) {
+			System.out.println("조회수 업데이트 중 오류가 발생하였습니다.");
+			e.printStackTrace();
+		}
+	}
+	
+	//리뷰 수정하기
+	public int updateEdit(ReviewDTO dto) {
+		int result=0;
+		try {
+			String query = "UPDATE review "
+					+ "SET title=?, content=? "
+					+ "WHERE idx=?";
+			psmt=con.prepareStatement(query);
+			psmt.setString(1, dto.getReviewtitle());
+			psmt.setString(2, dto.getContent());
+			psmt.setString(3, dto.getIdx());
+			
+			result=psmt.executeUpdate();
+		}catch(Exception e) {
+			System.out.println("리뷰 수정 중 오류가 발생하였습니다.");
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	//지정한 리뷰 삭제하기
+	public int deleteReview(ReviewDTO dto) {
+		int result=0;
+		try {
+			String query = "DELETE review WHERE idx=?";
+			psmt=con.prepareStatement(query);
+			psmt.setString(1, dto.getIdx());
+			
+			result=psmt.executeUpdate();
+		}catch(Exception e) {
+			System.out.println("리뷰 삭제 중 오류가 발생하였습니다.");
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 	
 	
