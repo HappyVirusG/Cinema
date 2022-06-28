@@ -82,7 +82,7 @@
                        <li><button>주요정보</button></li>
                        <li><button>트레일러</button></li>
                        <li><button>포스터 · 스틸컷</button></li>
-                       <li><button>평점/리뷰</button></li>
+                       <li><button>평점/관람평</button></li>
                        <li><button>상영시간표</button></li>
                    </ul>
                </div> <!-- .movieInfoBtns -->
