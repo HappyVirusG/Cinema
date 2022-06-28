@@ -20,32 +20,32 @@
 		        <div class="sort-korean">가나다순</div>
 		    </div>
 		    <div class="movie-list">
-		        <ul>
-		            <li class="selectMovie">
-		                <a href="#">
-		                    <span class="movieAge all"></span>
-		                    <span class="movieName frozen">겨울왕국</span>
-		                </a>
-		            </li>
-		            <li class="selectMovie">
-		                <a href="#">
-		                    <span class="movieAge fifteen"></span>
-		                    <span class="movieName parasite">기생충</span>
-		                </a>
-		            </li>
-		            <li class="selectMovie">
-		                <a href="#">
-		                    <span class="movieAge fifteen"></span>
-		                    <span class="movieName theDarkKnight">다크나이트</span>
-		                </a>
-		            </li>
-		            <li class="selectMovie">
-		                <a href="#">
-		                    <span class="movieAge twelve"></span>
-		                    <span class="movieName exit">엑시트</span>
-		                </a>
-		            </li>
-		        </ul>
+	        	<ul>
+                       <li class="selectMovie frozen">
+                           <a href="#">
+                               <span class="movieAge all"></span>
+                               <span class="movieName frozen">겨울왕국</span>
+                           </a>
+                       </li>
+                       <li class="selectMovie parasite">
+                           <a href="#">
+                               <span class="movieAge fifteen"></span>
+                               <span class="movieName parasite">기생충</span>
+                           </a>
+                       </li>
+                       <li class="selectMovie theDarkKnight">
+                           <a href="#">
+                               <span class="movieAge fifteen"></span>
+                               <span class="movieName theDarkKnight">다크나이트</span>
+                           </a>
+                       </li>
+                       <li class="selectMovie exit">
+                           <a href="#">
+                               <span class="movieAge twelve"></span>
+                               <span class="movieName exit">엑시트</span>
+                           </a>
+                       </li>
+                   </ul>
 		    </div>
 		</div> <!-- .movie-reserve -->
 		<div class="theater-reserve">
@@ -556,66 +556,50 @@
         }) 
 
         //영화선택
-        $('.selectMovie').click(function() {
-            $(this).attr('id', 'movieOn');
-            $('.selectMovie').not($(this)).removeAttr('id', 'movieOn');
-
-            $(this).find($('.movieName')).css('color', '#e7e7e7');
-            $('.movieName').not($(this).find($('.movieName'))).css('color', 'black');
-
-            $('.local_text').text()
-
-            $('.buttonCommon').click(function() {
-                $('.selectDay').click(function() {
-                    $('.plzTheater').css('display', 'none');
-                    $('.theaterTime').css('display', 'block');
-                })
-            })
-
-            $('.selectDay').click(function() {
-                $('.buttonCommon').click(function() {
-                    $('.plzTheater').css('display', 'none');
-                    $('.theaterTime').css('display', 'block');
-                })
-            })
-            $('.movie_text').text($(this).find('.movieName').text())
-            $('.select_movie').css('display', 'none');
-            if($(this).hasClass('.frozen')) $('.selected_movie').addClass('.frozenOn');
-            
-        })
-
-        //지역선택  
-        $('.hall-theater .localButton').click(function() {
-            $(this).attr('id', 'theaterOn');
-            $('.localButton').not($(this)).removeAttr('id', 'theaterOn');
-
-            $('.localSeoul').removeClass('first_button');
-        })
-
-        //지역 극장 선택  
-        $('.theaterCommon .buttonCommon').click(function() {
-            $(this).attr('id', 'theaterButtonOn');
-            $('.buttonCommon').not($(this)).removeAttr('id', 'theaterButtonOn');
-
-            $(".selected_wrap").css('display', 'block');
-            $('.select_theater').css('display', 'none');
-
-            $(".local_text").text("CGV " + $(this).text() + " > ");
-
-            $('.selectDay').click(function() {
-                $('.selectMovie').click(function() {
-                    $('.plzTheater').css('display', 'none');
-                    $('.theaterTime').css('display', 'block');
-                })
-            })
-
-            $('.selectMovie').click(function() {
-                $('.selectDay').click(function() {
-                    $('.plzTheater').css('display', 'none');
-                    $('.theaterTime').css('display', 'block');
-                })
-            })
-        })
+		$('.selectMovie').click(function() {
+			$(this).attr('id', 'movieOn');
+			$('.selectMovie').not($(this)).removeAttr('id', 'movieOn');
+			
+			$(this).find($('.movieName')).css('color', '#e7e7e7');
+			$('.movieName').not($(this).find($('.movieName'))).css('color', 'black');
+			
+			$('.local_text').text()
+			
+			$('.buttonCommon').click(function() {
+			    $('.selectDay').click(function() {
+			        $('.plzTheater').css('display', 'none');
+			        $('.theaterTime').css('display', 'block');
+			    })
+			})
+			
+			$('.selectDay').click(function() {
+			    $('.buttonCommon').click(function() {
+			        $('.plzTheater').css('display', 'none');
+			        $('.theaterTime').css('display', 'block');
+			    })
+			})
+			$('.movie_text').text($(this).find('.movieName').text())
+			$('.select_movie').css('display', 'none');
+			
+			if($(this).hasClass('frozen') === true){
+			    $('.movie_img img').attr("src", "./img/frozen.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
+			if($(this).hasClass('parasite') === true){
+			    $('.movie_img img').attr("src", "./img/parasite.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
+			    
+			if($(this).hasClass('theDarkKnight') === true) {
+			    $('.movie_img img').attr("src", "./img/theDarkKnight.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
+			    
+			if($(this).hasClass('exit') === true) {
+			    $('.movie_img img').attr("src", "./img/exit.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
+		})	
         
         //날짜 선택
         $(".hallDate .selectDay").click(function() {
