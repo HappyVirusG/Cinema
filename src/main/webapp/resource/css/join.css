@@ -38,6 +38,7 @@ a{
     cursor: pointer;
     background-color: white;
     border: 1px solid #ccc;
+    padding-left : 15px
 }
 #join .userInfo input:focus{
     outline: none;
