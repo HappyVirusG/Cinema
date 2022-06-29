@@ -3,7 +3,6 @@ package model;
 public class ReviewDTO {
 	private String moviecode;
 	private String idx;
-	private String reviewtitle;
 	private java.util.Date postdate;
 	private String hit;
 	private String content;
@@ -23,12 +22,7 @@ public class ReviewDTO {
 	public void setIdx(String idx) {
 		this.idx = idx;
 	}
-	public String getReviewtitle() {
-		return reviewtitle;
-	}
-	public void setReviewtitle(String reviewtitle) {
-		this.reviewtitle = reviewtitle;
-	}
+
 	public java.util.Date getPostdate() {
 		return postdate;
 	}

@@ -58,7 +58,6 @@ public class ReviewDAO extends JDBConnect{
 				
 				dto.setMoviecode(rs.getString("moviecode"));
 				dto.setIdx(rs.getString("idx"));
-				dto.setReviewtitle(rs.getString("reviewtitle"));
 				dto.setPostdate(rs.getDate("postdate"));
 				dto.setHit(rs.getString("hit"));
 				dto.setContent(rs.getString("content"));
@@ -79,15 +78,14 @@ public class ReviewDAO extends JDBConnect{
 	public int insertReview(ReviewDTO dto) {
 		int result=0;
 		try {
-			String query = "INSERT INTO review(hit, idx, moviecode, reviewtitle,, content, membercode, score) "
-					+" VALUES(0, 시퀀스만들어놓기,?, ?, ?, ?, ?)";
+			String query = "INSERT INTO review(hit, idx, moviecode, content, membercode, score) "
+					+" VALUES(0, 시퀀스만들어놓기,?, ?, ?, ?)";
 			psmt = con.prepareStatement(query);
 			
 			psmt.setString(1, dto.getMoviecode());
-			psmt.setString(2, dto.getReviewtitle());
-			psmt.setString(3, dto.getContent());
-			psmt.setString(4, dto.getMembercode());
-			psmt.setString(5, dto.getScore());
+			psmt.setString(2, dto.getContent());
+			psmt.setString(3, dto.getMembercode());
+			psmt.setString(4, dto.getScore());
 			
 			result = psmt.executeUpdate();
 		}catch(Exception e) {
@@ -111,7 +109,6 @@ public class ReviewDAO extends JDBConnect{
 			if(rs.next()) {
 				dto.setMoviecode(rs.getString("moviecode"));
 				dto.setIdx(rs.getString("idx"));
-				dto.setReviewtitle(rs.getString("reviewtitle"));
 				dto.setPostdate(rs.getDate("postdate"));
 				dto.setHit(rs.getString("hit"));
 				dto.setContent(rs.getString("content"));
@@ -146,12 +143,11 @@ public class ReviewDAO extends JDBConnect{
 		int result=0;
 		try {
 			String query = "UPDATE review "
-					+ "SET title=?, content=? "
+					+ "SET content=? "
 					+ "WHERE idx=?";
 			psmt=con.prepareStatement(query);
-			psmt.setString(1, dto.getReviewtitle());
-			psmt.setString(2, dto.getContent());
-			psmt.setString(3, dto.getIdx());
+			psmt.setString(1, dto.getContent());
+			psmt.setString(2, dto.getIdx());
 			
 			result=psmt.executeUpdate();
 		}catch(Exception e) {

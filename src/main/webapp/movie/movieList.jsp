@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 - 그린 시네마</title>
-    <link rel="stylesheet" href="../resource/css/header_footer.css?ver=6">
+    <link rel="stylesheet" href="../resource/css/header_footer.css?ver=8">
     <link rel="stylesheet" href="../resource/css/movie_list.css?ver=3">
 
     <!-- font-family -->
