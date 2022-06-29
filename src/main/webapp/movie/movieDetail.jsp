@@ -11,7 +11,7 @@
     
 	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=5">
     <link rel="stylesheet" href="../resource/css/movie_detail.css?ver=3">
-    <link rel="stylesheet" href="../resource/css/review.css">
+    <link rel="stylesheet" href="../resource/css/review.css?ver=4">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
