@@ -9,6 +9,7 @@ public class ReviewDTO {
 	private String membercode;
 	private String score;
 	private String movietitle;
+	private String id;
 	
 	public String getMoviecode() {
 		return moviecode;
@@ -53,13 +54,19 @@ public class ReviewDTO {
 	public void setScore(String score) {
 		this.score = score;
 	}
+	
+	//DB에는 없지만 필요하기 때문에 저장 
 	public String getMovietitle() {
 		return movietitle;
 	}
-	
-	//DB에는 없지만 필요하기 때문에 저장 
 	public void setMovietitle(String movietitle) {
 		this.movietitle = movietitle;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 

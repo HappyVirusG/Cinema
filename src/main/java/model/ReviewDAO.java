@@ -7,6 +7,7 @@ import java.util.Vector;
 import javax.servlet.ServletContext;
 
 import common.JDBConnect;
+import member.MemberDTO;
 
 public class ReviewDAO extends JDBConnect{
 	public ReviewDAO(ServletContext application) {
@@ -75,17 +76,30 @@ public class ReviewDAO extends JDBConnect{
 	}
 	
 //	리뷰 데이터를 받아 DB에 추가
-	public int insertReview(ReviewDTO dto) {
+	public int insertReview(MemberDTO mdto, ReviewDTO rdto) {
 		int result=0;
 		try {
+			String findQuery = "SELECT M.membercode "
+					+ " FROM member M INNER JOIN review R "
+					+ " ON M.mebercode = R.moviecode "
+					+ " WHERE id = ? ";
+			psmt = con.prepareStatement(findQuery);
+			psmt.setString(1, mdto.getId());
+			
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				mdto.setMembercode(rs.getString("membercode"));
+				mdto.setId(rs.getString("id"));
+			}
+			
 			String query = "INSERT INTO review(hit, idx, moviecode, content, membercode, score) "
 					+" VALUES(0, 시퀀스만들어놓기,?, ?, ?, ?)";
 			psmt = con.prepareStatement(query);
 			
-			psmt.setString(1, dto.getMoviecode());
-			psmt.setString(2, dto.getContent());
-			psmt.setString(3, dto.getMembercode());
-			psmt.setString(4, dto.getScore());
+			psmt.setString(1, rdto.getMoviecode());
+			psmt.setString(2, rdto.getContent());
+			psmt.setString(3, rdto.getMembercode());
+			psmt.setString(4, rdto.getScore());
 			
 			result = psmt.executeUpdate();
 		}catch(Exception e) {
