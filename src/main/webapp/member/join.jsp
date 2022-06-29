@@ -71,7 +71,7 @@
             </form>
         </section>
         
-    <script>
+   <!--  <script>
     let userId = document.querySelector("#user_id");
     let pw1 = document.querySelector("#user_pw1");
     let pw2 = document.querySelector("#user_pw2");
@@ -111,7 +111,7 @@
     	}
    	})
 
-</script>
+</script> -->
     
     </div>
    <%@include file="../main/footer.jsp" %>
