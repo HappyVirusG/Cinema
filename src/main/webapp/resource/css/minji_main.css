@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+#modal{
+	display: none;
+}
+
+
 
 #container .carousel-inner img{
     height: 700px;

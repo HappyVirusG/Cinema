@@ -3,7 +3,7 @@ package model;
 public class ReviewDTO {
 	private String moviecode;
 	private String idx;
-	private java.util.Date postdate;
+	private java.sql.Date postdate;
 	private String hit;
 	private String content;
 	private String membercode;
@@ -27,7 +27,7 @@ public class ReviewDTO {
 	public java.util.Date getPostdate() {
 		return postdate;
 	}
-	public void setPostdate(java.util.Date postdate) {
+	public void setPostdate(java.sql.Date postdate) {
 		this.postdate = postdate;
 	}
 	public String getHit() {

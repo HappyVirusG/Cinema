@@ -9,9 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="movieTitle">탑건-매버릭</title>
     
-	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=5">
-    <link rel="stylesheet" href="../resource/css/movie_detail.css?ver=3">
-    <link rel="stylesheet" href="../resource/css/review.css?ver=6">
+    <link rel="stylesheet" href="../resource/css/movie_info_modal.css">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,12 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<%@include file="../main/header.jsp" %>
-<iframe width="100%" height="600" src="https://www.youtube.com/embed/Mrj9XACVJ8U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<!-- 예고편 -->
-   <div id="wrap">
-	
-       <div id="contents" class="contentsMovieDetail">
+
+<div id="modal">
+ <div id="contents" class="contentsMovieDetail">
            <div class="movieSummary">
                <h3>탑건-매버릭</h3>
                <p class="subTitle">Top Gun: Maverick, 2022</p>
@@ -77,9 +72,7 @@
                <div class="movieInfoBtns">
                    <ul>
                        <li><button>주요정보</button></li>
-                       <li><button>포스터/스틸컷</button></li>
-                       <li><button type="button" onclick="location.href='#review'">평점/관람평</button></li>
-                       <li><button>상영시간표</button></li>
+                       <li><button>더보기</button></li>
                    </ul>
                </div> <!-- .movieInfoBtns -->
            </div> <!-- .movieBtns -->
@@ -95,11 +88,9 @@
 매버릭은 자신이 가르친 동료들과 함께 마지막이 될 지 모를 하늘 위 비행에 나서는데… 
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
-<section >
-<%@include file="review.jsp" %>
-</section>       
-<%@include file="../main/footer.jsp" %>
 </div>
+      
+
 
 
 </body>

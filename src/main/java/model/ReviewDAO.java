@@ -69,7 +69,7 @@ public class ReviewDAO extends JDBConnect{
 
 			}
 		}catch(Exception e) {
-			System.out.println("리뷰 목록을 반환하던 중 오류가 발생하였습니다.");
+			System.out.println("리뷰 목록을 읽어오던 중 오류가 발생하였습니다.");
 			e.printStackTrace();
 		}
 		return reviewPost;	
@@ -88,12 +88,12 @@ public class ReviewDAO extends JDBConnect{
 			
 			rs = psmt.executeQuery();
 			while(rs.next()) {
-				mdto.setMembercode(rs.getString("membercode"));
-				mdto.setId(rs.getString("id"));
+				rdto.setMembercode(rs.getString("membercode"));
+				rdto.setId(rs.getString("id"));
 			}
 			
 			String query = "INSERT INTO review(hit, idx, moviecode, content, membercode, score) "
-					+" VALUES(0, 시퀀스만들어놓기,?, ?, ?, ?)";
+					+" VALUES(0, review_idx_seq.nextval, ?, ?, ?, ?)";
 			psmt = con.prepareStatement(query);
 			
 			psmt.setString(1, rdto.getMoviecode());
@@ -107,49 +107,6 @@ public class ReviewDAO extends JDBConnect{
 			e.printStackTrace();
 		}
 		return result;
-	}
-
-//	리뷰 확인하기
-	public ReviewDTO selectView(String idx) {
-		ReviewDTO dto = new ReviewDTO();
-		String query = "SELECT M.title, R.* "
-				+ " FROM movie M INNER JOIN review R  "
-				+ " ON M.moviecode = R.moviecode "
-				+ " WHERE idx = ? ";
-		try {
-			psmt=con.prepareStatement(query);
-			psmt.setString(1, idx);
-			rs=psmt.executeQuery();
-			if(rs.next()) {
-				dto.setMoviecode(rs.getString("moviecode"));
-				dto.setIdx(rs.getString("idx"));
-				dto.setPostdate(rs.getDate("postdate"));
-				dto.setHit(rs.getString("hit"));
-				dto.setContent(rs.getString("content"));
-				dto.setMembercode(rs.getString("membercode"));
-				dto.setScore(rs.getString("score"));
-				dto.setMovietitle(rs.getString("movietitle"));
-			}
-		}catch(Exception e) {
-			System.out.println("리뷰 상세보기 중 예외 발생");
-			e.printStackTrace();
-		}
-		return dto;
-	}
-	
-	//조회수를 1씩 증가시키는 메서드
-	public void updateHit(String num) {
-		String query = "UPDATE review "
-				+ "SET hit = hit+1 "
-				+ "WHERE num=? ";
-		try {
-			psmt=con.prepareStatement(query);
-			psmt.setString(1, num);
-			psmt.executeUpdate();
-		}catch(Exception e) {
-			System.out.println("조회수 업데이트 중 오류가 발생하였습니다.");
-			e.printStackTrace();
-		}
 	}
 	
 	//리뷰 수정하기
