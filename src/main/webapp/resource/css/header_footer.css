@@ -11,6 +11,7 @@ a{
     text-decoration: none;
     color: black;
 }
+
 /* style reset */
 #ul1, #menuUl{
     list-style: none;
@@ -25,15 +26,15 @@ a{
     text-decoration: none;
     color: black;
 }
-h1{
-	font-size: 20px;
+#mainTitle{
+	font-size: 28px;
+	font-weight: bold;
 }
 
 #wrap{
     margin: auto;
-    width: 1240px;
+    min-width: 1240px;
 }
-
 #header .title{
     margin: auto;
     text-align: center;
