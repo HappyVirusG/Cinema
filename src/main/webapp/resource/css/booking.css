@@ -19,7 +19,6 @@ body {
     justify-content: center;
     height: 665px;
     margin: 0 auto;
-    margin-top: 50px;
 }
 .reserve-container>div {
     border: 1px solid #d1d0c7;
@@ -59,21 +58,31 @@ body {
     margin-left: 6px;
 }
 .movie-list li {
+    margin-left: -25px;
     padding-bottom: 5px;
 }
 .movie-list .all {
     display: inline-block;
-    background-image: url(../img/icons/cinema/icon_ratings2.png);
+    background-image: url(./img/icon_ratings2.png);
     background-position-x: 5px;
     background-position-y: 6px;
     width: 32px;
     height: 30px;
     line-height: 30px;
     margin-bottom: -10px;
+    /* font-size: 12px; */
+    /* font-weight: 400; */
+    /* white-space: nowrap; */
+    /* padding-top: -10px; */
+    /* list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    text-align: left;
+    zoom: 1; */
 }
 .movie-list .twelve {
     display: inline-block;
-    background-image: url(../img/icons/cinema/icon_ratings2.png);
+    background-image: url(./img/icon_ratings2.png);
     background-position-x: 5px;
     background-position-y: -29px;
     width: 32px;
@@ -83,7 +92,7 @@ body {
 }
 .movie-list .fifteen {
     display: inline-block;
-    background-image: url(../img/icons/cinema/icon_ratings2.png);
+    background-image: url(./img/icon_ratings2.png);
     background-position-x: 5px;
     background-position-y: -64px;
     width: 32px;
@@ -103,6 +112,7 @@ body {
     text-align: left;
     white-space: nowrap;
     width: auto;
+    cursor: pointer;
 }
 #movieOn {
     background-color: #444444;
@@ -110,8 +120,8 @@ body {
 .frozenOn {
     background-image: url(./img/frozen.jpg) none;
 }
-.theDarkKnightOn {
-	
+.theDarkKnight {
+    background-image: url(./img/theDarkKnight.jpg) none;
 }
 
 
@@ -131,7 +141,7 @@ body {
 .hall-theater .localName {
     position: absolute;
     top: 10px;
-    left: 25px;
+    left: -20px;
     margin-top: 50px;
     z-index: 2;
 }
@@ -145,7 +155,6 @@ body {
     cursor: pointer;
     border: 0px;
     margin-bottom: 1px;
-    padding-right: 11px;
 }
 .theater-list .localName li .first_button {
     background-color: #FDFCF0;
@@ -175,7 +184,6 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding-left: 10px;
 }
 .localTheater .theater_button .buttonOn {
     background-color: #333333;
@@ -290,8 +298,8 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     padding-right: 60px;
+    margin-left: -30px;
     height: 70px;
-    margin-left: 10px;
 }
 .time-reserve .timeButtonList ul a span {
     margin-bottom: 10px;
@@ -331,43 +339,63 @@ body {
 .select_wrap {
     position: relative;
     width: 100%;
-    height: 130px;
+    height: 140px;
     background-color: #1d1d1c;
     margin: 0 auto;
 }
 .select_wrap .select_movie {
+    background-image: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/tnb/tnb_steps.png);
+    margin-left: 23px;
+    zoom: 1;
+    background-repeat: no-repeat;
+    width: 111px;
+    height: 100px;
     position: absolute;
-    top: 50px;
+    top: 35px;
     left: 450px;
-    color: #5b5b5b;
-    font-size: 30px;
 }
 .select_wrap .select_theater {
+    background-image: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/tnb/tnb_steps.png);
+    background-position-x: 50%;
+    background-position-y: -68px;
+    margin-left: 23px;
+    width: 111px;
+    height: 100px;
     position: absolute;
-    top: 50px;
+    top: -5px;
     left: 650px;
-    color: #5b5b5b;
-    font-size: 30px;
+    /* color: #5b5b5b; */
+    /* font-size: 30px; */
 }
 .select_wrap .select_seat {
+    background-image: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/tnb/tnb_steps.png);
+    background-position-x: 50%;
+    background-position-y: -190px;
+    width: 111px;
+    height: 100px;
     position: absolute;
-    top: 50px;
+    top: 9px;
     left: 850px;
-    color: #5b5b5b;
-    font-size: 30px;
+    /* color: #5b5b5b; */
+    /* font-size: 30px; */
 }
 .select_wrap .select_pay {
+    background-image: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/tnb/tnb_steps.png);
+    background-position-x: 50%;
+    background-position-y: -298px;
+    width: 71px;
+    height: 100px;
     position: absolute;
-    top: 50px;
+    top: 9px;
     left: 1050px;
-    color: #5b5b5b;
-    font-size: 30px;
+    /* color: #5b5b5b; */
+    /* font-size: 30px; */
 }
 .selected_wrap {
     width: 160px;
     display: none;
     position: absolute;
-    top: 950px;
+    top: 760px;
     left: 650px;
     color: #e7e7e7;
     font-size: 13px;
@@ -380,6 +408,38 @@ body {
     display: block;
     margin-bottom: 10px;
 }
+.selected_movie {
+    position: absolute;
+    top: 753px;
+    left: 450px;
+    
+}
+.selected_movie .movie_img {
+    display: none;
+    background-size: cover;
+    width: 90px;
+    height: 125px;
+}
+.selected_movie .movie_text {
+    width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    color: #e7e7e7;
+    font-size: 12px;
+    font-weight: bold;
+}
 .selected_wrap .date_text {
     font-size: 11px;
+}
+
+.nextPage .btn_selectSeat {
+    position: absolute;
+    top: 755px;
+    right: 450px;
+    background-image: url(http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/tnb/tnb_buttons.png);
+    background-position-y: -220px;
+    width: 106px;
+    height: 108px;
+    cursor: pointer;
 }
