@@ -679,6 +679,8 @@
                         $('.theaterTime').css('display', 'block');
                     })
                 })
+                
+                return false;
             })
             
             //시간 선택
@@ -687,6 +689,8 @@
                 $('.time').not($(this)).removeAttr('id', 'timeOn');
 
                 $('.theater_text').text($(this).parent('.theater').find('.floor').text());
+                
+                return false;
             })
             </script>
 			<script src="../resource/JS/booking.js"></script>
