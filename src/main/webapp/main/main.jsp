@@ -11,7 +11,7 @@
     
     <!-- css연결 -->
     <link rel="stylesheet" href="../resource/css/minji_main.css?ver=3">
-    <link rel="stylesheet" href="../resource/css/movie_info_modal.css">
+    <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=4">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -152,14 +152,21 @@
        </div> <!-- #contents .contentsMovieDetail-->
 </div> <!-- #modal -->
 
+<script>
+	const modal = document.getElementById("modal");
+	const modalBack = document.getElementByClass('modalBack');
+	function modalFunc(){
+		modal.style.display="flex";
+		modalBack.style.display="block";
+	}
+</script>
 
+<div class="modalBack"></div>
             <div id="sub_imgs">
                 <div class="sub_img">
-                    <a href="#">
+                   <a href="javascript:void(0);" onclick="modalFunc();">
                         <img src="../resource/img/poster/탑건매버릭.jpg" alt="예매바로가기1">
-                        <p class="over">
-                            <img id="one" src="../resource/img/main/click_icon.png">
-                        </p>
+                        <p class="over"></p>
                     </a>
                 </div>
            
@@ -250,6 +257,7 @@
 
     </div> <!--container끝-->
  </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <%@include file="footer.jsp" %>
 
