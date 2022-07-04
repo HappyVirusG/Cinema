@@ -25,7 +25,7 @@
     <div class="movieChartLine"></div>
         <ul>
             <li>
-                <a href="/model/movieDetail.do">
+                <a href="../model/movieDetail.do">
                     <img src="../resource/img/poster/탑건매버릭.jpg" alt=""><br/>
                     <p class="movieChartTitle">
                         <span class="rating" id="rating12">12</span>
