@@ -12,7 +12,7 @@
     
     <!-- css연결 -->
     <link rel="stylesheet" href="../resource/css/minji_main.css?ver=3">
-    <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=6">
+    <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=1">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,6 @@
 <%@include file="header.jsp" %>
 
 <div id="wrap">
- 
     <div id = "container">
 
         <div id = "two_section">
@@ -81,13 +80,14 @@
             </div>
 <div id="modalBck"></div> <!-- #modalBck -->
 <div id="modal">
+  <img src="../resource/img/poster/탑건매버릭.jpg" alt="">
+
  <div id="contents" class="contentsMovieDetail">
+
            <div class="movieSummary">
                <h3>탑건-매버릭</h3>
                <p class="subTitle">Top Gun: Maverick, 2022</p>
-               <img src="../resource/img/poster/탑건매버릭.jpg" alt="">
-
-               <div class="nowScreen">현재상영중</div>
+              
 
                <ul class="rating">
                    <li>관람객 평점 <span class="boxOffice">8.99</span></li>
@@ -95,7 +95,6 @@
                    <li>누적관객수 <span class="boxOffice">900,0000</span></li>
                </ul>
            </div> <!-- .movieSummary -->
-
 
            <table class="movieInfo">
                <tr>
@@ -140,9 +139,9 @@
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
      <div id="modalBtns">
+       	<button type="button" class="closeBtn" onclick="modalClose();">x</button>
      	<button type="button" class="bookingBtn">예매하기</button>
-     	<button type="button" class="close">닫기</button>
-     	<button type="button" class="detail">상세보기</button>
+     	<a onclick="../model/movieDetail.do" class="detailBtn">관람평/스틸컷까지 함께 보기</a>
      </div>
 </div> <!-- #modal -->
 
@@ -152,6 +151,11 @@
 	function modalFunc(){
 		modal.style.display="flex";
 		modalBack.style.display="block";
+	}
+	
+	function modalClose(){
+		modal.style.display="none";
+		modalBack.style.display="none";
 	}
 </script>
 
