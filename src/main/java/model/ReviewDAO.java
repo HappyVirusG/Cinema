@@ -10,6 +10,9 @@ import common.JDBConnect;
 import member.MemberDTO;
 
 public class ReviewDAO extends JDBConnect{
+	public ReviewDAO() {
+		super();
+	}
 	public ReviewDAO(ServletContext application) {
 		super(application);
 	}
@@ -20,6 +23,7 @@ public class ReviewDAO extends JDBConnect{
 //	리뷰 개수 세기
 	public int reviewCount(Map<String, Object> map) {
 		int totalCount = 0;
+		
 		String query = "SELECT COUNT(*) FROM review";
 		
 //		검색 단어가 있을 때
@@ -50,6 +54,7 @@ public class ReviewDAO extends JDBConnect{
 			query += " WHERE "+map.get("searchField")+" "
 					+" LIKE '%"+map.get("searchWord")+"%'";
 		}
+		
 		query += " ORDER BY idx DESC";
 		try {
 			stmt=con.createStatement();
@@ -60,7 +65,6 @@ public class ReviewDAO extends JDBConnect{
 				dto.setMoviecode(rs.getString("moviecode"));
 				dto.setIdx(rs.getString("idx"));
 				dto.setPostdate(rs.getDate("postdate"));
-				dto.setHit(rs.getString("hit"));
 				dto.setContent(rs.getString("content"));
 				dto.setMembercode(rs.getString("membercode"));
 				dto.setScore(rs.getString("score"));

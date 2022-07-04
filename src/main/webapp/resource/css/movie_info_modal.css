@@ -1,16 +1,8 @@
 @charset "utf-8";
 
-.modalBack{
-	width: 1024px;
-	height: 1000px;
-	background-color: rgba(0,0,0,0.8);
-	display: none;
-	position: fixed;
-	
-}
 #modal{
 	width: 980px;
-	height: 700px;
+	/* height: 700px; */
 	position: fixed;
 	left: 50%;
 	top: 50%;
@@ -19,14 +11,27 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	display: none;
-	z-index: 1000;
+	
+	z-index: 10000;
 	box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
 	backdrop-filter: blur(1.5px);
 	-webkit-backdrop-filter: blur(1.5px);
 	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.18);
 	background-color: white;
+	
+	display: none;
+}
+#modalBck{
+	width: 100%;
+	height: 150em;
+	background-color: rgba(0,0,0,0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	
+	display: none;
 }
 
 #contents{
@@ -36,21 +41,21 @@
     position: relative;
 }
 
-#contents .movieSummary{
+#modal .movieSummary{
     display: flex;
     padding-left: 380px;
     padding-top: 20px;
 }
-#contents .movieSummary h3{
+#modal .movieSummary h3{
     font-size: 30px;
 }
-#contents .subTitle{
+#modal .subTitle{
     position: absolute;
     left: 384px;
     top: 60px;
 }
 
-#contents .movieSummary img{
+#modal .movieSummary img{
     width: 300px;
     position: absolute;
     left: 40px;
@@ -59,7 +64,7 @@
     border-radius: 5px;
 }
 
-#contents .nowScreen{
+#modal .nowScreen{
     position: absolute;
     top: 30px;
     left: 650px;
@@ -74,38 +79,46 @@
     font-weight: 800;
 }
 
-#contents .rating{
+#modal .rating{
     display: flex;
     /* background-color: aqua; */
     position: absolute;
     top: 100px;
 }
 
-#contents .rating li{
+#modal .rating li{
     padding-right: 30px;
 }
 
-#contents .boxOffice{
+#modal .boxOffice{
     font-size: 20px;
     font-weight: 500;
     padding-left: 5px;
 }
 
-#contents .movieInfo{
+#modal .movieInfo{
     margin-left: 380px;
     margin-top: 100px;
 }
 
-#contents .movieInfo td{
+#modal .movieInfo td{
     padding-left: 10px;
 }
 
-#contents .movieBtns{
+#modal .movieBtns{
     margin-left: 380px;
     margin-top: 20px;
 }
-
-#contents .bookingBtn{
+#modalBtns{
+	background-color: #333;
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+#modalBtns .bookingBtn{
     background-color: rgb(229, 37, 60);
     color: #fff;
     border: none;
@@ -113,46 +126,30 @@
     height: 50px;
     position: absolute;
     left: 720px;
-    top: 260px;
+    bottom: 40px;
     font-size: 20px;
     font-weight: 500;
 }
 
-.bookingBtn:hover{
+#modalBtns .bookingBtn:hover{
     background-color: rgb(64, 169, 169);
     cursor: pointer;
 }
 
-
-#contents .movieInfoBtns{
-    /* background-color: rgb(69, 69, 69); */
-    width: 550px;
-}
-
-#contents .movieInfoBtns ul{
-    display: flex;
-    margin-top: 20px;
-}
-
-#contents .movieInfoBtns li{
-    padding: 5px;
-}
-
-#contents .movieInfoBtns button{
+#modal .movieInfoBtns button{
     background-color: rgb(39, 39, 39);
     color: white;
     width: 100px;
     height: 40px;
     cursor: pointer;
 }
-#contents .movieInfoBtns button:hover{
+#modal .movieInfoBtns button:hover{
 	background-color: rgb(19, 19, 19);
 }
 
-#contents .movieInfoDetail{
-    margin-left: 100px;
-    margin-top: 60px;
+#modal .movieInfoDetail{
+	margin: 100px 0 0 100px;
     width: 800px;
 }
 
-/* movie_detail */
+/* movie_summary */
