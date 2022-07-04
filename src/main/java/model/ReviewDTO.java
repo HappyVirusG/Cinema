@@ -4,7 +4,6 @@ public class ReviewDTO {
 	private String moviecode;
 	private String idx;
 	private java.sql.Date postdate;
-	private String hit;
 	private String content;
 	private String membercode;
 	private String score;
@@ -30,12 +29,7 @@ public class ReviewDTO {
 	public void setPostdate(java.sql.Date postdate) {
 		this.postdate = postdate;
 	}
-	public String getHit() {
-		return hit;
-	}
-	public void setHit(String hit) {
-		this.hit = hit;
-	}
+
 	public String getContent() {
 		return content;
 	}

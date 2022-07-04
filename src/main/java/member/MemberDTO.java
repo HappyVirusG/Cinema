@@ -6,7 +6,7 @@ public class MemberDTO {
 	private String address;
 	private String id;
 	private String pw;
-	private java.util.Date birth;
+	private java.sql.Date birth;
 	private String tel;
 	private String email;
 	public String getMembercode() {
@@ -39,10 +39,11 @@ public class MemberDTO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public java.util.Date getBirth() {
+
+	public java.sql.Date getBirth() {
 		return birth;
 	}
-	public void setBirth(java.util.Date birth) {
+	public void setBirth(java.sql.Date birth) {
 		this.birth = birth;
 	}
 	public String getTel() {

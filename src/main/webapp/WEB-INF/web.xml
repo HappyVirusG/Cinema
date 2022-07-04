@@ -25,7 +25,7 @@
 <!-- 계정ID -->
 <context-param>
 	<param-name>OracleId</param-name>
-	<param-value>WEBANDY</param-value>
+	<param-value>cinema</param-value>
 </context-param>
 
 <!-- 계정PW -->
@@ -45,4 +45,15 @@
 	<param-name>PAGES_PER_BLOCK</param-name>
 	<param-value>5</param-value>
 </context-param>
+
+
+<servlet>
+	<servlet-name>MovieDetail</servlet-name>
+	<servlet-class>model.ReviewListController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>MovieDetail</servlet-name>
+	<url-pattern>/model/movieDetail.do</url-pattern>
+</servlet-mapping>
+
 </web-app>

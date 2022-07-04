@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,7 @@
     
     <!-- css연결 -->
     <link rel="stylesheet" href="../resource/css/minji_main.css?ver=3">
-    <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=4">
+    <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=6">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +23,7 @@
 <body>
 
 <%@include file="header.jsp" %>
+
 <div id="wrap">
  
     <div id = "container">
@@ -68,8 +70,6 @@
             </section><!--.main_slide(포스터부분)--> 
         </div>
 
-
-
         <section class = "movie_info">
 
             <div class="movie_info_title">
@@ -79,7 +79,7 @@
                     <p>></p>
                 </button>
             </div>
-
+<div id="modalBck"></div> <!-- #modalBck -->
 <div id="modal">
  <div id="contents" class="contentsMovieDetail">
            <div class="movieSummary">
@@ -128,17 +128,6 @@
                </tr>
            </table> <!-- .movieInfo -->
 
-           <div class="movieBtns">
-               <button class="bookingBtn">예매하기</button>
-
-               <div class="movieInfoBtns">
-                   <ul>
-                       <li><button>주요정보</button></li>
-                       <li><button>더보기</button></li>
-                   </ul>
-               </div> <!-- .movieInfoBtns -->
-           </div> <!-- .movieBtns -->
-
            <div class="movieInfoDetail">
 한순간의 실수도 용납되지 않는 하늘 위, <br/>
 가장 압도적인 비행이 시작된다! <br/>
@@ -150,18 +139,22 @@
 매버릭은 자신이 가르친 동료들과 함께 마지막이 될 지 모를 하늘 위 비행에 나서는데… 
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
+     <div id="modalBtns">
+     	<button type="button" class="bookingBtn">예매하기</button>
+     	<button type="button" class="close">닫기</button>
+     	<button type="button" class="detail">상세보기</button>
+     </div>
 </div> <!-- #modal -->
 
 <script>
 	const modal = document.getElementById("modal");
-	const modalBack = document.getElementByClass('modalBack');
+	const modalBack = document.getElementById('modalBck');
 	function modalFunc(){
 		modal.style.display="flex";
 		modalBack.style.display="block";
 	}
 </script>
 
-<div class="modalBack"></div>
             <div id="sub_imgs">
                 <div class="sub_img">
                    <a href="javascript:void(0);" onclick="modalFunc();">

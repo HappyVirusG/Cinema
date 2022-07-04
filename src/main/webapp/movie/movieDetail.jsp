@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +12,12 @@
 	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=5">
     <link rel="stylesheet" href="../resource/css/movie_detail.css?ver=3">
     <link rel="stylesheet" href="../resource/css/review.css?ver=6">
-
-    <!-- font-family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 <%@include file="../main/header.jsp" %>
 <iframe width="100%" height="600" src="https://www.youtube.com/embed/Mrj9XACVJ8U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <!-- 예고편 -->
+
    <div id="wrap">
 	
        <div id="contents" class="contentsMovieDetail">
@@ -97,6 +93,7 @@
        </div> <!-- #contents .contentsMovieDetail-->
 <section >
 <%@include file="review.jsp" %>
+
 </section>       
 <%@include file="../main/footer.jsp" %>
 </div>
