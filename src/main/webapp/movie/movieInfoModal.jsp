@@ -66,16 +66,7 @@
                </tr>
            </table> <!-- .movieInfo -->
 
-           <div class="movieBtns">
-               <button class="bookingBtn">예매하기</button>
-
-               <div class="movieInfoBtns">
-                   <ul>
-                       <li><button>주요정보</button></li>
-                       <li><button>더보기</button></li>
-                   </ul>
-               </div> <!-- .movieInfoBtns -->
-           </div> <!-- .movieBtns -->
+           
 
            <div class="movieInfoDetail">
 한순간의 실수도 용납되지 않는 하늘 위, <br/>
@@ -90,7 +81,16 @@
        </div> <!-- #contents .contentsMovieDetail-->
 </div>
       
+<div class="movieBtns">
+               <button class="bookingBtn">예매하기</button>
 
+               <div class="movieInfoBtns">
+                   <ul>
+                       <li><button>주요정보</button></li>
+                       <li><button>더보기</button></li>
+                   </ul>
+               </div> <!-- .movieInfoBtns -->
+           </div> <!-- .movieBtns -->
 
 
 </body>
