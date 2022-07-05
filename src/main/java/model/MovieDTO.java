@@ -13,6 +13,9 @@ public class MovieDTO {
 	private java.sql.Date opendate;
 	private String image;
 	private String price;
+	private String engtitle;
+	private String youtube;
+	
 	public String getMoviecode() {
 		return moviecode;
 	}
@@ -87,5 +90,18 @@ public class MovieDTO {
 	public void setPrice(String price) {
 		this.price = price;
 	}
+	public String getEngtitle() {
+		return engtitle;
+	}
+	public void setEngtitle(String engtitle) {
+		this.engtitle = engtitle;
+	}
+	public String getYoutube() {
+		return youtube;
+	}
+	public void setYoutube(String youtube) {
+		this.youtube = youtube;
+	}
+	
 	
 }

@@ -67,6 +67,8 @@ public class MovieDAO extends JDBConnect{
 				dto.setImage(rs.getString("image"));
 				dto.setPrice(rs.getString("price"));
 				dto.setGenre(rs.getString("genre"));
+				dto.setEngtitle(rs.getString("engtitle"));
+				dto.setYoutube(rs.getString("youtube"));
 				
 				board.add(dto);
 			}
@@ -81,7 +83,7 @@ public class MovieDAO extends JDBConnect{
 	public MovieDTO selectView(String moviecode) {
 		MovieDTO dto = new MovieDTO();
 		//쿼리문 양식 준비
-		String query = "SELECT * FROM mvcboard WHERE idx=?";
+		String query = "SELECT * FROM movie WHERE moviecode=?";
 		try {
 			psmt=con.prepareStatement(query); //쿼리문 실행 준비
 			psmt.setString(1, moviecode); //인파라미터 설정
@@ -100,6 +102,8 @@ public class MovieDAO extends JDBConnect{
 				dto.setImage(rs.getString("image"));
 				dto.setPrice(rs.getString("price"));
 				dto.setGenre(rs.getString("genre"));
+				dto.setEngtitle(rs.getString("engtitle"));
+				dto.setYoutube(rs.getString("youtube"));
 			}
 		}catch(Exception e) {
 			System.out.println("영화 상세보기 중 예외 발생");
