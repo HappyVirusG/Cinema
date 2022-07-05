@@ -1,0 +1,309 @@
+@charset "utf-8";
+
+#container .carousel-inner img{
+    height: 700px;
+}
+
+#container #main_slide{
+    position: relative;
+    height: 600px;
+}
+
+#container .carousel-control-next {
+    background-color: #383838;
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+#container .carousel-control-prev {
+    background-color: #383838;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ메인포스터 부분 끝 */
+
+
+
+#container .booking {
+    width: 59%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    margin-top: 100px;
+    background-color: rgba(65, 64, 64);
+    position: absolute;
+    bottom: -160px;
+    left: 20.5%;
+    z-index: 100;
+    line-height: 120px;
+}
+
+#two_section {
+    background-color: rgb(253, 241, 226)
+}
+
+#movieName {
+    width: 160px;
+    height: 35px;
+    padding: 20px;
+    font-size: 12px;
+    border: none;
+    margin-right: 20px;
+    margin-top: 10px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+}
+
+#container .movieName:focus {
+    outline: none;
+}
+
+#container button {
+    width: 70px;
+    height: 35px;
+    line-height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    /* font-weight: 500; */
+    background-color: rgb(255, 255, 255);
+    color: rgb(48, 48, 48);
+    margin-right: 70px;
+}
+
+#container button:hover {
+    background-color: #d83030;
+    color: #fff;
+}
+
+#container #sharch:hover {
+    background-color: #919191;
+    color: #fff;
+}
+
+#icon1 {
+    width: 60px;
+    height: 50px;
+}
+
+#icon2 {
+    width: 65px;
+    height: 50px;
+}
+
+#icon3 {
+    width: 65px;
+    height: 50px;
+    margin-top: 32px;
+}
+
+#container .booking p {
+    height: 50px;
+    line-height: 120px;
+    color: #fff;
+    margin: 0 30px 0 10px;
+}
+
+#container .booking img {
+    margin-top: 30px;
+}
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ빠른예매 부분 끝 */
+
+#container .movie_info_title {
+    display: flex;
+    justify-content: space-around;
+    width: 103%;
+    margin-top: 220px;
+    margin-left: 20px;
+    position: relative;
+}
+
+#movie_more {
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(48, 48, 48);
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+#container .movie_info_title a {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#container .box_office{
+    border-bottom: 3px solid #d83030;
+    margin-top: 40px;
+    position: absolute;
+    left: 380px;
+}
+
+#container .movie_info {
+    margin-top: 100px;
+}
+
+#sub_imgs {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#container .sub_img {
+    width: 250px;
+    position: relative;
+    margin: 30px 20px 10px 20px;
+    border: 1px solid rgb(187, 187, 187);
+}
+
+#container .sub_img img {
+    width: 250px;
+    height: 350px;
+    position: relative;
+    /* box-shadow : 5px 5px 20px 0 #666; */
+}
+
+#one {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+}
+
+#container .sub_img .over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 16px;
+    display: none;
+}
+
+#container .sub_img .over span {
+    display : block;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#container .sub_img:hover .over {
+    display: block;
+}
+
+#sub_img_explanation {
+    display: flex;
+    margin-left: 440px;
+    margin-bottom: 50px;
+}
+
+#sub_img_explanation p{
+    margin-right: 175px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+#container .star {
+    width: 20px;
+    height: 20px;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ영화정보소개 부분 끝 */
+
+#container .event_title {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#look_at_whole {
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(48, 48, 48);
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#container .event_title a {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#container .EVENT{
+    border-bottom: 3px solid #d83030;
+}
+
+#event {
+    background-color: #d83030;
+    display: flex;
+    justify-content: center;
+}
+
+#event a {
+    text-decoration-line: none;
+}
+
+#event p {
+    color: rgb(255, 255, 255);
+}
+
+#event img {
+    width: 300px;
+    border-radius: 10%;
+}
+
+#container .eventin {
+    margin: 30px;
+    overflow: hidden;
+}
+
+#container .eventin:hover img{
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
+#container .eventin img {
+    transition: transform 0.2s;
+}
+
+#container .eventin p {
+    margin-top: 20px;
+}
+
+
+#container .advertisement {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    background-color: #DFF7B9;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ이벤트 & 광고 부분 끝 */
