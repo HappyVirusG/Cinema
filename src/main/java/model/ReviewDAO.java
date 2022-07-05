@@ -45,23 +45,19 @@ public class ReviewDAO extends JDBConnect{
 	}
 	
 //	리뷰 목록 반환
-	public List<ReviewDTO> selectList(Map<String, Object> map){
+	public List<ReviewDTO> selectList(Map<String, Object> map, String moviecode){
 		List<ReviewDTO> reviewPost = new Vector<ReviewDTO>();
-		String query = "SELECT * FROM review";
-		
-//		검색 단어가 있을 때
-		if(map.get("searchWord")!=null) {
-			query += " WHERE "+map.get("searchField")+" "
-					+" LIKE '%"+map.get("searchWord")+"%'";
-		}
-		
-		query += " ORDER BY idx DESC";
+		String query = "SELECT R.* FROM movie M, review R"
+				+ " WHERE M.moviecode = R.moviecode "
+				+ " AND M.moviecode = ?"
+				+ " ORDER BY idx DESC";
 		try {
-			stmt=con.createStatement();
-			rs=stmt.executeQuery(query);
+			psmt=con.prepareStatement(query);
+			psmt.setString(1, moviecode);
+			rs=psmt.executeQuery();
 			while(rs.next()) {
 				ReviewDTO dto = new ReviewDTO();
-				
+
 				dto.setMoviecode(rs.getString("moviecode"));
 				dto.setIdx(rs.getString("idx"));
 				dto.setPostdate(rs.getDate("postdate"));
@@ -70,7 +66,6 @@ public class ReviewDAO extends JDBConnect{
 				dto.setScore(rs.getString("score"));
 				
 				reviewPost.add(dto); //결과를 목록에 저장
-
 			}
 		}catch(Exception e) {
 			System.out.println("리뷰 목록을 읽어오던 중 오류가 발생하였습니다.");

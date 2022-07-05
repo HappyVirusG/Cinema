@@ -32,6 +32,8 @@
     	<c:otherwise>
 
         <c:forEach items="${ boardLists }" var="row" varStatus="loop">
+        
+
             <li>
                 <a href="../model/movieDetail.do?moviecode=${row.moviecode}">
                     <img src="${row.image}" alt=""><br/>

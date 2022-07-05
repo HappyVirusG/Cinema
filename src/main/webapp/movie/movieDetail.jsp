@@ -12,7 +12,7 @@
     
 	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=5">
     <link rel="stylesheet" href="../resource/css/movie_detail.css?ver=3">
-
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 <body>
 <%@include file="../main/header.jsp" %>
@@ -88,6 +88,12 @@
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
 <section >
+<!--    <script>
+   	$(document).ready(function(){
+   		getAjaxJsonData("../model/review.do", "", "../model/movieDetail.do")
+   	});
+   </script> -->
+
 <%@include file="review.jsp" %>
 
 </section>       
