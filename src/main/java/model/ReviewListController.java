@@ -11,23 +11,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/review.do")
+@WebServlet("/model/review.do")
 public class ReviewListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		ReviewDAO dao = new ReviewDAO();
+		ReviewDAO rdao = new ReviewDAO();
 		Map<String, Object> map = new HashMap<String, Object>();
 		
-		String searchWord = req.getParameter("searchWord");
-	
-		if(searchWord != null) {
-			map.put("searchWord", searchWord);
-		}
-		int totalCount = dao.reviewCount(map);
+		int totalCount = rdao.reviewCount(map);
 		
-		List<ReviewDTO> reviewLists = dao.selectList(map);
-		dao.close();
-		
+		String moviecode = req.getParameter("moviecode");
+		System.out.println("moviecode>>>>>>>"+moviecode);
+		List<ReviewDTO> reviewLists = rdao.selectList(map, moviecode);
+		rdao.close();
+
 		req.setAttribute("reviewLists", reviewLists);
 		req.setAttribute("totalCount", totalCount);
 		req.setAttribute("map", map);

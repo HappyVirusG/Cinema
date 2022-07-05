@@ -18,7 +18,8 @@
 <div class="reviewLine"></div>
 <div id="review">
     <div class="reviewCurrent">
-    
+	
+	${dto.moviecode}
 	<c:choose>
     	<c:when test="${ empty reviewLists }">
     	<p>
@@ -68,7 +69,6 @@
 	    </div> <!-- .contentPost -->
         </form> <!-- form 입력값 -->
     </div> <!-- .reviewTable 리뷰 작성 -->
-    
    <c:choose>
     	<c:when test="${ empty reviewLists }">
     		<div class="noneReview"> 첫번째 한줄평의 주인공이 되어보세요! </div>
@@ -76,7 +76,6 @@
     	<c:otherwise>
     		<c:forEach items="${ reviewLists }" var="row" varStatus="loop">
     		<div class="userReview">
-    	
             <div class="user">
                 <img src="../resource/img/review/hansohee.jpg" alt=""><br/>
                 <span>${ row.id }영화덕후</span>  <!-- 작성자 id -->
