@@ -6,10 +6,11 @@ public class MovieDTO {
 	private String director;
 	private String actors;
 	private String country;
+	private String genre;
 	private String summary;
 	private String runningtime;
 	private String ratingcode;
-	private java.util.Date opendate;
+	private java.sql.Date opendate;
 	private String image;
 	private String price;
 	public String getMoviecode() {
@@ -42,6 +43,13 @@ public class MovieDTO {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	
+	public String getGenre() {
+		return genre;
+	}
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
 	public String getSummary() {
 		return summary;
 	}
@@ -60,10 +68,11 @@ public class MovieDTO {
 	public void setRatingcode(String ratingcode) {
 		this.ratingcode = ratingcode;
 	}
-	public java.util.Date getOpendate() {
+
+	public java.sql.Date getOpendate() {
 		return opendate;
 	}
-	public void setOpendate(java.util.Date opendate) {
+	public void setOpendate(java.sql.Date opendate) {
 		this.opendate = opendate;
 	}
 	public String getImage() {

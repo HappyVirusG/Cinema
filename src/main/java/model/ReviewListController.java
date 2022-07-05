@@ -28,6 +28,7 @@ public class ReviewListController extends HttpServlet{
 		dao.close();
 		
 		req.setAttribute("reviewLists", reviewLists);
+		req.setAttribute("totalCount", totalCount);
 		req.setAttribute("map", map);
 		req.getRequestDispatcher("/movie/movieDetail.jsp").forward(req, resp);
 	}

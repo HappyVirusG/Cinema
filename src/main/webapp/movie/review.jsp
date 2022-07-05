@@ -1,7 +1,9 @@
+<%@page import="model.ReviewListController"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 
+<link rel="stylesheet" href="../resource/css/review.css?ver=6">
 <script>
 	function validateForm(form){
 		if(form.content.value==""){
@@ -16,10 +18,19 @@
 <div class="reviewLine"></div>
 <div id="review">
     <div class="reviewCurrent">
-
+    
+	<c:choose>
+    	<c:when test="${ empty reviewLists }">
+    	<p>
+    		아직 남겨진 관람평이 없어요!
+    	</p>
+    	</c:when>
+    	<c:otherwise>
         <p>
-            <span>탑건 : 매버릭</span>에 대한 <span>${ map.totalCount }</span>개의 관람평이 있어요!
+            <span>탑건 : 매버릭</span>에 대한 <span>${ totalCount }</span>개의 관람평이 있어요!
         </p>
+        </c:otherwise>
+	</c:choose>
         <button>본 영화 등록</button>
         
     </div>
@@ -46,7 +57,7 @@
 	          <div class="user">
 	              <img src="../resource/img/review/admin.jpg" alt="">
 	              <br/>
-	              <span>작성자아뒤</span>
+	              <span>로그인id</span>
 	          </div> <!-- .user -->
 	          
              <div class="typeContent">
@@ -60,7 +71,7 @@
     
    <c:choose>
     	<c:when test="${ empty reviewLists }">
-    		<div class="noneReview"> 등록된 관람평이 없습니다.</div>
+    		<div class="noneReview"> 첫번째 한줄평의 주인공이 되어보세요! </div>
     	</c:when>
     	<c:otherwise>
     		<c:forEach items="${ reviewLists }" var="row" varStatus="loop">
@@ -68,17 +79,46 @@
     	
             <div class="user">
                 <img src="../resource/img/review/hansohee.jpg" alt=""><br/>
-                <span>${ row.id }</span>  <!-- 작성자 id -->
+                <span>${ row.id }영화덕후</span>  <!-- 작성자 id -->
             </div>
             
             <div class="userRate">
             <!-- 작성자가 준 평점 -->
-                <span class="userScore">${ row.score }</span><br/>
-                최고예요! <!-- 평점에 부연설명 추가해놓기 -->
+                <span class="userScore">
+                	<script>
+                	for(let i=1; i<=parseInt("${row.score}"); i++){
+            			document.write("⭐");
+            		}
+                	</script>
+                </span>
+                <br/>
+                <script>
+               	 switch(parseInt("${row.score}")){
+               		case 1:
+               			document.write("별로였어요");
+               			break;
+               		case 2:
+               			document.write("실망했어요");
+               			break;
+               		case 3:
+               			document.write("그냥 그랬어요");
+						break;
+					case 4:
+						document.write("좋았어요");
+						break;
+					case 5:
+						document.write("최고예요!");
+						break;
+						
+               		}
+                </script>
             </div>
             <div class="userLine"></div>
             <div class="userContent"> <!-- 작성자 관람평 -->
             	${ row.content }
+            	<span class="userPostDate">
+           			${row.postdate}
+           		</span>
             </div>
             </div>
     		</c:forEach>

@@ -5,11 +5,11 @@
 
 <link rel="stylesheet" href="../resource/css/header_footer.css?ver=3">
 
-    <!-- font-family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
-  
+<!-- font-family -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+
 
 	<header id="header">
     <div class="title">
@@ -37,7 +37,7 @@
     <div class="headerLine"></div>
     <div class="menu">
          <ul id="ul1">
-            <li><a id="a1" href="../movie/movieList.jsp">영화</a></li>
+            <li><a id="a1" href="../model/movieList.do">영화</a></li>
             <li><a id="a1" href="../movie/booking.jsp">예매</a></li>
             <li><a id="a1" href="">스토어</a></li>
             <li><a id="a1" href="">멤버십</a></li>
