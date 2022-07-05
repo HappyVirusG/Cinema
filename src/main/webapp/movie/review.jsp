@@ -109,7 +109,6 @@
 					case 5:
 						document.write("최고예요!");
 						break;
-						
                		}
                 </script>
             </div>

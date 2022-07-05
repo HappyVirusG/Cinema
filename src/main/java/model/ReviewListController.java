@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/review.do")
 public class ReviewListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,6 +31,6 @@ public class ReviewListController extends HttpServlet{
 		req.setAttribute("reviewLists", reviewLists);
 		req.setAttribute("totalCount", totalCount);
 		req.setAttribute("map", map);
-		req.getRequestDispatcher("/movie/movieDetail.jsp").forward(req, resp);
+		req.getRequestDispatcher("/movie/review.jsp").forward(req, resp);
 	}
 }

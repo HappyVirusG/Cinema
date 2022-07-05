@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
 </head>
 <body>
 <%@include file="../main/header.jsp" %>
-<iframe width="100%" height="600" src="https://www.youtube.com/embed/Mrj9XACVJ8U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="600" src="${dto.youtube}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <!-- 예고편 -->
 
    <div id="wrap">
@@ -25,8 +26,10 @@
                <h3>
                ${ dto.title }
                </h3>
-               <p class="subTitle">Top Gun: Maverick, 2022</p>
-               <img src="../resource/img/poster/탑건매버릭.jpg" alt="">
+               <p class="subTitle">${dto.engtitle}, 
+               	<fmt:formatDate pattern="yyyy" value="${dto.opendate}"/>
+               </p>
+               <img src="${dto.image}" alt="">
 
                <div class="nowScreen">현재상영중</div>
 
@@ -47,8 +50,6 @@
                    <th>출연</th>
                    <td>
                        <a href=""> ${dto.actors}</a>
-                       <a href=""> 마일즈 텔러</a>
-                        제니퍼 코넬리
                    </td>
                </tr>
                <tr>
@@ -61,7 +62,7 @@
                </tr>
                <tr>
                    <th>등급</th>
-                   <td>${dto.ratingcode}세 관람가</td>
+                   <td>${dto.ratingcode} 관람가</td>
                </tr>
                <tr>
                    <th>개봉</th>
