@@ -11,7 +11,7 @@
     
 	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=5">
     <link rel="stylesheet" href="../resource/css/movie_detail.css?ver=3">
-    <link rel="stylesheet" href="../resource/css/review.css?ver=6">
+
 </head>
 <body>
 <%@include file="../main/header.jsp" %>
@@ -22,7 +22,9 @@
 	
        <div id="contents" class="contentsMovieDetail">
            <div class="movieSummary">
-               <h3>탑건-매버릭</h3>
+               <h3>
+               ${ dto.title }
+               </h3>
                <p class="subTitle">Top Gun: Maverick, 2022</p>
                <img src="../resource/img/poster/탑건매버릭.jpg" alt="">
 
@@ -39,31 +41,31 @@
            <table class="movieInfo">
                <tr>
                    <th>감독</th>
-                   <td><a href="">조셉 코신스키</a></td>
+                   <td><a href="">${dto.director}</a></td>
                </tr>
                <tr>
                    <th>출연</th>
                    <td>
-                       <a href=""> 톰 크루즈</a>
+                       <a href=""> ${dto.actors}</a>
                        <a href=""> 마일즈 텔러</a>
                         제니퍼 코넬리
                    </td>
                </tr>
                <tr>
                    <th>장르</th>
-                   <td><a href="">액션</a>
+                   <td><a href="">${dto.genre}</a>
                </tr>
                <tr>
                    <th>국가</th>
-                   <td>미국</td>
+                   <td>${dto.country}</td>
                </tr>
                <tr>
                    <th>등급</th>
-                   <td>12세 관람가</td>
+                   <td>${dto.ratingcode}세 관람가</td>
                </tr>
                <tr>
                    <th>개봉</th>
-                   <td class="movieDate">2019.07.31</td>
+                   <td class="movieDate">${dto.opendate}</td>
                </tr>
            </table> <!-- .movieInfo -->
 
@@ -81,14 +83,7 @@
            </div> <!-- .movieBtns -->
 
            <div class="movieInfoDetail">
-한순간의 실수도 용납되지 않는 하늘 위, <br/>
-가장 압도적인 비행이 시작된다! <br/>
- <br/>
-최고의 파일럿이자 전설적인 인물 매버릭(톰 크루즈)은 자신이 졸업한 훈련학교 교관으로 발탁된다. <br/> 
-그의 명성을 모르던 팀원들은 매버릭의 지시를 무시하지만 실전을 방불케 하는 상공 훈련에서 눈으로 봐도 믿기 힘든 전설적인 조종 실력에 모두가 압도된다. <br/> 
- <br/>
-매버릭의 지휘아래 견고한 팀워크를 쌓아가던 팀원들에게 국경을 뛰어넘는 위험한 임무가 주어지자 <br/>
-매버릭은 자신이 가르친 동료들과 함께 마지막이 될 지 모를 하늘 위 비행에 나서는데… 
+           	${dto.summary}
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
 <section >

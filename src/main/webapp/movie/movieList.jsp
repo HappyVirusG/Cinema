@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,45 +23,36 @@
     <div class="movieList">
     <h3>현재상영작</h3>
     <div class="movieChartLine"></div>
-        <ul>
+    
+    <ul>
+    <c:choose>
+    	<c:when test="${empty boardLists}">
+
+    		<li>등록된 영화가 없습니다.</li>
+
+    	</c:when>
+    	<c:otherwise>
+    	
+
+        <c:forEach items="${ boardLists }" var="row" varStatus="loop">
             <li>
-                <a href="../model/movieDetail.do">
-                    <img src="../resource/img/poster/탑건매버릭.jpg" alt=""><br/>
+                <a href="../model/movieDetail.do?moviecode=${row.moviecode}">
+                    <img src="${row.image}" alt=""><br/>
                     <p class="movieChartTitle">
                         <span class="rating" id="rating12">12</span>
-                        <span class="movieTitle">탑건: 매버릭</span>
+                        <span class="movieTitle">${row.title}</span>
                     </p>
                     
                     <p>예매율 <span class="boxOffice">46.2%</span> </p>
-                    <p class="movieDate">2022.06.22</p>
+                    <p class="movieDate">${row.opendate}</p>
                 </a>
                 <button class="bookingBtn">예매하기</button>
             </li>
-            <li>
-                <a href="">
-                    <img src="../resource/img/poster/마녀2.jpg" alt=""><br/>
-                    <p class="movieChartTitle">
-                        <span class="rating" id="rating15">15</span>
-                        <span class="movieTitle">마녀2</span>
-                    </p>
-                    <p>예매율 <span class="boxOffice">4.6%</span> </p>
-                    <p class="movieDate">2022.06.15</p>
-                </a>
-                <button class="bookingBtn">예매하기</button>
-            </li>
-            <li>
-                <a href="">
-                    <img src="../resource/img/poster/버즈라이트이어.jpg" alt=""><br/>
-                    <p class="movieChartTitle">
-                        <span class="rating" id="ratingAll">All</span>
-                        <span class="movieTitle">버즈 라이트 이어</span>
-                    </p>
-                    
-                    <p>예매율 <span class="boxOffice">0.2%</span> </p>
-                    <p class="movieDate">2022.06.15</p>
-                </a>
-                <button class="bookingBtn">예매하기</button>
-            </li>
+			</c:forEach>
+         </c:otherwise>
+      </c:choose> 
+<!-- 
+
             <li>
                 <a href="">
                     <img src="../resource/img/poster/다크나이트.jpg" alt=""><br/>
@@ -73,7 +64,7 @@
                     <p class="movieDate">2008.08.06</p>
                 </a>
                 <button class="bookingBtn">예매하기</button>
-            </li>
+            </li> -->
         </ul>
 
     </div>

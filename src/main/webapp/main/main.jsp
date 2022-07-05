@@ -11,7 +11,7 @@
     <title>그린시네마</title>
     
     <!-- css연결 -->
-    <link rel="stylesheet" href="../resource/css/minji_main.css?ver=3">
+    <link rel="stylesheet" href="../resource/css/minji_main.css?ver=5">
     <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=1">
 
     <!-- font-family -->
@@ -141,7 +141,7 @@
      <div id="modalBtns">
        	<button type="button" class="closeBtn" onclick="modalClose();">x</button>
      	<button type="button" class="bookingBtn">예매하기</button>
-     	<a onclick="../model/movieDetail.do" class="detailBtn">관람평/스틸컷까지 함께 보기</a>
+     	<a href="../model/movieDetail.do" class="detailBtn">관람평/스틸컷까지 함께 보기</a>
      </div>
 </div> <!-- #modal -->
 

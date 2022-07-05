@@ -37,13 +37,13 @@
 <!-- 한 페이지당 들어갈 포스트 수: 상수라서 대문자 -->
 <context-param>
 	<param-name>POSTS_PER_PAGE</param-name>
-	<param-value>15</param-value>
+	<param-value>16</param-value>
 </context-param>
 
 <!-- 한 블럭당 들어갈 페이지 수 -->
 <context-param>
 	<param-name>PAGES_PER_BLOCK</param-name>
-	<param-value>5</param-value>
+	<param-value>4</param-value>
 </context-param>
  <servlet>
 	<servlet-name>MovieDetail</servlet-name>
@@ -53,4 +53,14 @@
 	<servlet-name>MovieDetail</servlet-name>
 	<url-pattern>/model/movieDetail.do</url-pattern>
 </servlet-mapping>
+
+ <servlet>
+	<servlet-name>MovieList</servlet-name>
+	<servlet-class>model.MovieListController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>MovieList</servlet-name>
+	<url-pattern>/model/movieList.do</url-pattern>
+</servlet-mapping>
+
 </web-app>
