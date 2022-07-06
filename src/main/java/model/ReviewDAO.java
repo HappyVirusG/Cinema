@@ -21,20 +21,19 @@ public class ReviewDAO extends JDBConnect{
 	}
 	
 //	리뷰 개수 세기
-	public int reviewCount(Map<String, Object> map) {
+	public int reviewCount(Map<String, Object> map, String moviecode) {
 		int totalCount = 0;
 		
-		String query = "SELECT COUNT(*) FROM review";
-		
-//		검색 단어가 있을 때
-//		select count(*) from board where 제목 like '%가%';
-		if(map.get("searchWord")!=null) {
-			query += " WHERE "+map.get("searchField")
-				  +" LIKE '%"+map.get("searchWord")+"%'";
-		}
+		String query = "SELECT COUNT(*) FROM movie M, review R"
+				+ " WHERE M.moviecode = R.moviecode "
+				+ " AND M.moviecode = ?"
+				+ " ORDER BY idx DESC";
+
 		try {
-			stmt=con.createStatement();
-			rs=stmt.executeQuery(query);
+			psmt=con.prepareStatement(query);
+			psmt.setString(1, moviecode);
+			rs=psmt.executeQuery();
+			
 			rs.next();
 			totalCount=rs.getInt(1);
 		}catch(Exception e) {

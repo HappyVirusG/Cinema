@@ -1,4 +1,4 @@
-<%@page import="model.ReviewListController"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
@@ -19,7 +19,6 @@
 <div id="review">
     <div class="reviewCurrent">
 	
-	${dto.moviecode}
 	<c:choose>
     	<c:when test="${ empty reviewLists }">
     	<p>
