@@ -47,7 +47,7 @@ public class MovieDAO extends JDBConnect{
 		if(map.get("searchWord")!=null) {
 			query += " LIKE '%"+map.get("searchWord")+"%' ";
 		}
-		query += " ORDER BY moviecode ASC ) tb) WHERE rNum BETWEEN ? AND ?";
+		query += " ORDER BY moviecode DESC ) tb) WHERE rNum BETWEEN ? AND ?";
 		try {
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, map.get("start").toString());

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="movieTitle">탑건-매버릭</title>
+    <title class="movieTitle">${dto.title}</title>
     
 	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=5">
     <link rel="stylesheet" href="../resource/css/movie_detail.css?ver=3">
@@ -16,16 +16,14 @@
 </head>
 <body>
 <%@include file="../main/header.jsp" %>
-<iframe width="100%" height="600" src="${dto.youtube}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="600px" src="${dto.youtube}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <!-- 예고편 -->
 
    <div id="wrap">
 	
        <div id="contents" class="contentsMovieDetail">
            <div class="movieSummary">
-               <h3>
-               ${ dto.title }
-               </h3>
+               <h3>${ dto.title }</h3>
                <p class="subTitle">${dto.engtitle}, 
                	<fmt:formatDate pattern="yyyy" value="${dto.opendate}"/>
                </p>
@@ -54,7 +52,7 @@
                </tr>
                <tr>
                    <th>장르</th>
-                   <td><a href="">${dto.genre}</a>
+                   <td>${dto.genre}
                </tr>
                <tr>
                    <th>국가</th>
@@ -88,11 +86,6 @@
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
 <section >
-<!--    <script>
-   	$(document).ready(function(){
-   		getAjaxJsonData("../model/review.do", "", "../model/movieDetail.do")
-   	});
-   </script> -->
 
 <%@include file="review.jsp" %>
 
