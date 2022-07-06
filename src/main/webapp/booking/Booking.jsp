@@ -11,7 +11,6 @@
 <body>
 <%@include file="../main/header.jsp" %>
 
-
 	     <div class="reserve-container">
             <div class="movie-reserve">
                 <div class="reserve-title">영화</div>
