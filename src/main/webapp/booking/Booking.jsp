@@ -23,25 +23,25 @@
                         <li class="selectMovie frozen allAge">
                             <a href="#">
                                 <span class="movieAge all"></span>
-                                <span class="movieName frozen">겨울왕국</span>
+                                <span class="movieName frozen" name="0001">겨울왕국</span>
                             </a>
                         </li>
                         <li class="selectMovie parasite fifteenAge">
                             <a href="#">
                                 <span class="movieAge fifteen"></span>
-                                <span class="movieName parasite">기생충</span>
+                                <span class="movieName parasite" name="0002">기생충</span>
                             </a>
                         </li>
                         <li class="selectMovie theDarkKnight fifteenAge">
                             <a href="#">
                                 <span class="movieAge fifteen"></span>
-                                <span class="movieName theDarkKnight">다크나이트</span>
+                                <span class="movieName theDarkKnight" name="0003">다크나이트</span>
                             </a>
                         </li>
                         <li class="selectMovie exit twelveAge">
                             <a href="#">
                                 <span class="movieAge twelve"></span>
-                                <span class="movieName exit">엑시트</span>
+                                <span class="movieName exit" name="0004">엑시트</span>
                             </a>
                         </li>
                     </ul>
@@ -532,24 +532,25 @@
                 <span class="movie_text_age"></span>
             </div>
             <div class="selected_wrap">
-                <span class="selected_local">극장 > <span class="local_text"></span></span>
-                <span class="selected_date">일시 > <span class="date_text"></span></span>
-                <span class="selected_theater">상영관 > <span class="theater_text"></span></span>
-                <span class="selected_pay">인원 > <span class="person_text"></span></span>
+                <span class="selected_local">극장 > <span class="local_text" name="local_text"></span></span>
+                <span class="selected_date">일시 > <span class="date_text" name="date_text"></span></span>
+                <span class="selected_theater">상영관 > <span class="theater_text" name="theater_text"></span></span>
+                <span class="selected_pay">인원 > <span class="person_text" name="person_text"></span></span>
             </div>
 
             <div class="selected_seat">
                 <div class="seatName">
-                    <div class="seat-name">좌석명</div><div class="select-seat-name"></div>
+                    <div class="seat-name">좌석명</div><div class="select-seat-name" name="select-seat-name"></div>
                 </div>
                 <div class="seatNum">
-                    <div class="seat-num">좌석번호</div><div class="select-seat-num"></div>
+                    <div class="seat-num">좌석번호</div><div class="select-seat-num" name="select-seat-num"></div>
                 </div>
             </div>
 
             <div class="changePage">
                 <a class="btn_movie"></a>
-                <a class="btn_seat_pay"></a>
+                <a class="btn_seat"></a>
+                <a href="bookingList.jsp"class="btn_pay"></a>
             </div>
         </div>
 
@@ -563,16 +564,17 @@
                 $('.buttonCommon').click(function() {
                     $('.selectDay').click(function() {
                         $('.time').click(function() {
-                            $('.btn_seat_pay').addClass('tm');
-                            $('.btn_seat_pay').css('backgroundPositionX', '-150px');
-                            $('.btn_seat_pay').click(function() {
+                            $('.btn_seat').addClass('tm');
+                            $('.btn_seat').css('backgroundPositionX', '-150px');
+                            $('.btn_seat').click(function() {
                                 $('.select-seat-wrapper').css('display', 'block');
                                 $('.reserve-container').css('display', 'none');
                                 $(this).css({
-                                    'top': '680px',
-                                    'backgroundPositionX': '0px',
-                                    'backgroundPositionY': '-330px'
+                                	'display': 'none'
                                 })
+                                $('.btn_pay').css({
+                                	'display': 'block',
+                                })                          	
                                 $('.selected_wrap').css('top', '680px');
                                 $('.selected_movie').css('top', '673px');
                                 $('.btn_movie').css({
@@ -580,23 +582,24 @@
                                 })
                             })
                         })
-                        $('.btn_seat_pay').addClass('sd');
+                        $('.btn_seat').addClass('sd');
                     })
-                    $('.btn_seat_pay').addClass('bc');
+                    $('.btn_seat').addClass('bc');
                 })
                 $('.selectDay').click(function() {
                     $('.buttonCommon').click(function() {
                         $('.time').click(function() {
-                            $('.btn_seat_pay').addClass('tm');
-                            $('.btn_seat_pay').css('backgroundPositionX', '-150px');
-                            $('.btn_seat_pay').click(function() {
+                            $('.btn_seat').addClass('tm');
+                            $('.btn_seat').css('backgroundPositionX', '-150px');
+                            $('.btn_seat').click(function() {
                                 $('.select-seat-wrapper').css('display', 'block');
                                 $('.reserve-container').css('display', 'none');
                                 $(this).css({
-                                    'top': '680px',
-                                    'backgroundPositionX': '0px',
-                                    'backgroundPositionY': '-330px'
+                                	'display': 'none'
                                 })
+                                $('.btn_pay').css({
+                                	'display': 'block',
+                                }) 
                                 $('.selected_wrap').css('top', '680px');
                                 $('.selected_movie').css('top', '673px');
                                 $('.btn_movie').css({
@@ -604,27 +607,28 @@
                                 })
                             })
                         })
-                        $('.btn_seat_pay').addClass('bc');
+                        $('.btn_seat').addClass('bc');
                     })
-                    $('.btn_seat_pay').addClass('sd');
+                    $('.btn_seat').addClass('sd');
                 })
-                $('.btn_seat_pay').addClass('sm');
+                $('.btn_seat').addClass('sm');
             })
 		
 		$('.buttonCommon').click(function() {
                 $('.selectMovie').click(function() {
                     $('.selectDay').click(function() {
                         $('.time').click(function() {
-                            $('.btn_seat_pay').addClass('tm');
-                            $('.btn_seat_pay').css('backgroundPositionX', '-150px');
-                            $('.btn_seat_pay').click(function() {
+                            $('.btn_seat').addClass('tm');
+                            $('.btn_seat').css('backgroundPositionX', '-150px');
+                            $('.btn_seat').click(function() {
                                 $('.select-seat-wrapper').css('display', 'block');
                                 $('.reserve-container').css('display', 'none');
                                 $(this).css({
-                                    'top': '680px',
-                                    'backgroundPositionX': '0px',
-                                    'backgroundPositionY': '-330px'
+                                	'display': 'none'
                                 })
+                                $('.btn_pay').css({
+                                	'display': 'block',
+                                }) 
                                 $('.selected_wrap').css('top', '680px');
                                 $('.selected_movie').css('top', '673px');
                                 $('.btn_movie').css({
@@ -632,23 +636,24 @@
                                 })
                             })
                         })
-                        $('.btn_seat_pay').addClass('sd');
+                        $('.btn_seat').addClass('sd');
                     })
-                    $('.btn_seat_pay').addClass('sm');
+                    $('.btn_seat').addClass('sm');
                 })
                 $('.selectDay').click(function() {
                     $('.selectMovie').click(function() {
                         $('.time').click(function() {
-                            $('.btn_seat_pay').addClass('tm');
-                            $('.btn_seat_pay').css('backgroundPositionX', '-150px');
-                            $('.btn_seat_pay').click(function() {
+                            $('.btn_seat').addClass('tm');
+                            $('.btn_seat').css('backgroundPositionX', '-150px');
+                            $('.btn_seat').click(function() {
                                 $('.select-seat-wrapper').css('display', 'block');
                                 $('.reserve-container').css('display', 'none');
                                 $(this).css({
-                                    'top': '680px',
-                                    'backgroundPositionX': '0px',
-                                    'backgroundPositionY': '-330px'
+                                	'display': 'none'
                                 })
+                                $('.btn_pay').css({
+                                	'display': 'block',
+                                }) 
                                 $('.selected_wrap').css('top', '680px');
                                 $('.selected_movie').css('top', '673px');
                                 $('.btn_movie').css({
@@ -656,27 +661,28 @@
                                 })
                             })
                         })
-                        $('.btn_seat_pay').addClass('sm');
+                        $('.btn_seat').addClass('sm');
                     })
-                    $('.btn_seat_pay').addClass('sd');
+                    $('.btn_seat').addClass('sd');
                 })
-                $('.btn_seat_pay').addClass('bc');
+                $('.btn_seat').addClass('bc');
             })
 		
 		$('.selectDay').click(function() {  
                 $('.selectMovie').click(function() {
                     $('.buttonCommon').click(function() {
                         $('.time').click(function() {
-                            $('.btn_seat_pay').addClass('tm');
-                            $('.btn_seat_pay').css('backgroundPositionX', '-150px');
-                            $('.btn_seat_pay').click(function() {
+                            $('.btn_seat').addClass('tm');
+                            $('.btn_seat').css('backgroundPositionX', '-150px');
+                            $('.btn_seat').click(function() {
                                 $('.select-seat-wrapper').css('display', 'block');
                                 $('.reserve-container').css('display', 'none');
                                 $(this).css({
-                                    'top': '680px',
-                                    'backgroundPositionX': '0px',
-                                    'backgroundPositionY': '-330px'
+                                	'display': 'none'
                                 })
+                                $('.btn_pay').css({
+                                	'display': 'block',
+                                }) 
                                 $('.selected_wrap').css('top', '680px');
                                 $('.selected_movie').css('top', '673px');
                                 $('.btn_movie').css({
@@ -691,16 +697,17 @@
                 $('.buttonCommon').click(function() {
                     $('.selectMovie').click(function() {
                         $('.time').click(function() {
-                            $('.btn_seat_pay').addClass('tm');
-                            $('.btn_seat_pay').css('backgroundPositionX', '-150px');
-                            $('.btn_seat_pay').click(function() {
+                            $('.btn_seat').addClass('tm');
+                            $('.btn_seat').css('backgroundPositionX', '-150px');
+                            $('.btn_seat').click(function() {
                                 $('.select-seat-wrapper').css('display', 'block');
                                 $('.reserve-container').css('display', 'none');
                                 $(this).css({
-                                    'top': '680px',
-                                    'backgroundPositionX': '0px',
-                                    'backgroundPositionY': '-330px'
+                                	'display': 'none'
                                 })
+                                $('.btn_pay').css({
+                                	'display': 'block',
+                                }) 
                                 $('.selected_wrap').css('top', '680px');
                                 $('.selected_movie').css('top', '673px');
                                 $('.btn_movie').css({
@@ -708,15 +715,15 @@
                                 })
                             })
                         })
-                        $('.btn_seat_pay').addClass('sm');
+                        $('.btn_seat').addClass('sm');
                     })
-                    $('.btn_seat_pay').addClass('bc');
+                    $('.btn_seat').addClass('bc');
                 })
-                $('.btn_seat_pay').addClass('sd');
+                $('.btn_seat').addClass('sd');
             })
 		
 		//좌석선택 버튼 페이지 이동 조건
-		$('.btn_seat_pay').click(function() {
+		$('.btn_seat').click(function() {
 			if($(this).hasClass('sm') === false)
                 alert("영화를 선택해 주세요");
             else if($(this).hasClass('bc') === false)
@@ -931,7 +938,7 @@
              $('.seat').click(function() {
                  let sValue = selectedSeats.length;
                  if(pValue == sValue) {
-                     $('.btn_seat_pay').css('backgroundPositionX', '-150px');
+                     $('.btn_pay').css('backgroundPositionX', '-150px');
                      $('.person_text').text(sValue + "명");
                      // $('.seat').attr("disabled", "disiabled");
                      $('.select_seat').css('display', 'none');

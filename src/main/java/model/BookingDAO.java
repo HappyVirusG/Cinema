@@ -12,7 +12,7 @@ public class BookingDAO extends DBConnPool{
 		super();
 	}
 	
-	public List<BookingDTO> selectList(Map<String, Object> map, String bookingcode) {
+	public List<BookingDTO> selectBookingList(Map<String, Object> map, String bookingcode) {
 		
 		List<BookingDTO> list = new Vector<BookingDTO>();
 		
@@ -36,7 +36,7 @@ public class BookingDAO extends DBConnPool{
 				list.add(dto);
 			}
 		} catch(Exception e) {
-			System.out.println("예매 리스트 불러오는 중 예외 발");
+			System.out.println("예매 목록 불러오는 중 예외 발생");
 			e.printStackTrace();
 		}
 		
@@ -47,8 +47,8 @@ public class BookingDAO extends DBConnPool{
 		int result = 0;
 		
 		try {
-			String query = "INSERT INTO booking"
-					+ "VALUES(?, ?, ?, ?, ?, ?)";
+			String query = "INSERT INTO booking(bookingcode, moviecode, membercode, timecode, price, seatcode) "
+					+ " VALUES(?, ?, ?, ?, ?, ?)";
 			
 			psmt = con.prepareStatement(query);
 			
@@ -68,7 +68,44 @@ public class BookingDAO extends DBConnPool{
 		return result;
 	}
 	
-	 
+	public int deleteBooking(String bookingcode) {
+		int result = 0;
+		
+		try {
+			String query = "DELETE FROM booking WHERE bookingcode = ?";
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, bookingcode);
+			result = psmt.executeUpdate();
+		} catch(Exception e) {
+			System.out.println("예매 목록 삭제 중 예외 발생");
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	public int updateBooking(BookingDTO dto) {
+		int result = 0;
+		
+		try {
+			String query = "UPDATE booking SET bookingcode=?, moviecode=?, membercode=?, timecode=?, price=?, seatcode=?";
+			
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, dto.getBookingcode());
+			psmt.setString(2, dto.getMoviecode());
+			psmt.setString(3, dto.getMembercode());
+			psmt.setString(4, dto.getTimecode());
+			psmt.setString(5, dto.getPrice());
+			psmt.setString(6, dto.getSeatcode());
+			
+			result = psmt.executeUpdate();
+		} catch(Exception e) {
+			System.out.println("예매 사항 수정 중 예외 발생");
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 }
 
 
