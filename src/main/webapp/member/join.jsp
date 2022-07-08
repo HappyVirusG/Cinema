@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <link rel="stylesheet" href="../resource/css/header_footer.css?ver=2">
-    <link rel="stylesheet" href="../resource/css/join.css">
+    <link rel="stylesheet" href="../resource/css/join.css?ver=1">
     
     
     <!-- font-family -->
@@ -19,38 +19,39 @@
 <body>
 <%@include file="../main/header.jsp" %>
     <div id="wrap">
-	
+   
         <section id="join">
-            <form action="" method="post">  
+           <h2>회원가입</h2>
+            <form onsubmit="return validateForm(this);" action="ExeUpdate.jsp" method="post">  
                 <div class="userInfo">
                     <label>아이디<br>
-                        <input type="text" id="user_id" name="user_id" placeholder="4~15자리의 문자를 입력하세요.">
+                        <input type="text" id="id" name="id" placeholder="4~15자리의 문자를 입력하세요.">
                         <br>
                     </label>
     
                     <label>비밀번호<br>
-                        <input type="password" id="user_pw1" name="user_pw1" placeholder="8자리 이상의 문자를 입력하세요.">
+                        <input type="password" id="pw" name="pw" placeholder="8자리 이상의 문자를 입력하세요.">
                         <br>
                     </label> 
                     
                     <label>비밀번호 확인<br>
-                        <input type="password" id="user_pw2" name="user_pw2"><br>
+                        <input type="password" id="pw2" name="pw2"><br>
                     </label>
     
                     <label>이름<br>
-                        <input type="text" id="user_name" name="user_name" placeholder="이름을 입력하세요."><br>
+                        <input type="text" id="name" name="name" placeholder="이름을 입력하세요."><br>
                     </label>                
                     
                     <label>생년월일<br>
-                        <input type="date"><br>
+                        <input type="date" name="birth"><br>
                     </label>
     
                     <label>이메일 <br>
-                        <input type="text" id="user_email" name="user_email"><br>
+                        <input type="text" id="email" name="email"><br>
                     </label>   
 
-                    <label>연락처<br>
-                        <input type="text" id="user_tel" name="user_tel" placeholder="010-0000-0000"><br>
+                    <label>휴대폰 번호<br>
+                        <input type="text" id="tel" name="tel" placeholder="-없이 입력"><br>
                     </label> 
                 </div>
                 
@@ -59,7 +60,6 @@
                         <input type="checkbox" name="" id="">
                         문자, 이메일로 상품 및 이벤트 정보를 받겠습니다. (선택)
                     </p>
-                    
                 </label>
                 <label>
                     <p>
@@ -71,49 +71,10 @@
             </form>
         </section>
         
-   <!--  <script>
-    let userId = document.querySelector("#user_id");
-    let pw1 = document.querySelector("#user_pw1");
-    let pw2 = document.querySelector("#user_pw2");
-    let userName = document.querySelector("#user_name");
-    let userEmail = document.querySelector("#user_email");
-    let userTel = document.querySelector("#user_tel");
-    
 
-
-    userId.addEventListener("change", function(){
-        if (userId.value.length < 4 || userId.value.length > 15) {
-            alert("4~15글자 이내로 입력하세요.")
-            userId.select();
-        }
-    })
-
-    pw1.addEventListener("change", function(){
-        if(pw1.value.length < 8) {
-            alert ("8자리 이상의 문자를 입력하세요.")
-            pw1.value="";
-            pw1.focus();
-        }
-    })
-
-    pw2.addEventListener("change", function(){
-        if(pw1.value != pw2.value) {
-            alert ("비밀번호가 일치하지 않습니다.")
-            pw2.value="";
-            pw2.focus();
-        }
-    })
-    
-    userName.addEventListener("change",function(){
-    	    if(this.value == "") {
-    	        alert ("이름이 입력되지 않았습니다")
-    	        this.value=""; 
-    	}
-   	})
-
-</script> -->
     
     </div>
+       <script src="../resource/JS/join.js"></script>
    <%@include file="../main/footer.jsp" %>
 </body>
 </html>

@@ -1,16 +1,21 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 
 <link rel="stylesheet" href="../resource/css/review.css?ver=6">
 <script>
-	function validateForm(form){
+	function validateForm(){
+		let form = document.reviewWriteFrm;
 		if(form.content.value==""){
 			alert("내용을 입력하세요")
 			form.content.focus();
 			return false;
 		}
+		if(form.score.value==""){
+			alert("평점을 선택하세요!")
+			return false;
+		}
+		form.submit();
 	}
 </script>
 
@@ -27,7 +32,7 @@
     	</c:when>
     	<c:otherwise>
         <p>
-            <span>탑건 : 매버릭</span>에 대한 <span>${ totalCount }</span>개의 관람평이 있어요!
+            <span>${ dto.title }</span>에 대한 <span>${ totalCount }</span>개의 관람평이 있어요!
         </p>
         </c:otherwise>
 	</c:choose>
@@ -36,7 +41,8 @@
     </div>
     
     <div class="reviewTable">
-        <form action="reviewWriteProcess.jsp" name="reviewWriteFrm" method="post" onsubmit="return validateForm(this)">
+        <form action="../model/movieDetail.do?moviecode=${dto.moviecode}" 
+        name="reviewWriteFrm" method="post">
         <div class="reviewPost">
             
             평점 · 관람평 작성<br/>
@@ -49,7 +55,6 @@
                     <input type="radio" name="score" value="2" id="score4"><label for="score4">⭐</label> 
                     <input type="radio" name="score" value="1" id="score5"><label for="score5">⭐</label>
                 </div>
-            
             <span>영화 관람 후 관람평 작성 시 50P 추가 적립</span>
         	</div>
         </div>
@@ -62,7 +67,7 @@
 	          
              <div class="typeContent">
 	              <textarea name="content" class="reviewContent" placeholder="평점 및 영화 관람평을 작성해주세요. &#13;&#10;주제와 무관한 리뷰 또는 스포일러는 표시제한 또는 삭제될 수 있습니다."></textarea>
-	              <button type="submit">관람평 작성</button>
+	              <button type="button" onclick="validateForm()">관람평 작성</button>
              </div> <!-- .typeContent -->
 	          
 	    </div> <!-- .contentPost -->

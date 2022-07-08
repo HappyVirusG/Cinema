@@ -74,30 +74,21 @@ public class ReviewDAO extends JDBConnect{
 	}
 	
 //	리뷰 데이터를 받아 DB에 추가
-	public int insertReview(MemberDTO mdto, ReviewDTO rdto) {
+	public int insertReview(ReviewDTO dto, String moviecode) {
 		int result=0;
 		try {
-			String findQuery = "SELECT M.membercode "
-					+ " FROM member M INNER JOIN review R "
-					+ " ON M.mebercode = R.moviecode "
-					+ " WHERE id = ? ";
-			psmt = con.prepareStatement(findQuery);
-			psmt.setString(1, mdto.getId());
-			
-			rs = psmt.executeQuery();
-			while(rs.next()) {
-				rdto.setMembercode(rs.getString("membercode"));
-				rdto.setId(rs.getString("id"));
-			}
-			
-			String query = "INSERT INTO review(hit, idx, moviecode, content, membercode, score) "
-					+" VALUES(0, review_idx_seq.nextval, ?, ?, ?, ?)";
+			/*
+			 * String findQuery =
+			 * "SELECT r.* FROM movie m INNER JOIN review r ON m.moviecode=r.moviecode WHERE m.moviecode=?"
+			 * ; psmt = con.prepareStatement(findQuery); psmt.setString(1, moviecode); rs =
+			 * psmt.executeQuery();
+			 */
+			//아직 memberDB 형성되지 않았기 때문에 mem04로 고정
+			String query = "INSERT INTO review(moviecode, idx, content, membercode, score)"
+					+" VALUES("+moviecode+", review_idx_seq.nextval, ?, mem04, ?)";
 			psmt = con.prepareStatement(query);
-			
-			psmt.setString(1, rdto.getMoviecode());
-			psmt.setString(2, rdto.getContent());
-			psmt.setString(3, rdto.getMembercode());
-			psmt.setString(4, rdto.getScore());
+			psmt.setString(1, dto.getContent());
+			psmt.setString(2, dto.getScore());
 			
 			result = psmt.executeUpdate();
 		}catch(Exception e) {
