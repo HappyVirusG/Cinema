@@ -1,0 +1,138 @@
+create user cinema
+identified by 1234;
+
+grant DBA to cinema;
+
+create table standard_code(
+groupcode varchar2(20),
+code varchar2(20),
+nm number
+);
+
+create table movie(
+moviecode varchar2(20) primary key,
+title varchar2(50) not null,
+director varchar2(50) null,
+actors varchar2(50) null,
+country varchar2(50) null,
+summary varchar2(2000) null,
+runningtime varchar2(20) not null,
+ratingcode varchar2(20) not null,
+opendate date default sysdate not null,
+image varchar2(200) not null,
+price number default 14000 not null,
+genre varchar2(50) null,
+engtitle varchar2(50) null,
+youtube varchrar2(100) null
+);
+
+create table theater(
+theatercode varchar2(20) primary key,
+location varchar2(20) not null,
+seatcode varchar2(20) not null,
+seatnm varchar2(20) not null
+);
+
+create table booking(
+bookingcode varchar2(20) primary key,
+moviecode varchar2(20) not null,
+membercode varchar2(20) not null,
+theatercode varchar2(20) not null,
+timecode varchar2(20) not null,
+price number not null,
+seatcode varchar2(20) not null
+);
+
+create table review(
+moviecode varchar2(20) not null,
+idx number primary key,
+postdate date default sysdate  not null ,
+content varchar2(2000) not null,
+membercode varchar2(20) not null,
+score number default 5 not null
+);
+
+create table time(
+timecode varchar2(20) primary key,
+starttime varchar2(20) not null,
+endtime varchar2(20) not null,
+screendate date not null,
+moviecount number not null,
+theatercode varchar2(20) not null,
+moviecode varchar2(20) not null
+);
+
+create table member(
+membercode varchar2(20) primary key,
+name varchar2(20) not null,
+id varchar2(20) not null,
+pw varchar2(20) not null,
+birth date not null,
+tel varchar2(20) not null,
+email varchar2(20) null
+);
+
+alter table booking
+add constraint booking_movie_fk foreign key(moviecode)
+references movie(moviecode);
+
+alter table booking
+add constraint booking_member_fk foreign key(membercode)
+references member(membercode);
+
+alter table booking
+add constraint booking_theater_fk foreign key(theatercode)
+references theater(theatercode);
+
+alter table review
+add constraint review_movie_fk foreign key(moviecode)
+references movie(moviecode);
+
+alter table time
+add constraint time_theater_fk foreign key(theatercode)
+references theater(theatercode);
+
+alter table time
+add constraint time_movie_fk foreign key(moviecode)
+references movie(moviecode);
+
+create sequence review_idx_seq
+increment by 1
+start with 1
+nomaxvalue
+minvalue 1
+nocycle
+nocache;
+
+create sequence member_nm_seq
+increment by 1
+start with 1
+nomaxvalue
+minvalue 1
+nocycle
+nocache;
+
+create sequence movie_nm_seq
+increment by 1
+start with 1
+nomaxvalue
+minvalue 1
+nocycle
+nocache;
+
+create sequence book_nm_seq
+increment by 1
+start with 1
+nomaxvalue
+minvalue 1
+nocycle
+nocache;
+
+create sequence theater_nm_seq
+increment by 1
+start with 1
+nomaxvalue
+minvalue 1
+nocycle
+nocache;
+

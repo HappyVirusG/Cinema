@@ -63,4 +63,5 @@
 	<url-pattern>/model/movieList.do</url-pattern>
 </servlet-mapping>
 
+
 </web-app>

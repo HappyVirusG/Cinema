@@ -11,8 +11,8 @@
     <title>그린시네마</title>
     
     <!-- css연결 -->
-    <link rel="stylesheet" href="../resource/css/minji_main.css?ver=5">
-    <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=1">
+    <link rel="stylesheet" href="../resource/css/minji_main.css?ver=6">
+    <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=2">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,18 +29,35 @@
 
         <div id = "two_section">
 
-            <section id = "main_slide">
+<!--             <section id = "main_slide">
+				<div id="galleryZone">
+                 <p><img src="../resource/img/main/pos_1.jpg" alt="" id="photo"></p>
+             	</div>
+                
+                <button onclick="gallery(0)" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+
+                <button onclick="gallery(1)" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button> -->
+				
 
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img src="../resource/img/main/버즈라이트이어_main.jpg" class="d-block w-100" alt="버즈 라이트 이어 포스터">
+                        <img src="../resource/img/main/pos_1.jpg" class="d-block w-100" alt="버즈 라이트 이어 포스터">
                       </div>
                       <div class="carousel-item">
-                        <img src="../resource/img/main/탑건매버릭_main.jpg" class="d-block w-100" alt="톰크루즈">
+                        <img src="../resource/img/main/pos_2.jpg" class="d-block w-100" alt="톰크루즈">
                       </div>
                       <div class="carousel-item">
-                        <img src="../resource/img/main/마녀2_main.jpg" class="d-block w-100" alt="마녀2">
+                        <img src="../resource/img/main/pos_3.jpg" class="d-block w-100" alt="마녀2">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="../resource/img/main/pos_4.jpg" class="d-block w-100" alt="마녀2">
                       </div>
                     </div>
                 </div>
@@ -53,7 +70,8 @@
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
-                </button>
+                </button> -->
+                
 			<section class = "booking">
                 <form action="#">
                     <input type="text" class="movieName" id="movieName">
@@ -67,6 +85,7 @@
                 <a><p>빠른예매</p></a>
             </section><!--.booking(빠른예매부분)--> 
             </section><!--.main_slide(포스터부분)--> 
+            
         </div>
 
         <section class = "movie_info">
@@ -254,6 +273,34 @@
 
     </div> <!--container끝-->
  </div>
+    <script>
+        let num = 1;
+
+        function gallery(direct){
+            if(direct){
+                if (num == 4) { 
+                   num=1;
+                } else {
+                    num++;
+                }
+            } 
+            
+            else {
+                if (num == 1) { 
+                    num=4;
+                } else {
+                    num--;
+                } 
+            }
+
+            let imgTag = document.querySelector("#photo");
+            imgTag.setAttribute("src", "../resource/img/main/pos_" + num + ".jpg")
+       
+        }
+    </script>
+ 
+ 
+ 
    <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <%@include file="footer.jsp" %>
