@@ -550,7 +550,7 @@
 
             
             
-            <form action="../model/booking.do" method="get">
+            <form action="../model/booking.do" method="get" name="frm" id="frm">
             	<input type="hidden" name="moviecode" value="">
             	<input type="hidden" name="timecode" value="">
             	<input type="hidden" name="price" value="">
@@ -559,7 +559,7 @@
             	<div class="changePage">
                 <a class="btn_movie"></a>
                 <a class="btn_seat"></a>
-                <a href="bookingList.jsp"class="btn_pay"></a>
+                <a class="btn_pay" onclick="return checkTrue()"></a>
             </div> <!-- .changePage -->
             </form>
         </div> <!-- .select-container -->
@@ -568,7 +568,11 @@
 	<script src="../resource/JS/booking.js"></script>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script>    
+	<script>
+		function checkTrue() {
+			document.getElementById("frm").submit();
+		}
+		
 		//좌석선택 버튼 활성화
 		$('.selectMovie').click(function() {
                 $('.buttonCommon').click(function() {

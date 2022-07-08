@@ -47,14 +47,14 @@ public class BookingDAO extends DBConnPool{
 		int result = 0;
 		
 		try {
-			String query = "INSERT INTO booking(bookingcode, moviecode, membercode, timecode, price, seatcode) "
-					+ " VALUES(?, ?, ?, ?, ?, ?)";
+			String query = "INSERT INTO booking(moviecode, timecode, price, seatcode) "
+					+ " VALUES(?, ?, ?, ?,)";
 			
 			psmt = con.prepareStatement(query);
 			
-			psmt.setString(1, dto.getBookingcode());
+//			psmt.setString(1, dto.getBookingcode());
 			psmt.setString(2, dto.getMoviecode());
-			psmt.setString(3, dto.getMembercode());
+//			psmt.setString(3, dto.getMembercode());
 			psmt.setString(4, dto.getTimecode());
 			psmt.setString(5, dto.getPrice());
 			psmt.setString(6, dto.getSeatcode());
