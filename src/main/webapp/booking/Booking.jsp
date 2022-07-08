@@ -523,20 +523,21 @@
                 <p class="select_theater"></p>  
                 <p class="select_seat"></p>
                 <p class="select_pay"></p>
-            </div>
+            </div> <!-- .select_wrap -->
 
             <div class="selected_movie">
                 <span class="movie_img"><img src="" width="90px" height="125px" alt=""></span>
                 <span class="movie_text"></span>
                 <span class="movie_kind"></span>
                 <span class="movie_text_age"></span>
-            </div>
+            </div> <!-- .selected_movie -->
+            
             <div class="selected_wrap">
                 <span class="selected_local">극장 > <span class="local_text" name="local_text"></span></span>
                 <span class="selected_date">일시 > <span class="date_text" name="date_text"></span></span>
                 <span class="selected_theater">상영관 > <span class="theater_text" name="theater_text"></span></span>
                 <span class="selected_pay">인원 > <span class="person_text" name="person_text"></span></span>
-            </div>
+            </div> <!-- .selected_wrap -->
 
             <div class="selected_seat">
                 <div class="seatName">
@@ -545,14 +546,23 @@
                 <div class="seatNum">
                     <div class="seat-num">좌석번호</div><div class="select-seat-num" name="select-seat-num"></div>
                 </div>
-            </div>
+            </div> <!-- .selected_seat -->
 
-            <div class="changePage">
+            
+            
+            <form action="../model/booking.do" method="get">
+            	<input type="hidden" name="moviecode" value="">
+            	<input type="hidden" name="timecode" value="">
+            	<input type="hidden" name="price" value="">
+            	<input type="hidden" name="seatcode" value="">
+            	
+            	<div class="changePage">
                 <a class="btn_movie"></a>
                 <a class="btn_seat"></a>
                 <a href="bookingList.jsp"class="btn_pay"></a>
-            </div>
-        </div>
+            </div> <!-- .changePage -->
+            </form>
+        </div> <!-- .select-container -->
 
 
 	<script src="../resource/JS/booking.js"></script>
@@ -790,6 +800,8 @@
 			    $('.movie_img').css('display', 'inline-block');
 			}
 			
+			$('input[name=moviecode]').attr('value', $(this).find('.movieName').text());
+			
 			return false;
 		})
 		
@@ -876,6 +888,13 @@
             $('.movie-place').text($(this).closest('.theater').find('.floor').text());
             $('.movie-remain-seat').text($(this).next($('.remain-seat')).text() + "/" + "100석");
             
+            $('input[name=timecode]').attr('value', $(this).text());
+            
+            if($(this).closest('.theater').find('.name').text() == "2D")
+            	$('input[name=price]').attr('value', "14000");	
+            else if($(this).closest('.theater').find('.name').text() == "4DX 2D")
+            	$('input[name=price]').attr('value', "18000");
+            
             return false;
 		})
 		 //일반 인원 선택
@@ -945,6 +964,7 @@
                      $('.selected_seat').css('display', 'block');
                      $('.select-seat-name').text("일반석");
                      $('.select-seat-num').text(selectedSeats);
+                     $('input[name=seatcode]').attr('value', selectedSeats);
                  } else if(sValue > pValue){
                      alert("지정한 인원수를 넘었습니다. 인원수 확인해주세요.")
                      $(this).removeClass('clicked');
