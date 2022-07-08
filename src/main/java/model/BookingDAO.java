@@ -5,22 +5,29 @@ import java.util.Map;
 import java.util.Vector;
 
 import common.DBConnPool;
+import common.JDBConnect;
 
-public class BookingDAO extends DBConnPool{
+public class BookingDAO extends JDBConnect{
 	
 	public BookingDAO() {
 		super();
 	}
 	
-	public List<BookingDTO> selectBookingList(Map<String, Object> map, String bookingcode) {
+	public List<BookingDTO> selectBookingList(Map<String, Object> map) {
 		
 		List<BookingDTO> list = new Vector<BookingDTO>();
 		
-		String query = "SELECT * FROM BOOKING WHERE bookingcode = ? ORDER BY DESC bookingcode";
+		String query = "SELECT * FROM BOOKING ";
+				
+		if(map.get("moviecode") != null) {
+			query += " WHERE moviecode"
+					+ " LIKE '%" + map.get("moviecode") + "%'";
+		}
+
+		query +=  "ORDER BY DESC bookingcode";
 		
 		try {
 			psmt = con.prepareStatement(query);
-			psmt.setString(1, bookingcode);
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
@@ -47,17 +54,17 @@ public class BookingDAO extends DBConnPool{
 		int result = 0;
 		
 		try {
-			String query = "INSERT INTO booking(moviecode, timecode, price, seatcode) "
-					+ " VALUES(?, ?, ?, ?,)";
+			String query = "INSERT INTO booking(bookingcode, moviecode, timecode, price, seatcode) "
+							+ "VALUES(?, ?, ?, ?, ?)";
 			
 			psmt = con.prepareStatement(query);
 			
-//			psmt.setString(1, dto.getBookingcode());
+			psmt.setString(1, dto.getBookingcode());
 			psmt.setString(2, dto.getMoviecode());
 //			psmt.setString(3, dto.getMembercode());
-			psmt.setString(4, dto.getTimecode());
-			psmt.setString(5, dto.getPrice());
-			psmt.setString(6, dto.getSeatcode());
+			psmt.setString(3, dto.getTimecode());
+			psmt.setString(4, dto.getPrice());
+			psmt.setString(5, dto.getSeatcode());
 			
 			result = psmt.executeUpdate();
 		} catch(Exception e) {
@@ -92,11 +99,11 @@ public class BookingDAO extends DBConnPool{
 			
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, dto.getBookingcode());
-			psmt.setString(2, dto.getMoviecode());
+			psmt.setString(1, dto.getMoviecode());
 			psmt.setString(3, dto.getMembercode());
-			psmt.setString(4, dto.getTimecode());
-			psmt.setString(5, dto.getPrice());
-			psmt.setString(6, dto.getSeatcode());
+			psmt.setString(2, dto.getTimecode());
+			psmt.setString(3, dto.getPrice());
+			psmt.setString(4, dto.getSeatcode());
 			
 			result = psmt.executeUpdate();
 		} catch(Exception e) {

@@ -551,6 +551,7 @@
             
             
             <form action="../model/booking.do" method="get" name="frm" id="frm">
+            	<input type="hidden" name="bookingcode" value="ABC">
             	<input type="hidden" name="moviecode" value="">
             	<input type="hidden" name="timecode" value="">
             	<input type="hidden" name="price" value="">

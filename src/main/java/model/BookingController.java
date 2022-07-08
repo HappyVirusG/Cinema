@@ -13,6 +13,7 @@ public class BookingController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		BookingDTO dto = new BookingDTO();
+		dto.setBookingcode(req.getParameter("bookingcode"));
 		dto.setMoviecode(req.getParameter("moviecode"));
 		dto.setTimecode(req.getParameter("timecode"));
 		dto.setPrice(req.getParameter("price"));
@@ -20,12 +21,15 @@ public class BookingController extends HttpServlet{
 		
 		BookingDAO dao = new BookingDAO();
 		int result = dao.insertBooking(dto);
+		dao.close();
 		
-		if(result == 1) {
-			resp.sendRedirect("../booking/BookingList.jsp");
-		} else {
-			resp.sendRedirect("../booking/Booking.jsp");
-		}
+//		if(result == 1) {
+//			req.setAttribute("dto", dto);
+//			req.getRequestDispatcher("../booking/BookingList.jsp").forward(req, resp);
+		
+//		if(result == 1) {
+//			resp.sendRedirect("../model/BookingList.do"); //목록으로
+//		}
 		
 	}
 }
