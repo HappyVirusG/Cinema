@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
- 	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=2">
-    <link rel="stylesheet" href="../resource/css/login.css">
+    <link rel="stylesheet" href="../resource/css/header_footer.css?ver=2">
+    <link rel="stylesheet" href="../resource/css/login.css?ver=1">
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,8 @@
 </head>
 <body>
 <%@include file="../main/header.jsp" %>
-	<div id=login_wrap>
+   <div id=login_wrap>
+   <h1 class="login_title">로그인</h1>
         <section id="login">
             <form id="form" action="" method="post">
                 <div class="userInfo">
@@ -35,10 +36,10 @@
                 </label>
 
                 <br>
-                <button type="submit" >로그인</button>
+                <button type="submit">로그인</button>
             </form>
         </section>
-	</div>
-	<%@include file="../main/footer.jsp" %>
+   </div>
+   <%@include file="../main/footer.jsp" %>
 </body>
 </html>

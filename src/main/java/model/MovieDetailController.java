@@ -18,9 +18,7 @@ public class MovieDetailController extends HttpServlet{
 		MovieDAO dao = new MovieDAO();
 		ReviewDAO rdao = new ReviewDAO();
 		Map<String, Object> map = new HashMap<String, Object>();
-		
-		
-		
+
 		String moviecode = req.getParameter("moviecode");
 		MovieDTO dto = dao.selectView(moviecode);
 		List<ReviewDTO> reviewLists = rdao.selectList(map, moviecode);
@@ -36,6 +34,29 @@ public class MovieDetailController extends HttpServlet{
 		req.setAttribute("map", map);
 		
 		req.getRequestDispatcher("/movie/movieDetail.jsp").forward(req, resp);
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("/movie/movieDetail.jsp").forward(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		ReviewDTO dto = new ReviewDTO();
+		System.out.println("왔냐?");
+		dto.setContent(req.getParameter("content"));
+		dto.setScore(req.getParameter("score"));
+		System.out.println("어디보자");
+		ReviewDAO dao = new ReviewDAO();
+		int result = dao.insertReview(dto, req.getParameter("moviecode"));
+		dao.close();
+		
+		if(result==1) {
+			System.out.println("리뷰 작성 성공");
+		}else {
+			System.out.println("리뷰 작성 실패");
+		}
 	}
 
 }

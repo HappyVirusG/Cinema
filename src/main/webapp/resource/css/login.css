@@ -1,9 +1,16 @@
 @charset "utf-8";
 
   #login_wrap {
-           width: 980px;
-           margin: auto;
-           margin-top: 20%;
+      width: 980px;
+      margin: 13% auto;
+  }
+  
+  .login_title{
+     width: 120px;
+     font-size: 40px;
+     border-bottom: 3px solid #d83030;
+     margin-left : 200px;
+     margin-bottom: 20px;
   }
 
   #login {
