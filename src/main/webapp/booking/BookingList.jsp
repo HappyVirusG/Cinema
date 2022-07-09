@@ -9,7 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form>
+
+	<h2>list</h2>
+	<%-- <form>
 		<table border="1" width="90%">
 			<c:choose>
 				<c:when test="${ empty lists }">
@@ -19,9 +21,9 @@
 						</td>
 					</tr>
 				</c:when>
-				<%-- 게시물이 있을 때 --%>
+				게시물이 있을 때
 				<c:otherwise>
-					<%-- items : 컬렉션 객체, var : 변수명, varStatus : 반복상태를 확인할 수 있는 변수 --%>
+					items : 컬렉션 객체, var : 변수명, varStatus : 반복상태를 확인할 수 있는 변수
 					<c:forEach items="${lists}" var="row" varStatus="loop">
 						<tr align="center">
 							<td name="moviecode">영화제목 ${row.moviecode }</td>
@@ -32,6 +34,6 @@
 				</c:otherwise>
 			</c:choose>
 		</table>
-	</form>
+	</form> --%>
 </body>
 </html>

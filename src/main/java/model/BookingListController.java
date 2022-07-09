@@ -11,26 +11,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/model/BookingList.do")
+@WebServlet("/model/bookingList.do")
 public class BookingListController extends HttpServlet{
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		BookingDAO dao = new BookingDAO();
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		String moviecode = req.getParameter("moviecode");
 		
+		System.out.println(moviecode);
+		
 		if(moviecode != null) {
 			map.put("moviecode", moviecode);
 		}
-		
+//		
 		List<BookingDTO> lists = dao.selectBookingList(map);
 		dao.close();
 		
+////		resp.sendRedirect("../model/bookingList.do");
 		req.setAttribute("lists", lists);
 		req.setAttribute("map", map);
-		req.getRequestDispatcher("/booking/bookingList.jsp").forward(req, resp);
+		req.getRequestDispatcher("../booking/BookingList.jsp").forward(req, resp);
 	}
 }

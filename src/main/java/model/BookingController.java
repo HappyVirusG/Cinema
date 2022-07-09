@@ -22,14 +22,16 @@ public class BookingController extends HttpServlet{
 		BookingDAO dao = new BookingDAO();
 		int result = dao.insertBooking(dto);
 		dao.close();
+		System.out.println("하이");
 		
 //		if(result == 1) {
 //			req.setAttribute("dto", dto);
 //			req.getRequestDispatcher("../booking/BookingList.jsp").forward(req, resp);
 		
-//		if(result == 1) {
-//			resp.sendRedirect("../model/BookingList.do"); //목록으로
-//		}
-		
+		if(result == 1) {
+//			resp.sendRedirect("../model/bookingList.do"); //목록으로
+			req.setAttribute("dto", dto);
+			req.getRequestDispatcher("../model/bookingList.do").forward(req, resp);
+		}
 	}
 }

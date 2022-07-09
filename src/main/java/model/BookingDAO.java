@@ -24,7 +24,7 @@ public class BookingDAO extends JDBConnect{
 					+ " LIKE '%" + map.get("moviecode") + "%'";
 		}
 
-		query +=  "ORDER BY DESC bookingcode";
+		query +=  "ORDER BY bookingcode DESC";
 		
 		try {
 			psmt = con.prepareStatement(query);
@@ -54,8 +54,9 @@ public class BookingDAO extends JDBConnect{
 		int result = 0;
 		
 		try {
-			String query = "INSERT INTO booking(bookingcode, moviecode, timecode, price, seatcode) "
-							+ "VALUES(?, ?, ?, ?, ?)";
+			String query = "INSERT INTO booking ( "
+					+ " bookingcode, moviecode, timecode, price, seatcode) "
+							+ " VALUES(?, ?, ?, ?, ?)";
 			
 			psmt = con.prepareStatement(query);
 			
@@ -67,6 +68,7 @@ public class BookingDAO extends JDBConnect{
 			psmt.setString(5, dto.getSeatcode());
 			
 			result = psmt.executeUpdate();
+			
 		} catch(Exception e) {
 			System.out.println("DB에 데이터 추가 중 예외 발생");
 			e.printStackTrace();
