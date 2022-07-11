@@ -35,7 +35,7 @@
 							<td width="15%">${row.seatcode }</td>
 							<td width="15%">${row.timecode }</td>
 							<td width="15%">${row.price }</td>
-							<td><button type="button" onclick="location.href='../model/bookingEdit.do'">X</button></td>
+							<td><button type="button" onclick="location.href='../model/bookingEdit.do?mode=delete&bookingcode=${row.bookingcode}'">X</button></td>
 						</tr>
 					</c:forEach>
 				</c:otherwise>

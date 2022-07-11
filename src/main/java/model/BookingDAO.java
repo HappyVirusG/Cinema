@@ -57,7 +57,7 @@ public class BookingDAO extends JDBConnect{
 		try {
 			String query = "INSERT INTO booking ( "
 					+ " bookingcode, moviecode, timecode, price, seatcode) "
-							+ " VALUES(concat(book, seq_booking_num.nextval()), ?, ?, ?, ?)";
+							+ " VALUES(concat('book', seq_booking_num.nextval), ?, ?, ?, ?)";
 			
 			psmt = con.prepareStatement(query);
 			

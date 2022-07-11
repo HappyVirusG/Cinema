@@ -24,7 +24,7 @@ public class BookingController extends HttpServlet{
 		
 		if(result == 1) {
 			req.setAttribute("dto", dto);
-			req.getRequestDispatcher("../model/bookingList.do").forward(req, resp);
+			req.getRequestDispatcher("../main/main.jsp").forward(req, resp);
 		}
 	}
 }
