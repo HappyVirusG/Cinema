@@ -19,9 +19,9 @@ public class BookingDAO extends JDBConnect{
 		
 		String query = "SELECT * FROM BOOKING ";
 				
-		if(map.get("moviecode") != null) {
-			query += " WHERE moviecode"
-					+ " LIKE '%" + map.get("moviecode") + "%'";
+		if(map.get("bookingcode") != null) {
+			query += " WHERE bookingcode"
+					+ " LIKE '%" + map.get("bookingcode") + "%'";
 		}
 
 		query +=  "ORDER BY bookingcode DESC";
@@ -36,9 +36,10 @@ public class BookingDAO extends JDBConnect{
 				dto.setBookingcode(rs.getString(1));
 				dto.setMoviecode(rs.getString(2));
 				dto.setMembercode(rs.getString(3));
-				dto.setTimecode(rs.getString(4));
-				dto.setPrice(rs.getString(5));
-				dto.setSeatcode(rs.getString(6));
+				dto.setTheatercode(rs.getString(4));
+				dto.setTimecode(rs.getString(5));
+				dto.setPrice(rs.getString(6));
+				dto.setSeatcode(rs.getString(7));
 				
 				list.add(dto);
 			}
@@ -56,16 +57,15 @@ public class BookingDAO extends JDBConnect{
 		try {
 			String query = "INSERT INTO booking ( "
 					+ " bookingcode, moviecode, timecode, price, seatcode) "
-							+ " VALUES(?, ?, ?, ?, ?)";
+							+ " VALUES(concat(book, seq_booking_num.nextval()), ?, ?, ?, ?)";
 			
 			psmt = con.prepareStatement(query);
 			
-			psmt.setString(1, dto.getBookingcode());
-			psmt.setString(2, dto.getMoviecode());
+			psmt.setString(1, dto.getMoviecode());
 //			psmt.setString(3, dto.getMembercode());
-			psmt.setString(3, dto.getTimecode());
-			psmt.setString(4, dto.getPrice());
-			psmt.setString(5, dto.getSeatcode());
+			psmt.setString(2, dto.getTimecode());
+			psmt.setString(3, dto.getPrice());
+			psmt.setString(4, dto.getSeatcode());
 			
 			result = psmt.executeUpdate();
 			
@@ -93,27 +93,50 @@ public class BookingDAO extends JDBConnect{
 		return result;
 	}
 	
-	public int updateBooking(BookingDTO dto) {
-		int result = 0;
+//	public int updateBooking(BookingDTO dto) {
+//		int result = 0;
+//		
+//		try {
+//			String query = "UPDATE booking SET bookingcode=?, moviecode=?, membercode=?, timecode=?, price=?, seatcode=?";
+//			
+//			psmt = con.prepareStatement(query);
+//			psmt.setString(1, dto.getBookingcode());
+//			psmt.setString(1, dto.getMoviecode());
+//			psmt.setString(3, dto.getMembercode());
+//			psmt.setString(2, dto.getTimecode());
+//			psmt.setString(3, dto.getPrice());
+//			psmt.setString(4, dto.getSeatcode());
+//			
+//			result = psmt.executeUpdate();
+//		} catch(Exception e) {
+//			System.out.println("예매 사항 수정 중 예외 발생");
+//			e.printStackTrace();
+//		}
+//		
+//		return result;
+//	}
+	
+	public boolean confirmBooking(String bookingcode) {
+		boolean exist = true;
 		
 		try {
-			String query = "UPDATE booking SET bookingcode=?, moviecode=?, membercode=?, timecode=?, price=?, seatcode=?";
+			String query = "SELECT COUNT(*) FROM booking WHERE bookingcode = ?";
 			
 			psmt = con.prepareStatement(query);
-			psmt.setString(1, dto.getBookingcode());
-			psmt.setString(1, dto.getMoviecode());
-			psmt.setString(3, dto.getMembercode());
-			psmt.setString(2, dto.getTimecode());
-			psmt.setString(3, dto.getPrice());
-			psmt.setString(4, dto.getSeatcode());
+			psmt.setString(1, bookingcode);
+			rs = psmt.executeQuery();
 			
-			result = psmt.executeUpdate();
+			rs.next();
+			
+			if(rs.getInt(1) == 0) {
+				exist = false;
+			}
 		} catch(Exception e) {
-			System.out.println("예매 사항 수정 중 예외 발생");
+			exist = false;
 			e.printStackTrace();
 		}
 		
-		return result;
+		return exist;
 	}
 }
 

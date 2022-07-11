@@ -4,6 +4,7 @@ public class BookingDTO {
 	private String bookingcode;
 	private String moviecode;
 	private String membercode;
+	private String theatercode;
 	private String timecode;
 	private String price;
 	private String seatcode;
@@ -24,6 +25,12 @@ public class BookingDTO {
 	}
 	public void setMembercode(String membercode) {
 		this.membercode = membercode;
+	}
+	public String getTheatercode() {
+		return theatercode;
+	}
+	public void setTheatercode(String theatercode) {
+		this.theatercode = theatercode;
 	}
 	public String getTimecode() {
 		return timecode;

@@ -20,17 +20,17 @@ public class BookingEditController extends HttpServlet{
 		String bookingcode = (req.getParameter("bookingcode"));
 		
 		BookingDAO dao = new BookingDAO();
-		boolean confirmed = dao.confirmBookingcode(bookingcode);
+		boolean confirmed = dao.confirmBooking(bookingcode);
 		
 		if(confirmed) {
 			if(mode.equals("delete")) {
 				int result = dao.deleteBooking(bookingcode);
 				dao.close();
 				if(result == 1)
-					JSFunction.alertLocation(resp, "»èÁ¦µÇ¾ú½À´Ï´Ù.", "../model/bookingList.do");
+					JSFunction.alertLocation(resp, "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.", "../model/bookingList.do");
 			}
 		} else {		
-			JSFunction.alertBack(resp, "ÇØ´ç ¿¹¸Å¹øÈ£ÀÇ ¿µÈ­°¡ ¾ø½À´Ï´Ù.");
+			JSFunction.alertBack(resp, "í•´ë‹¹ ì˜ˆë§¤ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ì˜ˆë§¤ì •ë³´ê°€ ì—†ìŠµë‹ˆ.");
 		}
 		
 	}

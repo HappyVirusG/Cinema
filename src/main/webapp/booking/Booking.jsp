@@ -20,28 +20,52 @@
                 </div>
                 <div class="movie-list">
                     <ul>
+                        <li class="selectMovie lightyear allAge">
+                            <a href="#">
+                                <span class="movieAge all"></span>
+                                <span class="movieName lightyear">버즈 라이트이어</span>
+                            </a>
+                        </li>
+                        <li class="selectMovie witch fifteenAge">
+                            <a href="#">
+                                <span class="movieAge fifteen"></span>
+                                <span class="movieName witch">마녀(魔女)</span>
+                            </a>
+                        </li>
+                        <li class="selectMovie topgun twelveAge">
+                            <a href="#">
+                                <span class="movieAge twelve"></span>
+                                <span class="movieName topgun">탑건-매버릭</span>
+                            </a>
+                        </li>
+                        <li class="selectMovie thor twelveAge">
+                            <a href="#">
+                                <span class="movieAge twelve"></span>
+                                <span class="movieName thor">토르: 러브 앤 썬더</span>
+                            </a>
+                        </li>
                         <li class="selectMovie frozen allAge">
                             <a href="#">
                                 <span class="movieAge all"></span>
-                                <span class="movieName frozen" name="0001">겨울왕국</span>
+                                <span class="movieName frozen"">겨울왕국</span>
                             </a>
                         </li>
                         <li class="selectMovie parasite fifteenAge">
                             <a href="#">
                                 <span class="movieAge fifteen"></span>
-                                <span class="movieName parasite" name="0002">기생충</span>
+                                <span class="movieName parasite">기생충</span>
                             </a>
                         </li>
                         <li class="selectMovie theDarkKnight fifteenAge">
                             <a href="#">
                                 <span class="movieAge fifteen"></span>
-                                <span class="movieName theDarkKnight" name="0003">다크나이트</span>
+                                <span class="movieName theDarkKnight">다크나이트</span>
                             </a>
                         </li>
                         <li class="selectMovie exit twelveAge">
                             <a href="#">
                                 <span class="movieAge twelve"></span>
-                                <span class="movieName exit" name="0004">엑시트</span>
+                                <span class="movieName exit">엑시트</span>
                             </a>
                         </li>
                     </ul>
@@ -786,6 +810,22 @@
             
             $('.select_movie').css('display', 'none');
 			
+			if($(this).hasClass('lightyear') === true){
+			    $('.movie_img img').attr("src", "../resource/img/poster/버즈라이트이어.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
+			if($(this).hasClass('witch') === true){
+			    $('.movie_img img').attr("src", "../resource/img/poster/마녀2.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
+			if($(this).hasClass('topgun') === true){
+			    $('.movie_img img').attr("src", "../resource/img/poster/탑건매버릭.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
+			if($(this).hasClass('thor') === true){
+			    $('.movie_img img').attr("src", "../resource/img/poster/토르러브앤썬더.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
 			if($(this).hasClass('frozen') === true){
 			    $('.movie_img img').attr("src", "../resource/img/poster/겨울왕국.jpg");
 			    $('.movie_img').css('display', 'inline-block');
