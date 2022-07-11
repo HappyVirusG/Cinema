@@ -79,6 +79,45 @@ public class MovieDAO extends JDBConnect{
 		}return board;
 	}
 	
+	//메인에서 영화목록 반환
+	public List<MovieDTO> selectMainPage(Map<String, Object> map){
+		List<MovieDTO> board = new Vector<MovieDTO>();
+		String query = "SELECT * FROM (SELECT tb.*, ROWNUM rNum FROM (SELECT * FROM movie ";
+		
+		if(map.get("searchWord")!=null) {
+			query += " LIKE '%"+map.get("searchWord")+"%' ";
+		}
+		query += " ORDER BY moviecode DESC) tb)";
+		try {
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(query);
+			
+			while(rs.next()) {
+				MovieDTO dto = new MovieDTO();
+				dto.setMoviecode(rs.getString("moviecode"));
+				dto.setTitle(rs.getString("title"));
+				dto.setDirector(rs.getString("director"));
+				dto.setActors(rs.getString("actors"));
+				dto.setCountry(rs.getString("country"));
+				dto.setSummary(rs.getString("summary"));
+				dto.setRunningtime(rs.getString("runningtime"));
+				dto.setRatingcode(rs.getString("ratingcode"));
+				dto.setOpendate(rs.getDate("opendate"));
+				dto.setImage(rs.getString("image"));
+				dto.setPrice(rs.getString("price"));
+				dto.setGenre(rs.getString("genre"));
+				dto.setEngtitle(rs.getString("engtitle"));
+				dto.setYoutube(rs.getString("youtube"));
+				
+				board.add(dto);
+			}
+			}catch(Exception e) {
+				System.out.println("영화 목록 조회 중 오류가 발생하였습니다.");
+				e.printStackTrace();
+			
+		}return board;
+	}
+	
 	//상세보기
 	public MovieDTO selectView(String moviecode) {
 		MovieDTO dto = new MovieDTO();

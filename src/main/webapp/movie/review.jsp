@@ -19,7 +19,6 @@
 	}
 </script>
 
-
 <div class="reviewLine"></div>
 <div id="review">
     <div class="reviewCurrent">
@@ -41,7 +40,7 @@
     </div>
     
     <div class="reviewTable">
-        <form action="../model/movieDetail.do?moviecode=${dto.moviecode}" 
+        <form action="../model/reviewWrite.do?moviecode=${dto.moviecode}" 
         name="reviewWriteFrm" method="post">
         <div class="reviewPost">
             
@@ -67,7 +66,7 @@
 	          
              <div class="typeContent">
 	              <textarea name="content" class="reviewContent" placeholder="평점 및 영화 관람평을 작성해주세요. &#13;&#10;주제와 무관한 리뷰 또는 스포일러는 표시제한 또는 삭제될 수 있습니다."></textarea>
-	              <button type="button" onclick="validateForm()">관람평 작성</button>
+	              <button type="submit">관람평 작성</button>
              </div> <!-- .typeContent -->
 	          
 	    </div> <!-- .contentPost -->
@@ -118,10 +117,12 @@
             <div class="userLine"></div>
             <div class="userContent"> <!-- 작성자 관람평 -->
             	${ row.content }
+            	<button onclick="location.href='../model/reviewDelete.do?idx=${row.idx}&moviecode=${dto.moviecode}'" class="userDelete">delete</button>
             	<span class="userPostDate">
            			${row.postdate}
            		</span>
             </div>
+            
             </div>
     		</c:forEach>
     	</c:otherwise>

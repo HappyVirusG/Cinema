@@ -45,14 +45,7 @@
 	<param-name>PAGES_PER_BLOCK</param-name>
 	<param-value>4</param-value>
 </context-param>
-<!--  <servlet>
-	<servlet-name>MovieDetail</servlet-name>
-	<servlet-class>model.ReviewListController</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>MovieDetail</servlet-name>
-	<url-pattern>/model/review.do</url-pattern>
-</servlet-mapping> -->
+
 
  <servlet>
 	<servlet-name>MovieList</servlet-name>
