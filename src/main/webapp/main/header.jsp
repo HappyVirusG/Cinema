@@ -27,7 +27,13 @@
         </div>
         <div class="myPage">
             <ul id="ul1">
-                <li><a id="a1" href="../member/login.jsp">로그인</a></li>
+                <li>
+	                <% if (session.getAttribute("id") == null) { %>
+						<a href="../member/login.jsp">로그인</a>
+					<% } else { %>
+						<a href="../member/logout.jsp">로그아웃</a>
+					<% } %>
+                </li>
                 <li><a id="a1" href="../member/join.jsp">회원가입</a></li>
                 <li><a id="a1" href="">MY PAGE</a></li>
                 <li><a id="a1" href="">고객센터</a></li>
