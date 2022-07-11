@@ -1,3 +1,8 @@
+<%@page import="java.util.Map"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="model.MovieDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="model.MovieDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
@@ -18,7 +23,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
-   
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
+   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -26,25 +34,24 @@
 
 <div id="wrap">
     <div id = "container">
-
         <div id = "two_section">
 
-<!--             <section id = "main_slide">
-				<div id="galleryZone">
-                 <p><img src="../resource/img/main/pos_1.jpg" alt="" id="photo"></p>
-             	</div>
-                
-                <button onclick="gallery(0)" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
+<!--             
+<section id = "main_slide">
+<div id="galleryZone">
+<p><img src="../resource/img/main/pos_1.jpg" alt="" id="photo"></p>
+</div>
 
-                <button onclick="gallery(1)" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button> -->
-				
+<button onclick="gallery(0)" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Previous</span>
+</button>
 
+<button onclick="gallery(1)" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="visually-hidden">Next</span>
+</button> 
+-->
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
@@ -70,7 +77,7 @@
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
-                </button> -->
+                </button> 
                 
 			<section class = "booking">
                 <form action="#">
@@ -83,8 +90,8 @@
                 <a><p>박스오피스</p></a>
                 <img id="icon3" src="../resource/img/main/icon34.png" alt="">
                 <a><p>빠른예매</p></a>
-            </section><!--.booking(빠른예매부분)--> 
-            </section><!--.main_slide(포스터부분)--> 
+            </section> <!--.booking(빠른예매부분)--> 
+            </section> <!--.main_slide(포스터부분)--> 
             
         </div>
 
@@ -97,6 +104,23 @@
                     <p>></p>
                 </button>
             </div>
+      
+<%
+	MovieDAO dao = new MovieDAO(application);
+	Map<String, Object> map = new HashMap<String, Object>();
+	
+	String searchField = request.getParameter("searchField");
+	String searchWord = request.getParameter("searchWord");
+	
+	if(searchWord != null){
+		map.put("searchField", searchField);
+		map.put("searchWord", searchWord);
+	}
+	int totalCount = dao.movieCount(map);
+	List<MovieDTO> boardLists = dao.selectMainPage(map);
+	dao.close();
+%>
+            
 <div id="modalBck"></div> <!-- #modalBck -->
 <div id="modal">
   <img src="../resource/img/poster/탑건매버릭.jpg" alt="">
@@ -164,74 +188,34 @@
      </div>
 </div> <!-- #modal -->
 
-<script>
-	const modal = document.getElementById("modal");
-	const modalBack = document.getElementById('modalBck');
-	function modalFunc(){
-		modal.style.display="flex";
-		modalBack.style.display="block";
-	}
-	
-	function modalClose(){
-		modal.style.display="none";
-		modalBack.style.display="none";
-	}
-</script>
-
             <div id="sub_imgs">
-                <div class="sub_img">
+            	<%if(!boardLists.isEmpty()){
+					for(MovieDTO dto : boardLists){
+				%>	
+				 <div class="sub_img">
                    <a href="javascript:void(0);" onclick="modalFunc();">
-                        <img src="../resource/img/poster/탑건매버릭.jpg" alt="예매바로가기1">
+                        <img src="<%=dto.getImage() %>" alt="예매바로가기1">
                         <p class="over"></p>
-                    </a>
+                   </a>
                 </div>
-           
-                <div class="sub_img">
-                    <a href="#">
-                        <img src="../resource/img/poster/버즈라이트이어.jpg" alt="예매바로가기2">
-                        <p class="over">
-                            <img id="one" src="../resource/img/main/click_icon.png">
-                        </p>
-                    </a>
-                </div>
-        
-                <div class="sub_img">
-                    <a href="#">
-                        <img src="../resource/img/poster/마녀2.jpg" alt="예매바로가기3">
-                        <p class="over">
-                            <img id="one" src="../resource/img/main/click_icon.png">
-                        </p>
-                    </a>
-                </div>
-       
-                <div class="sub_img">
-                    <a href="#">
-                        <img src="../resource/img/poster/마녀2.jpg" alt="예매바로가기4">
-                        <p class="over">
-                            <img id="one" src="../resource/img/main/click_icon.png">
-                        </p>
-                    </a>
-                </div>
+                <%
+					}
+				} %>
             </div>
-
+            
+             
             <div id="sub_img_explanation">
+            	<%if(!boardLists.isEmpty()){
+					for(MovieDTO dto : boardLists){
+				%>	
                 <div>
-                    <p>탑건:매버릭<br>예매율 55.3% | <img class="star" src="../resource/img/main/star.png"> 9.8</p>
+                    <p><%=dto.getTitle() %><br>예매율 55.3% | <img class="star" src="../resource/img/main/star.png"> 9.8</p>
                 </div>
-
-                <div>
-                    <p>버즈 라이트 이어<br>예매율 26.8% | <img class="star" src="../resource/img/main/star.png"> 9.1</p>
-                </div>
-
-                <div>
-                    <p>마녀2<br>예매율 10.1% | <img class="star" src="../resource/img/main/star.png"> 8.4</p>
-                </div>
-
-                <div>
-                    <p>마녀2<br>예매율 3.2% | <img class="star" src="../resource/img/main/star.png"> 9.3</p>
-                </div>
-            </div>
-       
+			
+				<%
+					}
+				} %>
+			</div>
 
         </section><!--.movie_info(영화정보소개부분)--> 
        
@@ -300,9 +284,24 @@
     </script>
  
  
+ <script>
+
+
+const modal = document.getElementById("modal");
+const modalBack =document.getElementById('modalBck');
+	function modalFunc(){
+		modal.style.display="flex";
+		modalBack.style.display="block";
+	}
+	
+	function modalClose(){
+		modal.style.display="none";
+		modalBack.style.display="none";
+	}
+</script>
  
-   <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ 
+   
 <%@include file="footer.jsp" %>
 
 </body>

@@ -56,7 +56,6 @@ public class ReviewDAO extends JDBConnect{
 			rs=psmt.executeQuery();
 			while(rs.next()) {
 				ReviewDTO dto = new ReviewDTO();
-
 				dto.setMoviecode(rs.getString("moviecode"));
 				dto.setIdx(rs.getString("idx"));
 				dto.setPostdate(rs.getDate("postdate"));
@@ -83,19 +82,23 @@ public class ReviewDAO extends JDBConnect{
 			 * ; psmt = con.prepareStatement(findQuery); psmt.setString(1, moviecode); rs =
 			 * psmt.executeQuery();
 			 */
+		
 			//아직 memberDB 형성되지 않았기 때문에 mem04로 고정
-			String query = "INSERT INTO review(moviecode, idx, content, membercode, score)"
-					+" VALUES("+moviecode+", review_idx_seq.nextval, ?, mem04, ?)";
+			String query = "INSERT INTO review(postdate, moviecode, idx, content, membercode, score) "
+					+ "VALUES(sysdate, '"+ moviecode +"', review_idx_seq.nextval,?, 'mem1', ?)";
+			
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, dto.getContent());
 			psmt.setString(2, dto.getScore());
 			
 			result = psmt.executeUpdate();
+			
 		}catch(Exception e) {
 			System.out.println("리뷰 업로드 중 오류가 발생하였습니다.");
 			e.printStackTrace();
 		}
 		return result;
+		
 	}
 	
 	//리뷰 수정하기
@@ -117,6 +120,28 @@ public class ReviewDAO extends JDBConnect{
 		return result;
 	}
 	
+	public ReviewDTO selectReview(String idx) {
+		ReviewDTO dto = new ReviewDTO();
+		String query = "SELECT * FROM review WHERE idx=?";
+		try {
+			psmt=con.prepareStatement(query);
+			psmt.setString(1, idx);
+			rs=psmt.executeQuery();
+			if(rs.next()) {
+				dto.setIdx(rs.getString("idx"));
+				dto.setMoviecode(rs.getString("moviecode"));
+				dto.setPostdate(rs.getDate("postdate"));
+				dto.setContent(rs.getString("content"));
+				dto.setScore(rs.getString("score"));
+				dto.setMembercode(rs.getString("membercode"));
+			}
+		}catch(Exception e) {
+			System.out.println("불러오기용 예외 발생");
+			e.printStackTrace();
+		}
+		return dto;
+	}
+	
 	//지정한 리뷰 삭제하기
 	public int deleteReview(ReviewDTO dto) {
 		int result=0;
@@ -132,6 +157,7 @@ public class ReviewDAO extends JDBConnect{
 		}
 		return result;
 	}
+	
 	
 	
 	
