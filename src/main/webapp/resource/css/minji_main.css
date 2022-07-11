@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 #container .carousel-inner img{
     height: 700px;
 }
@@ -50,7 +49,8 @@
 }
 
 #two_section {
-    background-color: rgb(253, 241, 226)
+     background-color: rgb(253, 241, 226) ;
+     height: 700px;
 }
 
 #movieName {
@@ -131,10 +131,10 @@
     position: relative;
 }
 
-#movie_more {
-    width: 130px;
-    height: 30px;
-    line-height: 30px;
+#container #movie_more{
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
     border-radius: 50px;
     border: 1px solid #ccc;
     font-size: 15px;
@@ -145,16 +145,19 @@
     margin-top: 50px;
 }
 
+
+
 #container .movie_info_title a {
     font-size: 30px;
     text-decoration: none;
 }
 
-#container .box_office{
+#container #box_office{
     border-bottom: 3px solid #d83030;
     margin-top: 40px;
     position: absolute;
     left: 380px;
+    top:0;
 }
 
 #container .movie_info {
@@ -239,10 +242,10 @@
     width: 100%;
 }
 
-#look_at_whole {
+#container #look_at_whole {
     width: 110px;
-    height: 30px;
-    line-height: 30px;
+    height: 35px;
+    line-height: 35px;
     border-radius: 50px;
     border: 1px solid #ccc;
     font-size: 15px;

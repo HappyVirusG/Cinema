@@ -19,7 +19,10 @@
    String email = request.getParameter("email");
    String tel = request.getParameter("tel");
       
-      String sql = "INSERT INTO member1(id,pw,name,email,tel) VALUES(?,?,?,?,?)";
+      String sql = " INSERT INTO member1(id,pw,name,email,tel) VALUES(?,?,?,?,?) ";
+/*     		  + " collation-server = utf8_unicode_ci "
+    		  + " init-connect='SET NAMES utf8' "
+    		  + " character-set-server = utf8; "; */
 
       PreparedStatement psmt = jdbc.con.prepareStatement(sql);
 

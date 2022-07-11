@@ -6,7 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-
+<!-- 언니 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -231,20 +231,20 @@
                </a>
             </div>
 
-            <div id = "event">
+ 			<div id = "event">
                 <div class="eventin">
-                    <a href=""><img src="../resource/img/main/event1.jpg" alt=""></a>
-                    <a href=""><p> [한국 영화 천만 달성 기념] CGV가 천만P 쏜다!</p></a>
+                    <a href=""><img src="../resource/img/main/event_1.jpg" alt=""></a>
+                    <a href=""><p> [토르: 러브 앤 썬더] 마이티토르 묠니르컵 론칭!</p></a>
                 </div>
 
                 <div class="eventin">
-                    <a href=""><img src="../resource/img/main/event2.jpg" alt=""></a>
-                    <a href=""><p> [한국 영화 천만 달성 기념] CGV가 천만P 쏜다!</p></a>
+                    <a href=""><img src="../resource/img/main/event_2.jpg" alt=""></a>
+                    <a href=""><p> [엘비스] SX 리미티드 포스터</p></a>
                 </div>
 
                 <div class="eventin">
-                    <a href=""><img src="../resource/img/main/event3.jpg" alt=""></a>
-                    <a href=""><p> [한국 영화 천만 달성 기념] CGV가 천만P 쏜다!</p></a>
+                    <a href=""><img src="../resource/img/main/event_3.jpg" alt=""></a>
+                    <a href=""><p> [이달의 아이스콘] 7월 라인업 미리 만나보기</p></a>
                 </div>
 
             </div><!--.event(이벤트)--> 
