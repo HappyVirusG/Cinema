@@ -45,6 +45,7 @@
          <ul id="ul1">
             <li><a id="a1" href="../model/movieList.do">영화</a></li>
             <li><a id="a1" href="../booking/Booking.jsp">예매</a></li>
+            <li><a id="a1" href="../model/bookingList.do">예매 목록</a></li>
             <li><a id="a1" href="">스토어</a></li>
             <li><a id="a1" href="">멤버십</a></li>
         </ul>

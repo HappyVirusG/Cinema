@@ -13,10 +13,12 @@ public class BookingController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		BookingDTO dto = new BookingDTO();
-		dto.setMoviecode(req.getParameter("moviecode"));
+		dto.setMoviecode(req.getParameter("title"));
+		dto.setTheatercode(req.getParameter("theatercode"));
 		dto.setTimecode(req.getParameter("timecode"));
 		dto.setPrice(req.getParameter("price"));
 		dto.setSeatcode(req.getParameter("seatcode"));
+		dto.setRatingcode(req.getParameter("ratingcode"));
 		
 		BookingDAO dao = new BookingDAO();
 		int result = dao.insertBooking(dto);

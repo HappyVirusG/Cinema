@@ -35,12 +35,15 @@ seatnm varchar2(20) not null
 
 create table booking(
 bookingcode varchar2(20) primary key,
+title varchar2(50) not null,
 moviecode varchar2(20) not null,
 membercode varchar2(20) not null,
 theatercode varchar2(20) not null,
 timecode varchar2(20) not null,
 price number not null,
-seatcode varchar2(20) not null
+seatcode varchar2(20) not null,
+ratingcode varchar2(20) not null
+starttimecode varchar2(20) not null
 );
 
 create table review(
@@ -73,6 +76,10 @@ email varchar2(20) null
 );
 
 alter table booking
+add constraint booking_movie_fk foreign key(title)
+references movie(title);
+
+alter table booking
 add constraint booking_movie_fk foreign key(moviecode)
 references movie(moviecode);
 
@@ -83,6 +90,10 @@ references member(membercode);
 alter table booking
 add constraint booking_theater_fk foreign key(theatercode)
 references theater(theatercode);
+
+alter table booking
+add constraint booking_theater_fk foreign key(ratingcode)
+references movie(ratingcode);
 
 alter table review
 add constraint review_movie_fk foreign key(moviecode)

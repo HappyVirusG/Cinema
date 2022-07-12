@@ -37,5 +37,7 @@ public class BookingListController extends HttpServlet{
 		req.setAttribute("lists", lists);
 		req.setAttribute("map", map);
 		req.getRequestDispatcher("../booking/BookingList.jsp").forward(req, resp);
+		req.getRequestDispatcher("../booking/exList.jsp").forward(req, resp);
+	
 	}
 }

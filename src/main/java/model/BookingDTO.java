@@ -8,6 +8,7 @@ public class BookingDTO {
 	private String timecode;
 	private String price;
 	private String seatcode;
+	private String ratingcode;
 	public String getBookingcode() {
 		return bookingcode;
 	}
@@ -50,6 +51,11 @@ public class BookingDTO {
 	public void setSeatcode(String seatcode) {
 		this.seatcode = seatcode;
 	}
-	
+	public String getRatingcode() {
+		return ratingcode;
+	}
+	public void setRatingcode(String ratingcode) {
+		this.ratingcode = ratingcode;
+	}
 	
 }

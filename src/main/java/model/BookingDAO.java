@@ -40,6 +40,7 @@ public class BookingDAO extends JDBConnect{
 				dto.setTimecode(rs.getString(5));
 				dto.setPrice(rs.getString(6));
 				dto.setSeatcode(rs.getString(7));
+				dto.setRatingcode(rs.getString(8));
 				
 				list.add(dto);
 			}
@@ -56,16 +57,17 @@ public class BookingDAO extends JDBConnect{
 		
 		try {
 			String query = "INSERT INTO booking ( "
-					+ " bookingcode, moviecode, timecode, price, seatcode) "
-							+ " VALUES(concat('book', seq_booking_num.nextval), ?, ?, ?, ?)";
+					+ " bookingcode, moviecode, theatercode, timecode, price, seatcode) "
+							+ " VALUES(concat('book', seq_booking_num.nextval), ?, ?, ?, ?, ?)";
 			
 			psmt = con.prepareStatement(query);
 			
 			psmt.setString(1, dto.getMoviecode());
+			psmt.setString(2, dto.getTheatercode());
 //			psmt.setString(3, dto.getMembercode());
-			psmt.setString(2, dto.getTimecode());
-			psmt.setString(3, dto.getPrice());
-			psmt.setString(4, dto.getSeatcode());
+			psmt.setString(3, dto.getTimecode());
+			psmt.setString(4, dto.getPrice());
+			psmt.setString(5, dto.getSeatcode());
 			
 			result = psmt.executeUpdate();
 			
