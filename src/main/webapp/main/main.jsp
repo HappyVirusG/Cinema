@@ -205,15 +205,15 @@
             
              
             <div id="sub_img_explanation">
-               <%if(!boardLists.isEmpty()){
-               for(MovieDTO dto : boardLists){ %>   
-                <div>
-                    <p><%=dto.getTitle() %><br>예매율 55.3% | <img class="star" src="../resource/img/main/star.png"> 9.8</p>
-                </div>
-            <%
-               }
-            } %>
-         </div>
+             <%if(!boardLists.isEmpty()){
+         for(MovieDTO dto : boardLists){ %>   
+              <div>
+                  <p><%=dto.getTitle() %><br>예매율 55.3% | <img class="star" src="../resource/img/main/star.png"> 9.8</p>
+              </div>
+          <%
+             }
+          } %>
+       </div>
         </section><!--.movie_info(영화정보소개부분)--> 
        
                 <section>
