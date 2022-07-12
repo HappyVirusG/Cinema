@@ -1,18 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:include page="Booking.jsp"/>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resource/css/header_footer.css">
 </head>
 <body>
-
-	<h2>list</h2>
-	<%-- <form>
-		<table border="1" width="90%">
+	<%@include file="../main/header.jsp" %>
+	<form>
+		<table border="1" width="100%">
+			<tr align="center">
+				<td width="15%">예매번호</td>
+				<td width="*">영화제목</td>
+				<td width="15%">좌석번호</td>
+				<td width="15%">시작시간</td>
+				<td width="15%">가격</td>
+			</tr>
 			<c:choose>
 				<c:when test="${ empty lists }">
 					<tr>
@@ -21,19 +27,21 @@
 						</td>
 					</tr>
 				</c:when>
-				게시물이 있을 때
 				<c:otherwise>
-					items : 컬렉션 객체, var : 변수명, varStatus : 반복상태를 확인할 수 있는 변수
 					<c:forEach items="${lists}" var="row" varStatus="loop">
 						<tr align="center">
-							<td name="moviecode">영화제목 ${row.moviecode }</td>
-							<td>좌석 ${row.seatcode }</td>
-							<td>시작시간 ${row.timecode }</td>
+							<td width="15%">${row.bookingcode }</td>
+							<td width="*" name="moviecode">${row.moviecode }</td>
+							<td width="15%">${row.seatcode }</td>
+							<td width="15%">${row.timecode }</td>
+							<td width="15%">${row.price }</td>
+							<td><button type="button" onclick="location.href='../model/bookingEdit.do?mode=delete&bookingcode=${row.bookingcode}'">X</button></td>
 						</tr>
 					</c:forEach>
 				</c:otherwise>
 			</c:choose>
 		</table>
-	</form> --%>
+	</form>
+	<%@include file="../main/footer.jsp" %>
 </body>
 </html>

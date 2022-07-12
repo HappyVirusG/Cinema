@@ -20,28 +20,52 @@
                 </div>
                 <div class="movie-list">
                     <ul>
-                        <li class="selectMovie frozen allAge">
+                        <li class="selectMovie lightyear allAge">
                             <a href="#">
                                 <span class="movieAge all"></span>
-                                <span class="movieName frozen" name="0001">겨울왕국</span>
+                                <span class="movieName lightyear">버즈 라이트이어</span>
                             </a>
                         </li>
-                        <li class="selectMovie parasite fifteenAge">
+                        <li class="selectMovie witch fifteenAge">
                             <a href="#">
                                 <span class="movieAge fifteen"></span>
-                                <span class="movieName parasite" name="0002">기생충</span>
+                                <span class="movieName witch">마녀(魔女)</span>
                             </a>
                         </li>
-                        <li class="selectMovie theDarkKnight fifteenAge">
-                            <a href="#">
-                                <span class="movieAge fifteen"></span>
-                                <span class="movieName theDarkKnight" name="0003">다크나이트</span>
-                            </a>
-                        </li>
-                        <li class="selectMovie exit twelveAge">
+                        <li class="selectMovie topgun twelveAge">
                             <a href="#">
                                 <span class="movieAge twelve"></span>
-                                <span class="movieName exit" name="0004">엑시트</span>
+                                <span class="movieName topgun">탑건-매버릭</span>
+                            </a>
+                        </li>
+                        <li class="selectMovie thor twelveAge">
+                            <a href="#">
+                                <span class="movieAge twelve"></span>
+                                <span class="movieName thor">토르: 러브 앤 썬더</span>
+                            </a>
+                        </li>
+                        <li class="selectMovie frozen allAge disappearMovie">
+                            <a href="#">
+                                <span class="movieAge all"></span>
+                                <span class="movieName frozen"">겨울왕국</span>
+                            </a>
+                        </li>
+                        <li class="selectMovie parasite fifteenAge disappearMovie">
+                            <a href="#">
+                                <span class="movieAge fifteen"></span>
+                                <span class="movieName parasite">기생충</span>
+                            </a>
+                        </li>
+                        <li class="selectMovie theDarkKnight fifteenAge disappearMovie">
+                            <a href="#">
+                                <span class="movieAge fifteen"></span>
+                                <span class="movieName theDarkKnight">다크나이트</span>
+                            </a>
+                        </li>
+                        <li class="selectMovie exit twelveAge disappearMovie">
+                            <a href="#">
+                                <span class="movieAge twelve"></span>
+                                <span class="movieName exit">엑시트</span>
                             </a>
                         </li>
                     </ul>
@@ -288,19 +312,7 @@
                     <div class="hallDate">
                         <div class="monthCommon">
                             <span class="year">2022</span>
-
                             <span class="seven month">7</span>
-                            <!-- <a href="#" class="selectDay seven"><span class="dayweek">금</span><span class="day">1</span> </a> -->
-                            <!-- <a href="#" class="selectDay seven sat"><span class="dayweek">토</span><span class="day">2</span> </a> -->
-                            <a href="#" class="selectDay seven sun"><span class="dayweek">일</span><span class="day">3</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">월</span><span class="day">4</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">화</span><span class="day">5</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">수</span><span class="day">6</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">목</span><span class="day">7</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">금</span><span class="day">8</span> </a>
-                            <a href="#" class="selectDay seven sat"><span class="dayweek">토</span><span class="day">9</span> </a>
-                            <a href="#" class="selectDay seven sun"><span class="dayweek">일</span><span class="day">10</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">월</span><span class="day">11</span> </a>
                             <a href="#" class="selectDay seven"><span class="dayweek">화</span><span class="day">12</span> </a>
                             <a href="#" class="selectDay seven"><span class="dayweek">수</span><span class="day">13</span> </a>
                             <a href="#" class="selectDay seven"><span class="dayweek">목</span><span class="day">14</span> </a>
@@ -321,6 +333,21 @@
                             <a href="#" class="selectDay seven"><span class="dayweek">금</span><span class="day">29</span> </a>
                             <a href="#" class="selectDay seven sat"><span class="dayweek">토</span><span class="day">30</span> </a>
                             <a href="#" class="selectDay seven sun"><span class="dayweek">일</span><span class="day">31</span> </a>
+                            
+                            <span class="year">2022</span>
+                            <span class="seven month">8</span>
+                            <a href="#" class="selectDay eight"><span class="dayweek">월</span><span class="day">1</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">화</span><span class="day">2</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">수</span><span class="day">3</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">목</span><span class="day">4</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">금</span><span class="day">5</span></a>
+                            <a href="#" class="selectDay eight sat"><span class="dayweek">토</span><span class="day">6</span> </a>
+                            <a href="#" class="selectDay eight sun"><span class="dayweek">일</span><span class="day">7</span> </a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">월</span><span class="day">8</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">화</span><span class="day">9</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">수</span><span class="day">10</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">목</span><span class="day">11</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">금</span><span class="day">12</span></a>
                         </div>
                     </div> <!-- .hallDate -->
                 </div> <!-- .date-list -->
@@ -681,6 +708,7 @@
                     $('.btn_seat').addClass('sd');
                 })
                 $('.btn_seat').addClass('bc');
+                $('.disappearMovie').css('display', 'none');
             })
 		
 		$('.selectDay').click(function() {  
@@ -735,6 +763,7 @@
                     $('.btn_seat').addClass('bc');
                 })
                 $('.btn_seat').addClass('sd');
+                $('.disappearMovie').css('display', 'none');
             })
 		
 		//좌석선택 버튼 페이지 이동 조건
@@ -786,6 +815,22 @@
             
             $('.select_movie').css('display', 'none');
 			
+			if($(this).hasClass('lightyear') === true){
+			    $('.movie_img img').attr("src", "../resource/img/poster/버즈라이트이어.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
+			if($(this).hasClass('witch') === true){
+			    $('.movie_img img').attr("src", "../resource/img/poster/마녀2.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
+			if($(this).hasClass('topgun') === true){
+			    $('.movie_img img').attr("src", "../resource/img/poster/탑건매버릭.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
+			if($(this).hasClass('thor') === true){
+			    $('.movie_img img').attr("src", "../resource/img/poster/토르러브앤썬더.jpg");
+			    $('.movie_img').css('display', 'inline-block');
+			}
 			if($(this).hasClass('frozen') === true){
 			    $('.movie_img img').attr("src", "../resource/img/poster/겨울왕국.jpg");
 			    $('.movie_img').css('display', 'inline-block');
@@ -852,13 +897,16 @@
 
             $(".selected_wrap").css('display', 'block');
             $('.select_theater').css('display', 'none');
-            
-            // if($(this).hasClass('six') === true)
-            //     $(".date_text").text("2022.6." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")");
-            //  else 
 
-             if($(this).hasClass('seven') === true)
-                $(".date_text").text("2022.7." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")" + " ");
+             if($(this).hasClass('seven') === true) {
+            	$(".date_text").text("2022.7." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")" + " ");
+              	$('.movie-time').text("2022.7." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")"); 
+             }
+                
+             if($(this).hasClass('eight') === true) {
+            	 $(".date_text").text("2022.8." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")" + " ");
+            	$('.movie-time').text("2022.8." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")"); 
+             }
           
             $('.buttonCommon').click(function() {
                 $('.selectMovie').click(function() {
@@ -875,8 +923,6 @@
 
             $('.time').removeAttr('id', 'timeOn');
 
-            $('.movie-time').text("2022.7." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")");
-			
             return false;
 		})
 		

@@ -26,7 +26,7 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -79,7 +79,7 @@
                     <span class="visually-hidden">Next</span>
                 </button> 
                 
-         <section class = "booking">
+			<section class = "booking">
                 <form action="#">
                     <input type="text" class="movieName" id="movieName">
                     <button id="sharch" type="button" onclick="newRegister()">검색</button>
@@ -106,19 +106,19 @@
             </div>
       
 <%
-   MovieDAO dao = new MovieDAO(application);
-   Map<String, Object> map = new HashMap<String, Object>();
-   
-   String searchField = request.getParameter("searchField");
-   String searchWord = request.getParameter("searchWord");
-   
-   if(searchWord != null){
-      map.put("searchField", searchField);
-      map.put("searchWord", searchWord);
-   }
-   int totalCount = dao.movieCount(map);
-   List<MovieDTO> boardLists = dao.selectMainPage(map);
-   dao.close();
+	MovieDAO dao = new MovieDAO(application);
+	Map<String, Object> map = new HashMap<String, Object>();
+	
+	String searchField = request.getParameter("searchField");
+	String searchWord = request.getParameter("searchWord");
+	
+	if(searchWord != null){
+		map.put("searchField", searchField);
+		map.put("searchWord", searchWord);
+	}
+	int totalCount = dao.movieCount(map);
+	List<MovieDTO> boardLists = dao.selectMainPage(map);
+	dao.close();
 %>
             
 <div id="modalBck"></div> <!-- #modalBck -->
@@ -182,38 +182,38 @@
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
      <div id="modalBtns">
-          <button type="button" class="closeBtn" onclick="modalClose();">x</button>
-        <button type="button" class="bookingBtn">예매하기</button>
-        <a href="../model/movieDetail.do" class="detailBtn">관람평/스틸컷까지 함께 보기</a>
+       	<button type="button" class="closeBtn" onclick="modalClose();">x</button>
+     	<button type="button" class="bookingBtn">예매하기</button>
+     	<a href="../model/movieDetail.do" class="detailBtn">관람평/스틸컷까지 함께 보기</a>
      </div>
 </div> <!-- #modal -->
 
             <div id="sub_imgs">
-               <%if(!boardLists.isEmpty()){
-               for(MovieDTO dto : boardLists){
-            %>   
-             <div class="sub_img">
+            	<%if(!boardLists.isEmpty()){
+					for(MovieDTO dto : boardLists){
+				%>	
+				 <div class="sub_img">
                    <a href="javascript:void(0);" onclick="modalFunc();">
                         <img src="<%=dto.getImage() %>" alt="예매바로가기1">
                         <p class="over"></p>
                    </a>
                 </div>
                 <%
-               }
-            } %>
+					}
+				} %>
             </div>
             
              
             <div id="sub_img_explanation">
-             <%if(!boardLists.isEmpty()){
-         for(MovieDTO dto : boardLists){ %>   
-              <div>
-                  <p><%=dto.getTitle() %><br>예매율 55.3% | <img class="star" src="../resource/img/main/star.png"> 9.8</p>
-              </div>
-          <%
-             }
-          } %>
-       </div>
+            	<%if(!boardLists.isEmpty()){
+					for(MovieDTO dto : boardLists){ %>	
+                <div>
+                    <p><%=dto.getTitle() %><br>예매율 55.3% | <img class="star" src="../resource/img/main/star.png"> 9.8</p>
+                </div>
+				<%
+					}
+				} %>
+			</div>
         </section><!--.movie_info(영화정보소개부분)--> 
        
                 <section>
@@ -285,15 +285,15 @@
 
 const modal = document.getElementById("modal");
 const modalBack =document.getElementById('modalBck');
-   function modalFunc(){
-      modal.style.display="flex";
-      modalBack.style.display="block";
-   }
-   
-   function modalClose(){
-      modal.style.display="none";
-      modalBack.style.display="none";
-   }
+	function modalFunc(){
+		modal.style.display="flex";
+		modalBack.style.display="block";
+	}
+	
+	function modalClose(){
+		modal.style.display="none";
+		modalBack.style.display="none";
+	}
 </script>
  
  
