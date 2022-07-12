@@ -73,7 +73,6 @@ public class BookingDAO extends JDBConnect{
 			System.out.println("DB에 데이터 추가 중 예외 발생");
 			e.printStackTrace();
 		}
-		
 		return result;
 	}
 	

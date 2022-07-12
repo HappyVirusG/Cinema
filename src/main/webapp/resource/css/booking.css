@@ -206,7 +206,7 @@ body {
     overflow: hidden;
 }
 .date-list .hallDate {
-    height: 700px;
+    height: 635px;
     overflow: scroll;
     overflow-x: hidden;
 }
