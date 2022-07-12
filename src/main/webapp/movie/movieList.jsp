@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 - 그린 시네마</title>
     <link rel="stylesheet" href="../resource/css/header_footer.css?ver=8">
-    <link rel="stylesheet" href="../resource/css/movie_list.css?ver=3">
+    <link rel="stylesheet" href="../resource/css/movie_list.css?ver=6">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,6 @@
     <div class="movieList">
     <h3>현재상영작</h3>
     <div class="movieChartLine"></div>
-    
     <ul>
     <c:choose>
     	<c:when test="${empty boardLists}">
@@ -32,21 +31,38 @@
     	<c:otherwise>
 
         <c:forEach items="${ boardLists }" var="row" varStatus="loop">
-        
-
-            <li>
+         <li id="movieNowList">
                 <a href="../model/movieDetail.do?moviecode=${row.moviecode}">
                     <img src="${row.image}" alt=""><br/>
                     <p class="movieChartTitle">
-                    	<span class="rating">${row.ratingcode}</span>
-                       	<span class="movieTitle">${row.title}</span>
+                    	<span class="rating" id="temporary">${row.ratingcode}</span>
+                    	<span class="movieTitle">${row.title}</span>
                     </p>
-                    
+<script>
+    var ratingAge;
+    switch("${row.ratingcode}"){
+    case "15":
+    	ratingAge="rating15";
+    	break;
+    case "12":
+    	ratingAge="rating12";
+    	break;
+    case "All":
+    	ratingAge="ratingAll";
+    	break;
+    case "19":
+    	ratingAge="rating19";
+    	break;
+    }
+    var rating = document.querySelector('#temporary');
+    rating.setAttribute('id', ratingAge);
+</script>
                     <p>예매율 <span class="boxOffice">46.2%</span> </p>
                     <p class="movieDate">${row.opendate}</p>
                 </a>
                 <button class="bookingBtn">예매하기</button>
             </li>
+
 			</c:forEach>
          </c:otherwise>
       </c:choose> 

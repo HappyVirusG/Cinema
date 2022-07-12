@@ -206,49 +206,45 @@
              
             <div id="sub_img_explanation">
             	<%if(!boardLists.isEmpty()){
-					for(MovieDTO dto : boardLists){
-				%>	
+					for(MovieDTO dto : boardLists){ %>	
                 <div>
                     <p><%=dto.getTitle() %><br>예매율 55.3% | <img class="star" src="../resource/img/main/star.png"> 9.8</p>
                 </div>
-			
 				<%
 					}
 				} %>
 			</div>
-
         </section><!--.movie_info(영화정보소개부분)--> 
        
-        <section>
+                <section>
 
             <div class="event_title">
                 <a href=""><p class="EVENT">EVENT</p></a>
                 <a href = "./Hello.jsp">
-               		<button id="look_at_whole" type="button">
-	                	<p>전체보기</p>
-	                    <p>></p>
-              		</button>
+                     <button id="look_at_whole" type="button">
+                      <p>전체보기</p>
+                       <p>></p>
+                    </button>
                </a>
             </div>
 
             <div id = "event">
                 <div class="eventin">
-                    <a href=""><img src="../resource/img/main/event1.jpg" alt=""></a>
-                    <a href=""><p> [한국 영화 천만 달성 기념] CGV가 천만P 쏜다!</p></a>
+                    <a href=""><img src="../resource/img/main/event_1.jpg" alt=""></a>
+                    <a href=""><p> [토르: 러브 앤 썬더] 마이티토르 묠니르컵 론칭!</p></a>
                 </div>
 
                 <div class="eventin">
-                    <a href=""><img src="../resource/img/main/event2.jpg" alt=""></a>
-                    <a href=""><p> [한국 영화 천만 달성 기념] CGV가 천만P 쏜다!</p></a>
+                    <a href=""><img src="../resource/img/main/event_2.jpg" alt=""></a>
+                    <a href=""><p> [엘비스] SX 리미티드 포스터</p></a>
                 </div>
 
                 <div class="eventin">
-                    <a href=""><img src="../resource/img/main/event3.jpg" alt=""></a>
-                    <a href=""><p> [한국 영화 천만 달성 기념] CGV가 천만P 쏜다!</p></a>
+                    <a href=""><img src="../resource/img/main/event_3.jpg" alt=""></a>
+                    <a href=""><p> [이달의 아이스콘] 7월 라인업 미리 만나보기</p></a>
                 </div>
 
             </div><!--.event(이벤트)--> 
-
             <div class = "advertisement">
                 <img src="../resource/img/main/ad.jpg" alt="">
             </div><!--.advertisement(광고)--> 
