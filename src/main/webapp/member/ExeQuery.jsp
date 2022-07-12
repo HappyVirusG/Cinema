@@ -23,7 +23,7 @@
       
       //3.쿼리 실행
       //ResultSet : 조회 결과를 담고 있는 집합
-      ResultSet rs =    stmt.executeQuery(sql);
+      ResultSet rs = stmt.executeQuery(sql);
       
       while(rs.next()){
          String id = rs.getString("id"); 

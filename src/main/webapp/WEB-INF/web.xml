@@ -18,7 +18,7 @@
 
 <!-- 접속 url -->
 <context-param>
-	<param-name>OracleUrl</param-name>
+	<param-name>OracleURL</param-name>
 	<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
 </context-param>
 

@@ -22,7 +22,7 @@
    
         <section id="join">
            <h2>회원가입</h2>
-            <form onsubmit="return validateForm(this);" action="ExeUpdate.jsp" method="post">  
+            <form onsubmit="return validateForm(this);" action="joinProcess.jsp" method="post">  
                 <div class="userInfo">
                     <label>아이디<br>
                         <input type="text" id="id" name="id" placeholder="4~15자리의 문자를 입력하세요.">
@@ -74,7 +74,7 @@
 
     
     </div>
-       <script src="../resource/JS/join.js"></script>
+   <script src="../resource/JS/join.js"></script>
    <%@include file="../main/footer.jsp" %>
 </body>
 </html>

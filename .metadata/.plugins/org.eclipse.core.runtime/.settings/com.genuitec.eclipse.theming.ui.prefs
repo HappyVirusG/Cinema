@@ -5,7 +5,12 @@ configurationInstallLocation=/C\:/Users/GreenArt/eclipse/jee-2022-03/eclipse/
 ct.reengagement.display.after=1666742928476
 eclipse.preferences.version=1
 iconcolormode=primary
+<<<<<<< Updated upstream
 last.download.attempt.time=1657274271357
 lastConfiguration=1657274264092
+=======
+last.download.attempt.time=1657269235173
+lastConfiguration=1657269225545
+>>>>>>> Stashed changes
 newinstall=true
 workbench.theme=Dark Gray
