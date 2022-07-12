@@ -1,8 +1,9 @@
 @charset "utf-8";
 
 #modal{
-	width: 980px;
+	width: 1000px;
 	height: 800px;
+	overflow: scroll;
 	position: fixed;
 	left: 50%;
 	top: 50%;

@@ -5,7 +5,8 @@
 <%@page import="model.MovieDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +18,7 @@
     
     <!-- css연결 -->
     <link rel="stylesheet" href="../resource/css/minji_main.css?ver=6">
-    <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=2">
+    <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=3">
 
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,75 +120,7 @@
 	int totalCount = dao.movieCount(map);
 	List<MovieDTO> boardLists = dao.selectMainPage(map);
 	dao.close();
-%>
-            
-<div id="modalBck"></div> <!-- #modalBck -->
-<div id="modal">
-  <img src="../resource/img/poster/탑건매버릭.jpg" alt="">
-
- <div id="contents" class="contentsMovieDetail">
-
-           <div class="movieSummary">
-               <h3>탑건-매버릭 test</h3>
-               <p class="subTitle">Top Gun: Maverick, 2022</p>
-              
-
-               <ul class="rating">
-                   <li>관람객 평점 <span class="boxOffice">8.99</span></li>
-                   <li>예매율 <span class="boxOffice">20.2%</span></li>
-                   <li>누적관객수 <span class="boxOffice">900,0000</span></li>
-               </ul>
-           </div> <!-- .movieSummary -->
-
-           <table class="movieInfo">
-               <tr>
-                   <th>감독</th>
-                   <td><a href="">조셉 코신스키</a></td>
-               </tr>
-               <tr>
-                   <th>출연</th>
-                   <td>
-                       <a href=""> 톰 크루즈</a>
-                       <a href=""> 마일즈 텔러</a>
-                        제니퍼 코넬리
-                   </td>
-               </tr>
-               <tr>
-                   <th>장르</th>
-                   <td><a href="">액션</a>
-               </tr>
-               <tr>
-                   <th>국가</th>
-                   <td>미국</td>
-               </tr>
-               <tr>
-                   <th>등급</th>
-                   <td>12세 관람가</td>
-               </tr>
-               <tr>
-                   <th>개봉</th>
-                   <td class="movieDate">2019.07.31</td>
-               </tr>
-           </table> <!-- .movieInfo -->
-
-           <div class="movieInfoDetail">
-한순간의 실수도 용납되지 않는 하늘 위, <br/>
-가장 압도적인 비행이 시작된다! <br/>
- <br/>
-최고의 파일럿이자 전설적인 인물 매버릭(톰 크루즈)은 자신이 졸업한 훈련학교 교관으로 발탁된다. <br/> 
-그의 명성을 모르던 팀원들은 매버릭의 지시를 무시하지만 실전을 방불케 하는 상공 훈련에서 눈으로 봐도 믿기 힘든 전설적인 조종 실력에 모두가 압도된다. <br/> 
- <br/>
-매버릭의 지휘아래 견고한 팀워크를 쌓아가던 팀원들에게 국경을 뛰어넘는 위험한 임무가 주어지자 <br/>
-매버릭은 자신이 가르친 동료들과 함께 마지막이 될 지 모를 하늘 위 비행에 나서는데… 
-            </div> <!-- .movieInfoDetail -->
-       </div> <!-- #contents .contentsMovieDetail-->
-     <div id="modalBtns">
-       	<button type="button" class="closeBtn" onclick="modalClose();">x</button>
-     	<button type="button" class="bookingBtn">예매하기</button>
-     	<a href="../model/movieDetail.do" class="detailBtn">관람평/스틸컷까지 함께 보기</a>
-     </div>
-</div> <!-- #modal -->
-
+%>            
             <div id="sub_imgs">
             	<%if(!boardLists.isEmpty()){
 					for(MovieDTO dto : boardLists){
@@ -202,7 +135,6 @@
 					}
 				} %>
             </div>
-            
              
             <div id="sub_img_explanation">
             	<%if(!boardLists.isEmpty()){
@@ -215,8 +147,77 @@
 				} %>
 			</div>
         </section><!--.movie_info(영화정보소개부분)--> 
-       
-                <section>
+        
+<%
+if(!boardLists.isEmpty()){
+	for(MovieDTO dto : boardLists){ 
+		
+%>
+
+
+     
+
+<div id="modalBck"></div> <!-- #modalBck -->
+<div id="modal">
+  <img src="<%=dto.getImage() %>" alt="">
+
+ <div id="contents" class="contentsMovieDetail">
+           <div class="movieSummary">
+               <h3><%=dto.getTitle() %></h3>
+               <p class="subTitle"><%=dto.getEngtitle() %>,
+               <fmt:formatDate pattern="yyyy" value="<%=dto.getOpendate()%>"/>
+               </p>
+               <ul class="rating">
+                   <li>관람객 평점 <span class="boxOffice">8.99</span></li>
+                   <li>예매율 <span class="boxOffice">20.2%</span></li>
+                   <li>누적관객수 <span class="boxOffice">900,0000</span></li>
+               </ul>
+           </div> <!-- .movieSummary -->
+
+           <table class="movieInfo">
+               <tr>
+                   <th>감독</th>
+                   <td><a href=""><%=dto.getDirector() %></a></td>
+               </tr>
+               <tr>
+                   <th>출연</th>
+                   <td>
+                       <a href=""><%=dto.getActors() %></a>
+                   </td>
+               </tr>
+               <tr>
+                   <th>장르</th>
+                   <td><a href=""><%=dto.getGenre() %></a>
+               </tr>
+               <tr>
+                   <th>국가</th>
+                   <td><%=dto.getCountry() %></td>
+               </tr>
+               <tr>
+                   <th>등급</th>
+                   <td><%=dto.getRatingcode() %></td>
+               </tr>
+               <tr>
+                   <th>개봉</th>
+                   <td class="movieDate"><%=dto.getOpendate() %></td>
+               </tr>
+           </table> <!-- .movieInfo -->
+
+           <div class="movieInfoDetail">
+           		<%=dto.getSummary() %>
+            </div> <!-- .movieInfoDetail -->
+       </div> <!-- #contents .contentsMovieDetail-->
+     <div id="modalBtns">
+       	<button type="button" class="closeBtn" onclick="modalClose();">x</button>
+     	<button type="button" class="bookingBtn">예매하기</button>
+     	<a href="../model/movieDetail.do?moviecode="<%=dto.getMoviecode() %> class="detailBtn">관람평/스틸컷까지 함께 보기</a>
+     </div>     
+</div> <!-- #modal -->
+
+<%
+	}
+} %>       
+       <section>
 
             <div class="event_title">
                 <a href=""><p class="EVENT">EVENT</p></a>
@@ -279,23 +280,22 @@
         }
     </script>
  
+ <script type="text/javascript">
  
- <script>
+ const modal = document.getElementById("modal");
+ const modalBack =document.getElementById('modalBck');
+ 	function modalFunc(){
 
-
-const modal = document.getElementById("modal");
-const modalBack =document.getElementById('modalBck');
-	function modalFunc(){
-		modal.style.display="flex";
-		modalBack.style.display="block";
-	}
-	
-	function modalClose(){
-		modal.style.display="none";
-		modalBack.style.display="none";
-	}
+ 		modal.style.display="flex";
+ 		modalBack.style.display="block";
+ 	}
+ 	
+ 	function modalClose(){
+ 		modal.style.display="none";
+ 		modalBack.style.display="none";
+ 	}
 </script>
- 
+
  
    
 <%@include file="footer.jsp" %>
