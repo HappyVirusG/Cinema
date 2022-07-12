@@ -19,7 +19,6 @@ public class BookingController extends HttpServlet{
 		dto.setPrice(req.getParameter("price"));
 		dto.setSeatcode(req.getParameter("seatcode"));
 		dto.setRatingcode(req.getParameter("ratingcode"));
-		dto.setStarttimecode(req.getParameter("starttimecode"));
 		
 		BookingDAO dao = new BookingDAO();
 		int result = dao.insertBooking(dto);

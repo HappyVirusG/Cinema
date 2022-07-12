@@ -807,15 +807,15 @@
 
             if($(this).hasClass('allAge') === true) {
                 $('.movie_text_age').text("전체 관람가");
-                ${'input[name=ratingcode]'}.attr('value', '전체');
+                $('input[name=ratingcode]').attr('value', '전체');
             }
             if($(this).hasClass('fifteenAge') === true) {
                 $('.movie_text_age').text("15세 관람가");
-                ${'input[name=ratingcode]'}.attr('value', '15세 관람가');
+                $('input[name=ratingcode]').attr('value', '15세 관람가');
             }
             if($(this).hasClass('twelveAge') === true) {
                 $('.movie_text_age').text("12세 관람가");
-                ${'input[name=ratingcode]'}.attr('value', '12세 관람가');
+                $('input[name=ratingcode]').attr('value', '12세 관람가');
             }    
             
             $('.select_movie').css('display', 'none');

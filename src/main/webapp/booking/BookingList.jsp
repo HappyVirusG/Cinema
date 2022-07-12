@@ -13,12 +13,13 @@
 	<form>
 		<table border="1" width="100%">
 			<tr align="center">
-				<td width="15%">예매번호</td>
+				<td width="10%">예매번호</td>
+				<td width="10%">연령</td>
 				<td width="*">영화제목</td>
-				<td width="15%">상영극장</td>
-				<td width="15%">좌석번호</td>
-				<td width="15%">시작시간</td>
-				<td width="15%">가격</td>
+				<td width="10%">상영극장</td>
+				<td width="10%">좌석번호</td>
+				<td width="10%">시작시간</td>
+				<td width="10%">가격</td>
 			</tr>
 			<c:choose>
 				<c:when test="${ empty lists }">
@@ -32,6 +33,7 @@
 					<c:forEach items="${lists}" var="row" varStatus="loop">
 						<tr align="center">
 							<td width="15%">${row.bookingcode }</td>
+							<td width="15%">${row.ratingcode }</td>
 							<td width="*">${row.moviecode }</td>
 							<td width="15%">${row.theatercode }</td>
 							<td width="15%">${row.seatcode }</td>

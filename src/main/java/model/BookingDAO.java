@@ -41,7 +41,6 @@ public class BookingDAO extends JDBConnect{
 				dto.setPrice(rs.getString(6));
 				dto.setSeatcode(rs.getString(7));
 				dto.setRatingcode(rs.getString(8));
-				dto.setStarttimecode(rs.getString(9));
 				
 				list.add(dto);
 			}
