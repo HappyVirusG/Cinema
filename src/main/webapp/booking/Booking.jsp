@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../member/IsLoggedIn.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -579,11 +578,13 @@
             
             
             <form action="../model/booking.do" method="get" name="frm" id="frm">
-            	<input type="hidden" name="bookingcode" value="ABC">
-            	<input type="hidden" name="moviecode" value="">
+            	<input type="hidden" name="title" value="">
+            	<input type="hidden" name="theatercode" value="">
             	<input type="hidden" name="timecode" value="">
             	<input type="hidden" name="price" value="">
             	<input type="hidden" name="seatcode" value="">
+            	<input type="hidden" name="ratingcode" value="">
+            	
             	
             	<div class="changePage">
                 <a class="btn_movie"></a>
@@ -806,12 +807,15 @@
 
             if($(this).hasClass('allAge') === true) {
                 $('.movie_text_age').text("전체 관람가");
+                ${'input[name=ratingcode]'}.attr('value', '전체');
             }
             if($(this).hasClass('fifteenAge') === true) {
                 $('.movie_text_age').text("15세 관람가");
+                ${'input[name=ratingcode]'}.attr('value', '15세 관람가');
             }
             if($(this).hasClass('twelveAge') === true) {
                 $('.movie_text_age').text("12세 관람가");
+                ${'input[name=ratingcode]'}.attr('value', '12세 관람가');
             }    
             
             $('.select_movie').css('display', 'none');
@@ -851,7 +855,7 @@
 			    $('.movie_img').css('display', 'inline-block');
 			}
 			
-			$('input[name=moviecode]').attr('value', $(this).find('.movieName').text());
+			$('input[name=title]').attr('value', $(this).find('.movieName').text());
 			
 			return false;
 		})
@@ -889,6 +893,7 @@
             })
 
             $('.movie-location').text("CGV " + $(this).text());
+            
         })
 	      
 		//날짜 선택
@@ -942,10 +947,7 @@
             
             $('input[name=timecode]').attr('value', $(this).text());
             
-            if($(this).closest('.theater').find('.name').text() == "2D")
-            	$('input[name=price]').attr('value', "14000");	
-            else if($(this).closest('.theater').find('.name').text() == "4DX 2D")
-            	$('input[name=price]').attr('value', "18000");
+            $('input[name=theatercode]').attr('value', $('.movie-location').text() + " " + $('.movie-place').text());
             
             return false;
 		})
@@ -955,7 +957,7 @@
              $('.adult').not($(this)).removeAttr('id', 'clicked');
              
              $(this).find('a').attr('id', 'text-clicked');
-             // $('.adult').find('a').not($(this)).removeAttr('id', 'text-clicked');
+             $('.select-seat-name').text("일반");
              
              return false;
 		 })
@@ -966,7 +968,7 @@
 		     $('.youth').not($(this)).removeAttr('id', 'clicked');
 		
 		     $(this).find('a').attr('id', 'text-clicked');
-		     // $('.adult').find('a').not($(this)).removeAttr('id', 'text-clicked');
+		     $('.select-seat-name').text("학생");
 		     
 		     return false;
 		 })
@@ -977,7 +979,7 @@
 		     $('.senior').not($(this)).removeAttr('id', 'clicked');
 		
 		     $(this).find('a').attr('id', 'text-clicked');
-		     // $('.adult').find('a').not($(this)).removeAttr('id', 'text-clicked');
+		     $('.select-seat-name').text("경로");
 		     
 		     return false;
 		 })
@@ -988,7 +990,7 @@
 		     $('.special').not($(this)).removeAttr('id', 'clicked');
 		
 		     $(this).find('a').attr('id', 'text-clicked');
-		     // $('.adult').find('a').not($(this)).removeAttr('id', 'text-clicked');
+		     $('.select-seat-name').text("우대");
 		     
 		     return false;
 		 })
@@ -1004,24 +1006,25 @@
 
              $('.seat').addClass('pc');
 
-             // console.log((this).closest('.title').text());
 
              $('.seat').click(function() {
                  let sValue = selectedSeats.length;
                  if(pValue == sValue) {
                      $('.btn_pay').css('backgroundPositionX', '-150px');
                      $('.person_text').text(sValue + "명");
-                     // $('.seat').attr("disabled", "disiabled");
                      $('.select_seat').css('display', 'none');
                      $('.selected_seat').css('display', 'block');
-                     $('.select-seat-name').text("일반석");
+                     
                      $('.select-seat-num').text(selectedSeats);
                      $('input[name=seatcode]').attr('value', selectedSeats);
+                     
+                     if($('.movie_kind').text() == '2D')
+                    	 $('input[name=price]').attr('value', 14000*selectedSeats.length)
+                     else if($('.movie_kind').text() == "4DX 2D")
+                     	$('input[name=price]').attr('value', 18000*selectedSeats.length);
                  } else if(sValue > pValue){
                      alert("지정한 인원수를 넘었습니다. 인원수 확인해주세요.")
                      $(this).removeClass('clicked');
-                     // $('.btn_seat_pay').css('backgroundPositionX', '0px');
-                     // $('.seat').attr("disabled", "false");
                  }
              })
 		
