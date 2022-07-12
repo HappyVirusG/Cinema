@@ -6,11 +6,11 @@
   }
   
   .login_title{
-     width: 120px;
-     font-size: 40px;
-     border-bottom: 3px solid #d83030;
-     margin-left : 200px;
-     margin-bottom: 20px;
+ 	 width: 120px;
+ 	 font-size: 40px;
+ 	 border-bottom: 3px solid #d83030;
+ 	 margin-left : 200px;
+ 	 margin-bottom: 20px;
   }
 
   #login {

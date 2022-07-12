@@ -3,9 +3,10 @@ package utils;
 public class BoardPage {
 	public static String pagingStr(int totalCount, int pageSize, int blockPage, int pageNum, String reqUrl) {
 		String pagingStr = "";
-		
+		//전체페이지 수 계산
 		int totalPages = (int)(Math.ceil((double)totalCount/pageSize));
 		
+		//이전 페이지 블록 바로가기 출력
 		int pageTemp = (((pageNum - 1)/blockPage) * blockPage) + 1;
 		
 		if(pageTemp != 1) {

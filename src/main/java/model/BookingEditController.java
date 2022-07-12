@@ -27,10 +27,10 @@ public class BookingEditController extends HttpServlet{
 				int result = dao.deleteBooking(bookingcode);
 				dao.close();
 				if(result == 1)
-					JSFunction.alertLocation(resp, "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.", "../model/bookingList.do");
+					JSFunction.alertLocation(resp, "¿¹¸Å Ãë¼ÒµÆ½À´Ï´Ù.", "../model/bookingList.do");
 			}
 		} else {		
-			JSFunction.alertBack(resp, "í•´ë‹¹ ì˜ˆë§¤ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ì˜ˆë§¤ì •ë³´ê°€ ì—†ìŠµë‹ˆ.");
+			JSFunction.alertBack(resp, "¿¹¸Å ¸ñ·Ï¿¡ ¾ø´Â ¿¹¸Å¹øÈ£ÀÔ´Ï´Ù.");
 		}
 		
 	}

@@ -57,7 +57,7 @@ public class BookingDAO extends JDBConnect{
 		try {
 			String query = "INSERT INTO booking ( "
 					+ " bookingcode, moviecode, timecode, price, seatcode) "
-							+ " VALUES(concat(book, seq_booking_num.nextval()), ?, ?, ?, ?)";
+							+ " VALUES(concat('book', seq_booking_num.nextval), ?, ?, ?, ?)";
 			
 			psmt = con.prepareStatement(query);
 			
@@ -73,7 +73,6 @@ public class BookingDAO extends JDBConnect{
 			System.out.println("DB에 데이터 추가 중 예외 발생");
 			e.printStackTrace();
 		}
-		
 		return result;
 	}
 	

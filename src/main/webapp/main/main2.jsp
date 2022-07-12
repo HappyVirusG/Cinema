@@ -151,11 +151,41 @@
 <%
 if(!boardLists.isEmpty()){
 	for(MovieDTO dto : boardLists){ 
-		
 %>
+<%
+	String modalNum = "";
+	switch(modalNum){
+	case "mov01":
+		modalNum = "modal1";
+		break;
+	case "mov02":
+		modalNum = "modal2";
+		break;
+	case "mov03":
+		modalNum = "modal3";
+		break;
+	case "mov04":
+		modalNum = "modal4";
+		break;
+	}
+%>
+<script>
+	var modal = document.querySelector('#modal');
+    modal.setAttribute('id', "<%=modalNum%>");
 
+    modal = "<%=modalNum%>";
+    const modalBack =document.getElementById('modalBck');
+    	function modalFunc(){
 
-     
+    		modal.style.display="flex";
+    		modalBack.style.display="block";
+    	}
+    	
+    	function modalClose(){
+    		modal.style.display="none";
+    		modalBack.style.display="none";
+    	}
+</script>
 
 <div id="modalBck"></div> <!-- #modalBck -->
 <div id="modal">
