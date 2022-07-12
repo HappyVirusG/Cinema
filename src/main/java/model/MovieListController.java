@@ -56,7 +56,7 @@ public class MovieListController extends HttpServlet{
 		List<MovieDTO> boardLists = dao.selectListPage(map);
 		dao.close(); //db연결 종료
 		
-		String pagingImg = BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, "../model2/list.do");
+		String pagingImg = BoardPage.pagingStr(totalCount, pageSize, blockPage, pageNum, "../model/movieList.do");
 		
 		map.put("pagingImg", pagingImg);
 		map.put("totalCount", totalCount);

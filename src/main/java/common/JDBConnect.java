@@ -23,7 +23,7 @@ public class JDBConnect {
 			Class.forName("oracle.jdbc.OracleDriver");
 			
 			String url="jdbc:oracle:thin:@localhost:1521:xe";
-			String id = "green";
+			String id = "cinema";
 			String pw = "1234";
 			
 			con = DriverManager.getConnection(url, id, pw);

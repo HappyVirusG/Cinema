@@ -46,7 +46,6 @@
 	<param-value>4</param-value>
 </context-param>
 
-
  <servlet>
 	<servlet-name>MovieList</servlet-name>
 	<servlet-class>model.MovieListController</servlet-class>
