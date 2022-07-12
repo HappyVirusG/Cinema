@@ -67,6 +67,10 @@
          </c:otherwise>
       </c:choose> 
     </ul> <!-- 영화 목록 -->
+    ${map.pagingImg}
+    <script>
+    	console.log("${map.pagingImg}")
+    </script>
 
     </div>
 </div> <!-- wrap -->

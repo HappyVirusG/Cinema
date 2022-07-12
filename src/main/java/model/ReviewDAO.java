@@ -85,11 +85,12 @@ public class ReviewDAO extends JDBConnect{
 		
 			//아직 memberDB 형성되지 않았기 때문에 mem04로 고정
 			String query = "INSERT INTO review(postdate, moviecode, idx, content, membercode, score) "
-					+ "VALUES(sysdate, '"+ moviecode +"', review_idx_seq.nextval,?, 'mem1', ?)";
+					+ "VALUES(sysdate, '"+ moviecode +"', review_idx_seq.nextval,?, ?, ?)";
 			
 			psmt = con.prepareStatement(query);
 			psmt.setString(1, dto.getContent());
-			psmt.setString(2, dto.getScore());
+			psmt.setString(2, dto.getMembercode());
+			psmt.setString(3, dto.getScore());
 			
 			result = psmt.executeUpdate();
 			
@@ -158,6 +159,20 @@ public class ReviewDAO extends JDBConnect{
 		return result;
 	}
 	
+	public int multipleReview(String moviecode, String membercode) {
+		int result=0;
+		try {
+			String query = "SELECT * FROM review WHERE moviecode=? AND membercode=?";
+			psmt=con.prepareStatement(query);
+			psmt.setString(1, moviecode);
+			psmt.setString(2, membercode);
+			result = psmt.executeUpdate();
+		}catch(Exception e) {
+			System.out.println("리뷰 중복 확인 중 오류가 발생하였습니다.");
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 	
 	

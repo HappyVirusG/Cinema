@@ -7,12 +7,12 @@
 	function validateForm(){
 		let form = document.reviewWriteFrm;
 		if(form.content.value==""){
-			alert("내용을 입력하세요")
+			alert("내용을 입력하세요.")
 			form.content.focus();
 			return false;
 		}
 		if(form.score.value==""){
-			alert("평점을 선택하세요!")
+			alert("평점을 선택하세요.")
 			return false;
 		}
 		form.submit();
@@ -61,12 +61,12 @@
 	          <div class="user">
 	              <img src="../resource/img/review/admin.jpg" alt="">
 	              <br/>
-	              <span>로그인id</span>
+	              <span><%=session.getAttribute("UserId") %></span>
 	          </div> <!-- .user -->
 	          
              <div class="typeContent">
 	              <textarea name="content" class="reviewContent" placeholder="평점 및 영화 관람평을 작성해주세요. &#13;&#10;주제와 무관한 리뷰 또는 스포일러는 표시제한 또는 삭제될 수 있습니다."></textarea>
-	              <button type="submit">관람평 작성</button>
+	              <button type="button" onclick="validateForm();">관람평 작성</button>
              </div> <!-- .typeContent -->
 	          
 	    </div> <!-- .contentPost -->
@@ -81,7 +81,7 @@
     		<div class="userReview">
             <div class="user">
                 <img src="../resource/img/review/hansohee.jpg" alt=""><br/>
-                <span>${ row.id }영화덕후</span>  <!-- 작성자 id -->
+                <span>${ row.membercode }</span>  <!-- 작성자 id -->
             </div>
             
             <div class="userRate">

@@ -19,8 +19,10 @@ public class ReviewDeleteContoller extends HttpServlet{
 		String idx = req.getParameter("idx");
 			ReviewDAO dao = new ReviewDAO();
 			ReviewDTO dto = dao.selectReview(idx);
-			
-			//삭제-25. 게시물을 삭제
+		HttpSession session = req.getSession();
+		System.out.println(session.getAttribute("UserId").toString());
+		System.out.println(dto.getMembercode());
+		if(session.getAttribute("UserId").toString().equals(dto.getMembercode())) {
 			int result = dao.deleteReview(dto);
 			dao.close();
 			
@@ -30,7 +32,12 @@ public class ReviewDeleteContoller extends HttpServlet{
 			}else {
 				JSFunction.alertBack(resp, "삭제에 실패하였습니다.");
 			}
+		}else {
+			JSFunction.alertBack(resp, "본인이 작성한 리뷰만 삭제 가능합니다!");
+
+			}
 		}
+		
 	}
 	
 
