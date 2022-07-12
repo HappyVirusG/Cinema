@@ -128,7 +128,7 @@
  <div id="contents" class="contentsMovieDetail">
 
            <div class="movieSummary">
-               <h3>탑건-매버릭</h3>
+               <h3>탑건-매버릭 test</h3>
                <p class="subTitle">Top Gun: Maverick, 2022</p>
               
 
