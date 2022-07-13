@@ -39,9 +39,8 @@
 <div id="wrap">
     <div id = "container">
         <div id = "two_section">
-
-<!--             
 <section id = "main_slide">
+<!--             
 <div id="galleryZone">
 <p><img src="../resource/img/main/pos_1.jpg" alt="" id="photo"></p>
 </div>
@@ -82,7 +81,6 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button> 
-                
 			<section class = "booking">
                 <form action="#">
                     <input type="text" class="movieName" id="movieName">
@@ -101,8 +99,8 @@
 
         <section class = "movie_info">
 
-            <div class="movie_info_title">
-                <a href=""><p class="box_office">박스오피스</p></a>
+            <div id="movie_info_title">
+                <a href=""><p id="box_office">박스오피스</p></a>
                 <button id="movie_more" type="button" onclick="">
                     <p>영화 더보기</p>
                     <p>></p>
