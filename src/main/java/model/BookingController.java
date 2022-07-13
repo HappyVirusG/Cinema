@@ -15,15 +15,18 @@ public class BookingController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
 		String id = (String)session.getAttribute("UserId");
-		
+		String membercode = (String)session.getAttribute("membercode");
+		System.out.println(membercode);
 		BookingDTO dto = new BookingDTO();
+		
 		dto.setTitle(req.getParameter("title"));
-		dto.setId((String)session.getAttribute("UserId"));
+		dto.setMembercode((String)session.getAttribute("membercode"));
 		dto.setTheatercode(req.getParameter("theatercode"));
 		dto.setTimecode(req.getParameter("timecode"));
 		dto.setPrice(req.getParameter("price"));
 		dto.setSeatcode(req.getParameter("seatcode"));
 		dto.setRatingcode(req.getParameter("ratingcode"));
+		dto.setDatecode(req.getParameter("datecode"));
 		
 		BookingDAO dao = new BookingDAO();
 		int result = dao.insertBooking(dto);

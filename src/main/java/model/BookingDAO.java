@@ -19,9 +19,9 @@ public class BookingDAO extends JDBConnect{
 		
 		String query = "SELECT * FROM BOOKING ";
 				
-		if(map.get("id") != null) {
-			query += " WHERE id "
-					+ "LIKE '%" + map.get("id") + "%'";
+		if(map.get("membercode") != null) {
+			query += " WHERE membercode "
+					+ "LIKE '%" + map.get("membercode") + "%'";
 		}
 
 		query +=  "ORDER BY bookingcode DESC";
@@ -41,6 +41,7 @@ public class BookingDAO extends JDBConnect{
 				dto.setPrice(rs.getString(7));
 				dto.setSeatcode(rs.getString(8));
 				dto.setRatingcode(rs.getString(9));
+				dto.setDatecode(rs.getString(10));
 				
 				
 				
@@ -59,19 +60,20 @@ public class BookingDAO extends JDBConnect{
 		
 		try {
 			String query = "INSERT INTO booking ( "
-					+ " bookingcode, title, id, membercode, theatercode, timecode, price, seatcode, ratingcode) "
-							+ " VALUES(concat('book', seq_booking_num.nextval), ?, ?, movie_nm_seq.nextval, ?, ?, ?, ?, ?)";
+					+ " bookingcode, title, moviecode, membercode, theatercode, timecode, price, seatcode, ratingcode, datecode) "
+					+ " VALUES(concat('book', seq_booking_num.nextval), ?, movie_nm_seq.nextval, ?, ?, ?, ?, ?, ?, ?)";
 			
 			psmt = con.prepareStatement(query);
 			
 //			psmt.setString(1, dto.getMoviecode());
 			psmt.setString(1, dto.getTitle());
-			psmt.setString(2, dto.getId());
+			psmt.setString(2, dto.getMembercode());
 			psmt.setString(3, dto.getTheatercode());
 			psmt.setString(4, dto.getTimecode());
 			psmt.setString(5, dto.getPrice());
 			psmt.setString(6, dto.getSeatcode());
 			psmt.setString(7, dto.getRatingcode());
+			psmt.setString(8, dto.getDatecode());
 			
 			result = psmt.executeUpdate();
 			

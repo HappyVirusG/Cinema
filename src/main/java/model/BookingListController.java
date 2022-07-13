@@ -24,10 +24,10 @@ public class BookingListController extends HttpServlet{
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		HttpSession session = req.getSession();
-		String id = (String)session.getAttribute("UserId");
+		String membercode = (String)session.getAttribute("memberCode");
 		
-		if(id != null) {
-			map.put("id", id);
+		if(membercode != null) {
+			map.put("membercode", membercode);
 		}
 		
 		List<BookingDTO> lists = dao.selectBookingList(map);

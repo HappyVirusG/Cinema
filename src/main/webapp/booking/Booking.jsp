@@ -584,9 +584,10 @@
             	<input type="hidden" name="price" value="">
             	<input type="hidden" name="seatcode" value="">
             	<input type="hidden" name="ratingcode" value="">
+            	<input type="hidden" name="datecode" value="">
             	
             	
-            	<div class="changePage">
+           	<div class="changePage">
                 <a class="btn_movie"></a>
                 <a class="btn_seat"></a>
                 <a class="btn_pay" onclick="return checkTrue()"></a>
@@ -906,12 +907,14 @@
 
              if($(this).hasClass('seven') === true) {
             	$(".date_text").text("2022.7." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")" + " ");
-              	$('.movie-time').text("2022.7." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")"); 
+              	$('.movie-time').text("2022.7." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")");
+              	$('input[name=datecode]').attr('value', '7.' + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")" + " ");
              }
                 
              if($(this).hasClass('eight') === true) {
-            	 $(".date_text").text("2022.8." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")" + " ");
-            	$('.movie-time').text("2022.8." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")"); 
+	           	$(".date_text").text("2022.8." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")" + " ");
+            	$('.movie-time').text("2022.8." + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")");
+            	$('input[name=datecode]').attr('value', '8.' + $(this).children('.day').text() + "(" + $(this).children('.dayweek').text() + ")" + " ");
              }
           
             $('.buttonCommon').click(function() {
@@ -928,7 +931,7 @@
             })
 
             $('.time').removeAttr('id', 'timeOn');
-
+            
             return false;
 		})
 		

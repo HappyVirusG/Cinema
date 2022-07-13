@@ -30,6 +30,7 @@
 			PrintWriter script = response.getWriter();
 			session.setAttribute("UserId", memberDTO.getId());
 			session.setAttribute("UserName", memberDTO.getName());
+			session.setAttribute("membercode", memberDTO.getMembercode());
 			script.println("<script>");
 			script.println("location.href='../main/main.jsp'");
 			script.println("</script>");
