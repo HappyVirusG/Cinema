@@ -43,7 +43,7 @@
                     </label>                
                     
                     <label>생년월일<br>
-                        <input type="date" name="birth"><br>
+                        <input type="text" id="birth" name="birth" placeholder="8자리로 입력"><br>
                     </label>
     
                     <label>이메일 <br>
@@ -74,7 +74,7 @@
 
     
     </div>
-   <script src="../resource/JS/join.js"></script>
+   <script src="../resource/JS/join.js?ver=2"></script>
    <%@include file="../main/footer.jsp" %>
 </body>
 </html>

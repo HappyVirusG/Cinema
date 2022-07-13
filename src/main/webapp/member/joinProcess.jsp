@@ -1,4 +1,4 @@
-<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.*"%>
 <%@page import="common.JDBConnect"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -11,26 +11,27 @@
 <body>
    
    <% 
-      JDBConnect jdbc = new JDBConnect();
+   request.setCharacterEncoding("utf-8");
+   
+   JDBConnect jdbc = new JDBConnect();
    
    String id = request.getParameter("id");
    String pw = request.getParameter("pw");
    String name = request.getParameter("name");
+   String birth = request.getParameter("birth");
    String email = request.getParameter("email");
    String tel = request.getParameter("tel");
       
-      String sql = " INSERT INTO member1(id,pw,name,email,tel) VALUES(?,?,?,?,?) ";
-/*     		  + " collation-server = utf8_unicode_ci "
-    		  + " init-connect='SET NAMES utf8' "
-    		  + " character-set-server = utf8; "; */
+      String sql = " INSERT INTO member1(id,pw,name,birth,email,tel) VALUES(?,?,?,?,?,?) ";
 
       PreparedStatement psmt = jdbc.con.prepareStatement(sql);
 
       psmt.setString(1, id);
       psmt.setString(2, pw);
       psmt.setString(3, name);
-      psmt.setString(4, email);
-      psmt.setString(5, tel);
+      psmt.setString(4, birth);
+      psmt.setString(5, email);
+      psmt.setString(6, tel);
       
       int inResult = psmt.executeUpdate();
       response.sendRedirect("joinSuccess.jsp");
