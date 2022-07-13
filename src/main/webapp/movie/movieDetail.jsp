@@ -36,8 +36,9 @@
                <ul class="rating">
                    <li>관람객 평점 <span class="boxOffice">8.99</span></li>
                    <li>예매율 <span class="boxOffice">20.2%</span></li>
-                   <li>누적관객수 <span class="boxOffice">900,0000</span></li>
+                   <li>누적관객수 <span class="boxOffice">1,953,287</span>명</li>
                </ul>
+               <div class="ratingLine"></div>
            </div> <!-- .movieSummary -->
 
 
@@ -62,11 +63,15 @@
                </tr>
                <tr>
                    <th>등급</th>
-                   <td>${dto.ratingcode} 관람가</td>
+                   <td>${dto.ratingcode}</td>
                </tr>
                <tr>
                    <th>개봉</th>
                    <td class="movieDate">${dto.opendate}</td>
+               </tr>
+               <tr>
+               		<th>상영시간</th>
+               		<td>${dto.runningtime }분</td>
                </tr>
            </table> <!-- .movieInfo -->
 

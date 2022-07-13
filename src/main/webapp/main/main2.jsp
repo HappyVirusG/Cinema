@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>그린시네마</title>
-    
+   	</style>
     <!-- css연결 -->
     <link rel="stylesheet" href="../resource/css/minji_main.css?ver=6">
     <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=3">
@@ -28,6 +28,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/cesiumjs/1.78/Build/Cesium/Cesium.js"></script>
    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   	
+   	
+
 </head>
 <body>
 
@@ -126,7 +129,7 @@
 					for(MovieDTO dto : boardLists){
 				%>	
 				 <div class="sub_img">
-                   <a href="javascript:void(0);" onclick="modalFunc();">
+                   <a class="modalBtn" >
                         <img src="<%=dto.getImage() %>" alt="예매바로가기1">
                         <p class="over"></p>
                    </a>
@@ -147,48 +150,14 @@
 				} %>
 			</div>
         </section><!--.movie_info(영화정보소개부분)--> 
-        
+
 <%
 if(!boardLists.isEmpty()){
-	for(MovieDTO dto : boardLists){ 
+	for(MovieDTO dto : boardLists){
 %>
-<%
-	String modalNum = "";
-	switch(modalNum){
-	case "mov01":
-		modalNum = "modal1";
-		break;
-	case "mov02":
-		modalNum = "modal2";
-		break;
-	case "mov03":
-		modalNum = "modal3";
-		break;
-	case "mov04":
-		modalNum = "modal4";
-		break;
-	}
-%>
-<script>
-	var modal = document.querySelector('#modal');
-    modal.setAttribute('id', "<%=modalNum%>");
 
-    modal = "<%=modalNum%>";
-    const modalBack =document.getElementById('modalBck');
-    	function modalFunc(){
 
-    		modal.style.display="flex";
-    		modalBack.style.display="block";
-    	}
-    	
-    	function modalClose(){
-    		modal.style.display="none";
-    		modalBack.style.display="none";
-    	}
-</script>
-
-<div id="modalBck"></div> <!-- #modalBck -->
-<div id="modal">
+<div class="modal" id="modal">
   <img src="<%=dto.getImage() %>" alt="">
 
  <div id="contents" class="contentsMovieDetail">
@@ -199,8 +168,8 @@ if(!boardLists.isEmpty()){
                </p>
                <ul class="rating">
                    <li>관람객 평점 <span class="boxOffice">8.99</span></li>
-                   <li>예매율 <span class="boxOffice">20.2%</span></li>
-                   <li>누적관객수 <span class="boxOffice">900,0000</span></li>
+                   <li>예매율 <span class="boxOffice">22.0%</span></li>
+                   <li>누적관객수 <span class="boxOffice">1,953,287</span>명</li>
                </ul>
            </div> <!-- .movieSummary -->
 
@@ -231,24 +200,50 @@ if(!boardLists.isEmpty()){
                    <th>개봉</th>
                    <td class="movieDate"><%=dto.getOpendate() %></td>
                </tr>
+               <tr>
+               		<th>상영시간</th>
+               		<td><%=dto.getRunningtime() %>분</td>
+               </tr>
+               
            </table> <!-- .movieInfo -->
-
+		<a href="../model/movieDetail.do?moviecode=<%=dto.getMoviecode() %>" class="detailBtn">관람평/스틸컷까지 함께 보기</a>
+		
            <div class="movieInfoDetail">
            		<%=dto.getSummary() %>
+           		<br/><br/><br/>
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
      <div id="modalBtns">
-       	<button type="button" class="closeBtn" onclick="modalClose();">x</button>
+       	<a onclick="modalClose();">
+			<img class="closeBtn" src="../resource/img/icons/x-icon.png" alt="close">
+       	</a>
      	<button type="button" class="bookingBtn">예매하기</button>
-     	<a href="../model/movieDetail.do?moviecode="<%=dto.getMoviecode() %> class="detailBtn">관람평/스틸컷까지 함께 보기</a>
      </div>     
 </div> <!-- #modal -->
+<%
+	String moviecode = dto.getMoviecode();
+	int modalNum = 0;
+	switch(moviecode){
+	case "mov01":
+		modalNum = 3;
+		break;
+	case "mov02":
+		modalNum = 2;
+		break;
+	case "mov03":
+		modalNum = 1;
+		break;
+	case "mov04":
+		modalNum = 0;
+		break;
+	}
+%>
 
 <%
 	}
-} %>       
+}
+ %>      
        <section>
-
             <div class="event_title">
                 <a href=""><p class="EVENT">EVENT</p></a>
                 <a href = "./Hello.jsp">
@@ -284,50 +279,54 @@ if(!boardLists.isEmpty()){
 
     </div> <!--container끝-->
  </div>
-    <script>
-        let num = 1;
+   <script>
+       let num = 1;
 
-        function gallery(direct){
-            if(direct){
-                if (num == 4) { 
-                   num=1;
-                } else {
-                    num++;
-                }
-            } 
-            
-            else {
-                if (num == 1) { 
-                    num=4;
-                } else {
-                    num--;
-                } 
-            }
+       function gallery(direct){
+           if(direct){
+               if (num == 4) { 
+                  num=1;
+               } else {
+                   num++;
+               }
+           } 
+           
+           else {
+               if (num == 1) { 
+                   num=4;
+               } else {
+                   num--;
+               } 
+           }
 
-            let imgTag = document.querySelector("#photo");
-            imgTag.setAttribute("src", "../resource/img/main/pos_" + num + ".jpg")
-       
-        }
-    </script>
- 
- <script type="text/javascript">
- 
- const modal = document.getElementById("modal");
- const modalBack =document.getElementById('modalBck');
- 	function modalFunc(){
+           let imgTag = document.querySelector("#photo");
+           imgTag.setAttribute("src", "../resource/img/main/pos_" + num + ".jpg")
+      
+       }
+   </script>
 
- 		modal.style.display="flex";
- 		modalBack.style.display="block";
- 	}
- 	
- 	function modalClose(){
- 		modal.style.display="none";
+<div id="modalBck"></div> <!-- #modalBck --> 
+<script>
+let modalBtn = document.querySelectorAll('.modalBtn');
+var modal = document.querySelectorAll('.modal');
+let closeBtn = document.querySelectorAll('.closeBtn');
+const modalBack =document.getElementById('modalBck');
+
+for(let i=0; i<modal.length; i++){
+	modalBtn[i].addEventListener("click", function(){
+		modal[i].style.display="flex";
+		modalBack.style.display="block";
+	})
+	closeBtn[i].addEventListener("click", function(){
+		modal[i].style.display="none";
  		modalBack.style.display="none";
- 	}
-</script>
-
+	})
+ 		
+ }
+ 	
+</script> 
  
-   
+
 <%@include file="footer.jsp" %>
 
 </body>
