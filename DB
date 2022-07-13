@@ -95,16 +95,8 @@ tel varchar2(20)
 );
 
 alter table booking
-add constraint booking_movie_fk foreign key(title)
-references movie(title);
-
-alter table booking
 add constraint booking_movie_fk foreign key(moviecode)
 references movie(moviecode);
-
-alter table booking
-add constraint booking_movie_fk foreign key(id)
-references member1(id);
 
 alter table booking
 add constraint booking_member_fk foreign key(membercode)

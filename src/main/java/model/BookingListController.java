@@ -30,20 +30,13 @@ public class BookingListController extends HttpServlet{
 			map.put("id", id);
 		}
 		
-//		String bookingcode = req.getParameter("bookingcode");
-//
-//		if(bookingcode != null) {
-//			map.put("bookingcode", bookingcode);
-//		}
-		
 		List<BookingDTO> lists = dao.selectBookingList(map);
 		dao.close();
 		
 		req.setAttribute("dto", dto);
 		req.setAttribute("lists", lists);
 		req.setAttribute("map", map);
-		req.getRequestDispatcher("../booking/BookingList.jsp").forward(req, resp);
-		req.getRequestDispatcher("../booking/exList.jsp").forward(req, resp);
+		req.getRequestDispatcher("../booking/BookingList2.jsp").forward(req, resp);
 	
 	}
 }
