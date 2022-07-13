@@ -19,7 +19,7 @@
 		<div class="wrap">
 		<c:choose>
 				<c:when test="${ empty lists }">
-							예매된 영화가 없습니다.
+							<div class="notMovie">예매된 영화가 없습니다.</div>
 				</c:when>
 				<c:otherwise>
 					<c:forEach items="${lists}" var="row" varStatus="loop">

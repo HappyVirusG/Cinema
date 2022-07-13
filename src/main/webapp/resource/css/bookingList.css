@@ -6,6 +6,11 @@
     padding: 0;
 }
 
+.notMovie {
+	width: 1020px;
+	text-align: center;
+}
+
 .list-container {
     width: 1020px;
     margin: 0 auto;
