@@ -81,7 +81,7 @@
                <div class="movieInfoBtns">
                    <ul>
                        <li><button>주요정보</button></li>
-                       <li><button>포스터/스틸컷</button></li>
+                       <li><button type="button" onclick="location.href='#gallery'">포스터/스틸컷</button></li>
                        <li><button type="button" onclick="location.href='#review'">평점/관람평</button></li>
                        <li><button>상영시간표</button></li>
                    </ul>
@@ -93,6 +93,9 @@
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
 <section >
+<div class="reviewLine"></div>
+
+<%@include file="movieStillcut.jsp" %>
 
 <%@include file="review.jsp" %>
 
