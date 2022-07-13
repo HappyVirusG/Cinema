@@ -15,6 +15,7 @@
    
    JDBConnect jdbc = new JDBConnect();
    
+   String membercode = request.getParameter("membercode");
    String id = request.getParameter("id");
    String pw = request.getParameter("pw");
    String name = request.getParameter("name");
@@ -22,10 +23,12 @@
    String email = request.getParameter("email");
    String tel = request.getParameter("tel");
       
-      String sql = " INSERT INTO member1(id,pw,name,birth,email,tel) VALUES(?,?,?,?,?,?) ";
+      String sql = " INSERT INTO member(membercode,id,pw,name,birth,email,tel) "
+    		  + " VALUES(concat('mem',member_nm_seq.nextval),?,?,?, TO_DATE(?,'YYYYMMDD'),?,?) ";
 
       PreparedStatement psmt = jdbc.con.prepareStatement(sql);
 
+      
       psmt.setString(1, id);
       psmt.setString(2, pw);
       psmt.setString(3, name);

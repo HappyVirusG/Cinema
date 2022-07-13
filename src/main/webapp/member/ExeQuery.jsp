@@ -17,7 +17,7 @@
       JDBConnect jdbc = new JDBConnect();
       
       //2.쿼리문 생성
-      String sql = "SELECT id, pw, name, birth, email, tel FROM member1";
+      String sql = "SELECT membercode, id, pw, name, birth, email, tel FROM member";
       
       Statement stmt = jdbc.con.createStatement();
       
@@ -26,6 +26,7 @@
       ResultSet rs = stmt.executeQuery(sql);
       
       while(rs.next()){
+         String membercode = rs.getString("membercode"); 
          String id = rs.getString("id"); 
          String pw = rs.getString("pw");
          String name = rs.getString("name");
@@ -33,7 +34,7 @@
          String email = rs.getString("email");
          String tel = rs.getString("tel");
          
-         out.println(String.format("%s %s %s %s %s %s", id, pw, name, birth, email, tel ) + "<br>");
+         out.println(String.format("%s %s %s %s %s %s %s", membercode, id, pw, name, birth, email, tel ) + "<br>");
          
       }
       
