@@ -8,6 +8,8 @@
 
 .notMovie {
 	width: 1020px;
+	height: 500px;
+	line-height: 500px;
 	text-align: center;
 }
 
