@@ -1,3 +1,5 @@
+<%@page import="member.MemberDAO"%>
+<%@page import="member.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -27,9 +29,11 @@
       request.setCharacterEncoding("utf-8");
    
       String name = request.getParameter("name");
+
       %>
       
-    <h2> <span>그린시네마</span> 회원가입 완료! <br><br>  <%=session.getAttribute(name) %>님, 회원이 되신것을 환영합니다.</h2>
+      
+    <h2> <span>그린시네마</span> 회원가입 완료! <br><br> 회원이 되신것을 환영합니다.</h2>
     <button class="go_to_home" onclick="location.href='../main/main.jsp';">메인으로 가기</button>
     <button class="go_to_login" onclick="location.href='../member/login.jsp';">로그인</button>
 </div>

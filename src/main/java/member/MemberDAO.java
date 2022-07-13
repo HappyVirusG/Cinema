@@ -1,5 +1,6 @@
 package member;
 
+import java.sql.PreparedStatement;
 import common.JDBConnect;
 
 public class MemberDAO extends JDBConnect{
