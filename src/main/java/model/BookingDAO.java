@@ -19,9 +19,9 @@ public class BookingDAO extends JDBConnect{
 		
 		String query = "SELECT * FROM BOOKING ";
 				
-		if(map.get("bookingcode") != null) {
-			query += " WHERE bookingcode"
-					+ " LIKE '%" + map.get("bookingcode") + "%'";
+		if(map.get("id") != null) {
+			query += " WHERE id "
+					+ "LIKE '%" + map.get("id") + "%'";
 		}
 
 		query +=  "ORDER BY bookingcode DESC";
@@ -34,13 +34,15 @@ public class BookingDAO extends JDBConnect{
 				BookingDTO dto =new BookingDTO();
 				
 				dto.setBookingcode(rs.getString(1));
-				dto.setMoviecode(rs.getString(2));
-				dto.setMembercode(rs.getString(3));
-				dto.setTheatercode(rs.getString(4));
-				dto.setTimecode(rs.getString(5));
-				dto.setPrice(rs.getString(6));
-				dto.setSeatcode(rs.getString(7));
-				dto.setRatingcode(rs.getString(8));
+				dto.setTitle(rs.getString(2));
+//				dto.setMembercode(rs.getString(3));
+				dto.setTheatercode(rs.getString(5));
+				dto.setTimecode(rs.getString(6));
+				dto.setPrice(rs.getString(7));
+				dto.setSeatcode(rs.getString(8));
+				dto.setRatingcode(rs.getString(9));
+				
+				
 				
 				list.add(dto);
 			}
@@ -57,17 +59,19 @@ public class BookingDAO extends JDBConnect{
 		
 		try {
 			String query = "INSERT INTO booking ( "
-					+ " bookingcode, moviecode, theatercode, timecode, price, seatcode) "
-							+ " VALUES(concat('book', seq_booking_num.nextval), ?, ?, ?, ?, ?)";
+					+ " bookingcode, title, id, membercode, theatercode, timecode, price, seatcode, ratingcode) "
+							+ " VALUES(concat('book', seq_booking_num.nextval), ?, ?, movie_nm_seq.nextval, ?, ?, ?, ?, ?)";
 			
 			psmt = con.prepareStatement(query);
 			
-			psmt.setString(1, dto.getMoviecode());
-			psmt.setString(2, dto.getTheatercode());
-//			psmt.setString(3, dto.getMembercode());
-			psmt.setString(3, dto.getTimecode());
-			psmt.setString(4, dto.getPrice());
-			psmt.setString(5, dto.getSeatcode());
+//			psmt.setString(1, dto.getMoviecode());
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getId());
+			psmt.setString(3, dto.getTheatercode());
+			psmt.setString(4, dto.getTimecode());
+			psmt.setString(5, dto.getPrice());
+			psmt.setString(6, dto.getSeatcode());
+			psmt.setString(7, dto.getRatingcode());
 			
 			result = psmt.executeUpdate();
 			

@@ -14,7 +14,7 @@
 		<table border="1" width="100%">
 			<tr align="center">
 				<td width="10%">예매번호</td>
-				<td width="10%">연령</td>
+				<td width="10%">상영등급</td>
 				<td width="*">영화제목</td>
 				<td width="10%">상영극장</td>
 				<td width="10%">좌석번호</td>
@@ -32,14 +32,14 @@
 				<c:otherwise>
 					<c:forEach items="${lists}" var="row" varStatus="loop">
 						<tr align="center">
-							<td width="15%">${row.bookingcode }</td>
+							<td width="10%">${row.bookingcode }</td>
 							<td width="15%">${row.ratingcode }</td>
-							<td width="*">${row.moviecode }</td>
-							<td width="15%">${row.theatercode }</td>
-							<td width="15%">${row.seatcode }</td>
-							<td width="15%">${row.timecode }</td>
-							<td width="15%">${row.price }</td>
-							<td><button type="button" onclick="location.href='../model/bookingEdit.do?mode=delete&bookingcode=${row.bookingcode}'">X</button></td>
+							<td width="*">${row.title }</td>
+							<td width="10%">${row.theatercode }</td>
+							<td width="10%">${row.seatcode }</td>
+							<td width="10%">${row.timecode }</td>
+							<td width="10%">${row.price }</td>
+							<td width="10%"><button type="button" onclick="location.href='../model/bookingEdit.do?mode=delete&bookingcode=${row.bookingcode}'">X</button></td>
 						</tr>
 					</c:forEach>
 				</c:otherwise>
