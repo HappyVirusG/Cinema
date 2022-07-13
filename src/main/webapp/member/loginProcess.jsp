@@ -16,6 +16,8 @@
 </head>
 <body>
 <%
+		request.setCharacterEncoding("utf-8");
+
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
@@ -32,10 +34,11 @@
 			script.println("location.href='../main/main.jsp'");
 			script.println("</script>");
 		}
+		
 		if(result == 0){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('비밀번호가 틀립니다')");
+			script.println("alert('존재하지 않는 아이디입니다')");
 			script.println("history.back()");
 			script.println("</script>");
 		}
@@ -43,7 +46,7 @@
 		if(result == -1){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('존재하지 않는 아이디입니다')");
+			script.println("alert('비밀번호가 틀립니다')");
 			script.println("history.back()");
 			script.println("</script>");
 		}

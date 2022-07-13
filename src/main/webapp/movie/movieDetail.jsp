@@ -36,8 +36,9 @@
                <ul class="rating">
                    <li>관람객 평점 <span class="boxOffice">8.99</span></li>
                    <li>예매율 <span class="boxOffice">20.2%</span></li>
-                   <li>누적관객수 <span class="boxOffice">900,0000</span></li>
+                   <li>누적관객수 <span class="boxOffice">1,953,287</span>명</li>
                </ul>
+               <div class="ratingLine"></div>
            </div> <!-- .movieSummary -->
 
 
@@ -62,11 +63,15 @@
                </tr>
                <tr>
                    <th>등급</th>
-                   <td>${dto.ratingcode} 관람가</td>
+                   <td>${dto.ratingcode}</td>
                </tr>
                <tr>
                    <th>개봉</th>
                    <td class="movieDate">${dto.opendate}</td>
+               </tr>
+               <tr>
+               		<th>상영시간</th>
+               		<td>${dto.runningtime }분</td>
                </tr>
            </table> <!-- .movieInfo -->
 
@@ -76,7 +81,7 @@
                <div class="movieInfoBtns">
                    <ul>
                        <li><button>주요정보</button></li>
-                       <li><button>포스터/스틸컷</button></li>
+                       <li><button type="button" onclick="location.href='#gallery'">포스터/스틸컷</button></li>
                        <li><button type="button" onclick="location.href='#review'">평점/관람평</button></li>
                        <li><button>상영시간표</button></li>
                    </ul>
@@ -88,6 +93,9 @@
             </div> <!-- .movieInfoDetail -->
        </div> <!-- #contents .contentsMovieDetail-->
 <section >
+<div class="reviewLine"></div>
+
+<%@include file="movieStillcut.jsp" %>
 
 <%@include file="review.jsp" %>
 

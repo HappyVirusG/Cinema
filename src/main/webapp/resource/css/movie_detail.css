@@ -44,6 +44,7 @@ a{
     border-radius: 5px;
 }
 
+
 #contents .nowScreen{
     position: absolute;
     top: 30px;
@@ -52,7 +53,7 @@ a{
     /* border-radius: 5px; */
     width: 80px;
     height: 30px;
-    line-height: 30px;
+    line-height: 25px;
     text-align: center;
     font-size: 15px;
     color: rgb(15, 18, 200);
@@ -64,16 +65,25 @@ a{
     /* background-color: aqua; */
     position: absolute;
     top: 100px;
+	font-size: 16px;
 }
-
+#contents .ratingLine{
+	width: 540px;
+	height: 1px;
+	background-color: #ddd;
+	position: absolute;
+	top: 145px;
+	
+}
 #contents .rating li{
     padding-right: 30px;
 }
 
 #contents .boxOffice{
     font-size: 20px;
-    font-weight: 500;
     padding-left: 5px;
+    font-weight: 500;
+    color: #430086;
 }
 
 #contents .movieInfo{

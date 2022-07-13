@@ -1,5 +1,6 @@
 package member;
 
+import java.sql.PreparedStatement;
 import common.JDBConnect;
 
 public class MemberDAO extends JDBConnect{
@@ -15,7 +16,7 @@ public class MemberDAO extends JDBConnect{
 	//로그인 영역
 		public int login(String id, String pw) {
 			
-			String sql = "SELECT pw FROM member1 WHERE id=?";
+			String sql = "SELECT pw FROM member WHERE id=?";
 				
 			try {
 				psmt = con.prepareStatement(sql);
@@ -41,7 +42,7 @@ public class MemberDAO extends JDBConnect{
 
 			MemberDTO dto = new MemberDTO();
 			
-			String query = "SELECT * FROM member1 WHERE id=? AND pw=?";
+			String query = "SELECT * FROM member WHERE id=? AND pw=?";
 			
 			try {
 				

@@ -2,7 +2,9 @@ package model;
 
 public class BookingDTO {
 	private String bookingcode;
-	private String moviecode;
+	private String title;
+	private String id;
+//	private String moviecode;
 	private String membercode;
 	private String theatercode;
 	private String timecode;
@@ -15,11 +17,17 @@ public class BookingDTO {
 	public void setBookingcode(String bookingcode) {
 		this.bookingcode = bookingcode;
 	}
-	public String getMoviecode() {
-		return moviecode;
+	public String getTitle() {
+		return title;
 	}
-	public void setMoviecode(String moviecode) {
-		this.moviecode = moviecode;
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getMembercode() {
 		return membercode;
