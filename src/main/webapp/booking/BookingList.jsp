@@ -34,7 +34,7 @@
 							</div>
 							
 							<div class="date-time">
-								<div class="date">&nbsp;</div>
+								<div class="date">${row.datecode }&nbsp;</div>
 								<div class="time">${row.timecode }</div>
 							</div>
 							
