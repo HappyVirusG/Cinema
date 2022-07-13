@@ -17,7 +17,7 @@
     <title>그린시네마</title>
    	</style>
     <!-- css연결 -->
-    <link rel="stylesheet" href="../resource/css/minji_main.css?ver=6">
+    <link rel="stylesheet" href="../resource/css/minji_main.css?ver=5">
     <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=3">
 
     <!-- font-family -->

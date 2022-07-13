@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
  	<link rel="stylesheet" href="../resource/css/header_footer.css?ver=2">
-    <link rel="stylesheet" href="../resource/css/login.css">
+    <link rel="stylesheet" href="../resource/css/login.css?ver=2">
     <!-- font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
