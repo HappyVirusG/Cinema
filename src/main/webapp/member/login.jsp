@@ -68,10 +68,7 @@
 	
 	<%		
 		} else {
-	%>
-		<%=session.getAttribute("UserName") %> 님, 반갑습니다!<br>
-		<a href="#">[로그아웃]</a>
-	<%		
+		 response.sendRedirect("../main/main.jsp");	
 		}
 	%>
 	
