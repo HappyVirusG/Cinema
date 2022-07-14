@@ -45,7 +45,6 @@ public class MemberDAO extends JDBConnect{
 			String query = "SELECT * FROM member WHERE id=? AND pw=?";
 			
 			try {
-				
 				psmt = con.prepareStatement(query);
 				psmt.setString(1, uid); 
 				psmt.setString(2, upass); 
@@ -63,5 +62,33 @@ public class MemberDAO extends JDBConnect{
 			
 			return dto;
 		}
+		
+		//member info를 membercode로만 들고오기(오버로딩)
+		public MemberDTO getMemberDTO(String membercode) {
+
+			MemberDTO dto = new MemberDTO();
+			
+			String query = "SELECT * FROM member WHERE membercode=?";
+			
+			try {
+				psmt = con.prepareStatement(query);
+				psmt.setString(1, membercode); 
+				rs=psmt.executeQuery(); 
+
+				if (rs.next()) {
+					dto.setMembercode(rs.getString("membercode"));
+					dto.setName(rs.getString("name"));
+					dto.setId(rs.getString("id")); 
+					dto.setPw(rs.getString("pw"));
+					dto.setTel(rs.getString("tel"));
+					dto.setEmail(rs.getString("email"));
+				}
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			return dto;
+		}
+		
 }
 

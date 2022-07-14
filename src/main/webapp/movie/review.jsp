@@ -81,9 +81,8 @@
     		<div class="userReview">
             <div class="user">
                 <img src="../resource/img/review/hansohee.jpg" alt=""><br/>
-                <span>${ row.membercode }</span>  <!-- 작성자 id -->
+                <span>${memberLists[loop.index].id }</span>  <!-- 작성자 id -->
             </div>
-            
             <div class="userRate">
             <!-- 작성자가 준 평점 -->
                 <span class="userScore">
@@ -124,7 +123,7 @@
             </div>
             
             </div>
-    		</c:forEach>
+            </c:forEach>
     	</c:otherwise>
     </c:choose>
     
