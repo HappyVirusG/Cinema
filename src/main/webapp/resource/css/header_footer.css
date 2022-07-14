@@ -109,7 +109,7 @@ a{
     margin: auto;
     line-height: 20px;
     text-align: center;
-    margin-top: 50px;
+    padding-top: 20px;
 }
 #footer .footerButton{
     display: flex;
