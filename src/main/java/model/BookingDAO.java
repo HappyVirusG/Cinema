@@ -24,7 +24,7 @@ public class BookingDAO extends JDBConnect{
 					+ "LIKE '%" + map.get("membercode") + "%'";
 		}
 
-		query +=  "ORDER BY bookingcode DESC";
+		query +=  "ORDER BY datecode ASC";
 		
 		try {
 			psmt = con.prepareStatement(query);

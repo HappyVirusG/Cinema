@@ -24,7 +24,7 @@
 				<c:otherwise>
 					<c:forEach items="${lists}" var="row" varStatus="loop">
 						<div class="movie-reserve">
-							<div><button type="button" class="delete" onclick="location.href='../model/bookingEdit.do?mode=delete&bookingcode=${row.bookingcode}'">예매취소</button></div>
+							<div><button type="button" class="delete" onclick="location.href = '../model/bookingEdit.do?mode=delete&bookingcode=${row.bookingcode}'">예매취소</button></div>
 							<div class="ratingcode">${row.ratingcode}</div>
 							<div class="title">${row.title}</div>
 							

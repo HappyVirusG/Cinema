@@ -14,9 +14,7 @@ public class BookingController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
-		String id = (String)session.getAttribute("UserId");
-		String membercode = (String)session.getAttribute("membercode");
-		System.out.println(membercode);
+		
 		BookingDTO dto = new BookingDTO();
 		
 		dto.setTitle(req.getParameter("title"));
