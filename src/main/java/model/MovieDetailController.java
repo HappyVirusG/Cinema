@@ -2,6 +2,7 @@ package model;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import member.MemberDAO;
+import member.MemberDTO;
+
 @WebServlet("/model/movieDetail.do")
 public class MovieDetailController extends HttpServlet{
 	
@@ -18,6 +22,7 @@ public class MovieDetailController extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		MovieDAO dao = new MovieDAO();
 		ReviewDAO rdao = new ReviewDAO();
+		MemberDAO mdao = new MemberDAO();
 		Map<String, Object> map = new HashMap<String, Object>();
 
 		String moviecode = req.getParameter("moviecode");
@@ -25,9 +30,19 @@ public class MovieDetailController extends HttpServlet{
 		List<ReviewDTO> reviewLists = rdao.selectList(map, moviecode);
 		int totalCount = rdao.reviewCount(map, moviecode);
 		
-		req.setAttribute("dto", dto);
+		String [] membercodes;
+		membercodes = new String[reviewLists.size()];
+		String [] memIds;
+		memIds = new String[reviewLists.size()];
+		List<MemberDTO> memberLists = new LinkedList<MemberDTO>();
+		for(int i=0; i<reviewLists.size(); i++) {
+			membercodes[i] = reviewLists.get(i).getMembercode();
+			memberLists.add(mdao.getMemberDTO(membercodes[i]));
+		}
 		
+		req.setAttribute("dto", dto);
 		req.setAttribute("reviewLists", reviewLists);
+		req.setAttribute("memberLists", memberLists);
 		req.setAttribute("totalCount", totalCount);
 		req.setAttribute("map", map);
 		

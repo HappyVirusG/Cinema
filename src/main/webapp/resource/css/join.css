@@ -17,11 +17,9 @@ a{
 #wrap{
     width: 980px;
     margin: auto;
-}
-*{
+    padding-bottom: 40px;
     background-color: #F5F6F7;
 }
-
 
 #join{
     width: 400px;

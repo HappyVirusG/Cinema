@@ -13,8 +13,6 @@ a{
 }
 /* style reset */
 
-
-
 .movieList{
 	width: 980px;
 	margin: auto;
@@ -42,12 +40,8 @@ h3{
     display: flex;
 }
 
-.movieList li{
-    padding: 10px;
-}
-
 .movieList img{
-    width: 205px;
+    width: 215px;
     box-shadow: 2px 2px 2px #ccc;
 }
 
@@ -66,7 +60,7 @@ h3{
     background-color: rgb(229, 37, 60);
     color: white;
     border: none;
-    width: 205px;
+    width: 215px;
     height: 40px;
     font-size: 20px;
     font-weight: 500;
@@ -114,9 +108,6 @@ h3{
 }
 #movieNowList a:hover{
 	color: black;
-}
-#movieNowList:hover{
-	background-color: #fee7e1;
 }
 #movieNowList p{
 	margin-bottom: 3px;

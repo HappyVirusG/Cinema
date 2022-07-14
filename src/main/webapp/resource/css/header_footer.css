@@ -109,18 +109,16 @@ a{
     margin: auto;
     line-height: 20px;
     text-align: center;
-    margin-top: 50px;
+    padding-top: 20px;
 }
 #footer .footerButton{
     display: flex;
     margin-left: 80px;
     margin-bottom: 20px;
 }
-
-
 #footer .footerButton a{
     color: rgb(69, 69, 69);
-    font-size: 15px;
+    font-size: 13px;
 }
 
 #footer .businessInfo{
