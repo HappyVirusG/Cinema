@@ -8,34 +8,38 @@
   padding: 0;
   box-sizing: border-box;
 }
-li {
+#slideShow li {
   list-style-type: none;
+  width: 800px;
+  display: flex;
 }
 #gallery{
 	width: 980px;
 	background-color: black;
 	margin: auto;
 	position: relative;
+	display: block;
 }
 #slideShow {
-  width: 800px;
-  height: 510px;
-  position: relative;
-  margin: 40px auto;
-  overflow: hidden;
+  	width: 800px;
+  	height: 510px;
+  	position: relative;
+  	margin: 40px auto;
+    overflow:hidden;
 }
-img{
-	width: 800px
+#slideShow .slides img{
+	height: 510px;
+	max-width: 800px;
 }
-#slideShow img{
-	vertical-align: baseline;
+#slideShow .slides {
+	width: 10400px;
+  	position: absolute;
+  	left: 0;
+  	top: 0;
+  	transition: 0.5s ease-out; /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
 }
-.slides {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 8800px; /* 슬라이드할 사진과 마진 총 넓이 */
-  transition: 0.5s ease-out; /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
+.slides li{
+	justify-content: center;
 }
 .slides li:not(:last-child) {
   float: left;
@@ -61,23 +65,21 @@ img{
   right: 20px;
 } 
 </style>
-<script>
-	
-</script>
+
 <div id="gallery">
   <div id="slideShow">
     <ul class="slides">
-		<li><img alt="" src="../resource/img/detail/4_1.jpg" id="photo"></li>
-		<li><img alt="" src="../resource/img/detail/4_2.jpg" id="photo"></li>
-		<li><img alt="" src="../resource/img/detail/4_3.jpg" id="photo"></li>
-		<li><img alt="" src="../resource/img/detail/4_4.jpg" id="photo"></li>
-		<li><img alt="" src="../resource/img/detail/4_5.jpg" id="photo"></li>
-		<li><img alt="" src="../resource/img/detail/4_6.jpg" id="photo"></li>
-		<li><img alt="" src="../resource/img/detail/4_7.jpg" id="photo"></li>
-		<li><img alt="" src="../resource/img/detail/4_8.jpg" id="photo"></li>
-		<li><img alt="" src="../resource/img/detail/4_9.jpg" id="photo"></li>
-		<li><img alt="" src="../resource/img/detail/4_10.jpg" id="photo"></li>
-		<li><img alt="" src="../resource/img/detail/4_11.jpg" id="photo"></li>
+    	<script>
+	    	const moviecode = "${dto.moviecode}";
+	    	const regex = /[^0-9]/g;
+	    	const result = moviecode.replace(regex, "");
+	    	const movieNum = parseInt(result);
+	    	console.log(result);
+	    	console.log(movieNum);
+    		for(let i=1; i<=11; i++){
+    			document.write("<li><img alt='' src='../resource/img/detail/"+movieNum+"_"+i+".jpg' id='photo'></li>")
+    		}
+    	</script>
     </ul>
     
   </div>
@@ -105,8 +107,7 @@ function makeClone() {
   slides.insertBefore(cloneSlide_last, slides.firstElementChild);
 }
 function initfunction() {
-  slides.style.width = (slideWidth) * (slideCount + 2) + 'px';
-  slides.style.left = -(slideWidth) + 'px';
+	slides.style.left = -(slideWidth) + 'px';
 }
 next.addEventListener('click', function () {
   //다음 버튼 눌렀을때
