@@ -29,7 +29,7 @@
                         <li class="selectMovie witch fifteenAge">
                             <a href="#">
                                 <span class="movieAge fifteen"></span>
-                                <span class="movieName witch">마녀(魔女)</span>
+                                <span class="movieName witch">마녀(魔女) Part2. The Other One</span>
                             </a>
                         </li>
                         <li class="selectMovie topgun twelveAge">
@@ -445,6 +445,50 @@
                                         </a>
                                     </li>
                                 </ul>
+                            </div>
+                            <div class="theater">
+                                <div class="theaterInfo">
+                                    <span class="name">IMAX LASER 2D</span>
+                                    <span class="floor">IMAX관</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="time">07:40</span>
+                                            <span class="remain-seat">100석</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="time">09:50</span>
+                                            <span class="remain-seat">100석</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="time">11:30</span>
+                                            <span class="remain-seat">100석</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="time">14:20</span>
+                                            <span class="remain-seat">100석</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="time">17:35</span>
+                                            <span class="remain-seat">100석</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="time">20:55</span>
+                                            <span class="remain-seat">100석</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>            
                         </div>
                         
@@ -601,8 +645,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script>
 		function checkTrue() {
+			alert("예매 완료됐습니다.");
 			document.getElementById("frm").submit();
 		}
+		
+		let pValue = 0;
 		
 		//좌석선택 버튼 활성화
 		$('.selectMovie').click(function() {
@@ -1009,7 +1056,6 @@
 
              $('.seat').addClass('pc');
 
-
              $('.seat').click(function() {
                  let sValue = selectedSeats.length;
                  if(pValue == sValue) {
@@ -1025,14 +1071,15 @@
                     	 $('input[name=price]').attr('value', 14000*selectedSeats.length)
                      else if($('.movie_kind').text() == "4DX 2D")
                      	$('input[name=price]').attr('value', 18000*selectedSeats.length);
+                     else if($('.movie_kind').text() == "IMAX LASER 2D")
+                     	$('input[name=price]').attr('value', 20000*selectedSeats.length);
                  } else if(sValue > pValue){
                      alert("지정한 인원수를 넘었습니다. 인원수 확인해주세요.")
                      $(this).removeClass('clicked');
                  }
              })
-		
-		     
 		 })
+		 
 		//인원 선택 없이 좌석 선택 시
 		$('.seat').click(function() {
 			if($(this).hasClass('pc') === false) {
