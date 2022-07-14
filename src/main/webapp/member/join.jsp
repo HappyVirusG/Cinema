@@ -19,7 +19,6 @@
 <body>
 <%@include file="../main/header.jsp" %>
     <div id="wrap">
-   
         <section id="join">
            <h2>회원가입</h2>
             <form onsubmit="return validateForm(this);" action="joinProcess.jsp" method="post">  
@@ -70,9 +69,6 @@
                 <button type="submit">가입하기</button>
             </form>
         </section>
-        
-
-    
     </div>
    <script src="../resource/JS/join.js?ver=2"></script>
    <%@include file="../main/footer.jsp" %>
