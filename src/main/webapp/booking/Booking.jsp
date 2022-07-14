@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../resource/css/header_footer.css">
 </head>
 <body>
+
 <%@include file="../main/header.jsp" %>
 
 	     <div class="reserve-container">

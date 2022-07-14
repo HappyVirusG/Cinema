@@ -10,7 +10,7 @@
 
 
 	<header id="header">
-    <div class="title">
+    <div class="headerTitle">
         <h1 id="mainTitle"><a id="title_name" href="../main/main.jsp"><img src="" alt="">그린 시네마</a></h1>
     </div>
     <div class="headerSide">
