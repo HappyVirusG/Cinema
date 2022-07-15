@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../member/IsLoggedIn.jsp" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -366,40 +367,28 @@
                                 </div>
                                 <ul>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">09:30</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">09:30</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">12:30</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">12:30</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">14:50</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">14:50</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">17:00</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">17:00</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">19:45</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">19:45</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">22:00</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">22:00</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                 </ul>
                             </div>
@@ -410,40 +399,28 @@
                                 </div>
                                 <ul>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">08:00</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">08:00</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">10:40</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">10:40</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">13:30</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">13:30</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">16:20</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">16:20</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">18:35</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">18:35</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">20:55</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">20:55</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                 </ul>
                             </div>
@@ -454,40 +431,28 @@
                                 </div>
                                 <ul>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">07:40</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">07:40</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">09:50</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">09:50</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">11:30</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">11:30</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">14:20</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">14:20</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">17:35</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">17:35</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="time">20:55</span>
-                                            <span class="remain-seat">100석</span>
-                                        </a>
+                                        <a href="#"><span class="time">20:55</span></a>
+                                        <span class="remain-seat">100석</span>
                                     </li>
                                 </ul>
                             </div>            
@@ -668,8 +633,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 })                          	
-                                $('.selected_wrap').css('top', '680px');
-                                $('.selected_movie').css('top', '673px');
+                                $('.selected_wrap').css('top', '675px');
+                                $('.selected_movie').css('top', '668px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -693,8 +658,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 }) 
-                                $('.selected_wrap').css('top', '680px');
-                                $('.selected_movie').css('top', '673px');
+                                $('.selected_wrap').css('top', '675px');
+                                $('.selected_movie').css('top', '668px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -722,8 +687,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 }) 
-                                $('.selected_wrap').css('top', '680px');
-                                $('.selected_movie').css('top', '673px');
+                                $('.selected_wrap').css('top', '675px');
+                                $('.selected_movie').css('top', '668px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -747,8 +712,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 }) 
-                                $('.selected_wrap').css('top', '680px');
-                                $('.selected_movie').css('top', '673px');
+                                $('.selected_wrap').css('top', '675px');
+                                $('.selected_movie').css('top', '668px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -777,8 +742,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 }) 
-                                $('.selected_wrap').css('top', '680px');
-                                $('.selected_movie').css('top', '673px');
+                                $('.selected_wrap').css('top', '675px');
+                                $('.selected_movie').css('top', '668px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -802,8 +767,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 }) 
-                                $('.selected_wrap').css('top', '680px');
-                                $('.selected_movie').css('top', '673px');
+                                $('.selected_wrap').css('top', '675px');
+                                $('.selected_movie').css('top', '668px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -1008,7 +973,7 @@
              $('.adult').not($(this)).removeAttr('id', 'clicked');
              
              $(this).find('a').attr('id', 'text-clicked');
-             $('.select-seat-name').text("일반");
+             $('.select-seat-name').text().concat('일반');
              
              return false;
 		 })

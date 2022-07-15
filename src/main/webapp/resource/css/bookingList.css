@@ -55,6 +55,7 @@
 	float: right;
 	margin-top: 10px;
 	font-size: 11px;
+	cursor: pointer;
 }
 .ratingcode {
     font-size: 12px;

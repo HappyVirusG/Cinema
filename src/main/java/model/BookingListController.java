@@ -25,6 +25,7 @@ public class BookingListController extends HttpServlet{
 		
 		HttpSession session = req.getSession();
 		String membercode = (String)session.getAttribute("membercode");
+		System.out.println(membercode);
 		
 		if(membercode != null) {
 			map.put("membercode", membercode);

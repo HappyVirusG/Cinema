@@ -59,7 +59,7 @@ a {
     margin-left: 6px;
 }
 .movie-list li {
-    margin-left: -30px;
+    margin-left: 0px;
     padding-bottom: 5px;
 }
 .movie-list .all {
@@ -132,7 +132,7 @@ a {
 .hall-theater .localName {
     position: absolute;
     top: 10px;
-    left: -13px;
+    left: 15px;
     margin-top: 50px;
     z-index: 1;
 }
@@ -303,7 +303,7 @@ a {
     font-size: 14px;
     font-weight: bold;
 }
-.time-reserve .timeButtonList ul a .remain-seat {
+.time-reserve .timeButtonList ul .remain-seat {
     color: #5e998b;
     font-size: 14px;
 }
@@ -333,6 +333,7 @@ a {
 .reset {
     width: 80px; 
     position: absolute;
+    top: 3px;
     right: 13px;
     border: none;
     background-color: #333333;
@@ -510,7 +511,7 @@ a {
     display: none;
     position: absolute;
     /* 605 */
-    top: 830px;
+    top: 825px;
     left: 820px;
     color: #e7e7e7;
     font-size: 13px;
@@ -526,7 +527,7 @@ a {
 .selected_movie {
     position: absolute;
     /* 595 */
-    top: 825px;
+    top: 820px;
     left: 620px;
 }
 .selected_movie .movie_img {
