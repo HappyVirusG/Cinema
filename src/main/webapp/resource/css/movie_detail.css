@@ -85,9 +85,12 @@ a{
     margin-left: 380px;
     margin-top: 100px;
 }
-
+#contents .movieInfo tr{
+	text-align: left;
+}
 #contents .movieInfo td{
     padding-left: 10px;
+    text-align: left;
 }
 
 #contents .movieBtns{
