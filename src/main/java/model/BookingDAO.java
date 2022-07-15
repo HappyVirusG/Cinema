@@ -44,7 +44,6 @@ public class BookingDAO extends JDBConnect{
 				dto.setDatecode(rs.getString(10));
 				
 				
-				
 				list.add(dto);
 			}
 		} catch(Exception e) {
@@ -142,8 +141,37 @@ public class BookingDAO extends JDBConnect{
 			exist = false;
 			e.printStackTrace();
 		}
-		
 		return exist;
+	}
+	
+	/* 무비코드와 멤버코드로 예매내역 불러오기 */
+	public BookingDTO getBookingDTO(String membercode, String moviecode) {
+		BookingDTO dto = new BookingDTO();
+		
+		String query = "SELECT * FROM booking WHERE membercode=? and moviecode=?";
+		
+		try {
+			psmt=con.prepareStatement(query);
+			psmt.setString(1, membercode);
+			psmt.setString(2, moviecode);
+			rs=psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setBookingcode(rs.getString("bookingcode"));
+				dto.setTitle(rs.getString("title"));
+				dto.setMembercode(rs.getString("membercode"));
+				dto.setTheatercode(rs.getString("theatercode"));
+				dto.setTimecode(rs.getString("timecode"));
+				dto.setPrice(rs.getString("price"));
+				dto.setSeatcode(rs.getString("seatcode"));
+				dto.setRatingcode(rs.getString("ratingcode"));
+				dto.setDatecode(rs.getString("datecode"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("예매내역을 불러오던 중 예외가 발생하였습니다.");
+		}
+		return dto;
 	}
 }
 

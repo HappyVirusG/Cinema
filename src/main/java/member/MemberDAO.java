@@ -79,6 +79,7 @@ public class MemberDAO extends JDBConnect{
 					dto.setMembercode(rs.getString("membercode"));
 					dto.setName(rs.getString("name"));
 					dto.setId(rs.getString("id")); 
+					dto.setBirth(rs.getDate("birth"));
 					dto.setPw(rs.getString("pw"));
 					dto.setTel(rs.getString("tel"));
 					dto.setEmail(rs.getString("email"));

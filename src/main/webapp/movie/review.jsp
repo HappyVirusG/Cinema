@@ -59,7 +59,7 @@
         </div>
 	    <div class="contentPost">
 	          <div class="user">
-	              <img src="../resource/img/review/admin.jpg" alt="">
+	              <img src="../resource/img/icons/user.png" alt="">
 	              <br/>
 	              <span><%=session.getAttribute("UserId") %></span>
 	          </div> <!-- .user -->
@@ -80,7 +80,7 @@
     		<c:forEach items="${ reviewLists }" var="row" varStatus="loop">
     		<div class="userReview">
             <div class="user">
-                <img src="../resource/img/review/hansohee.jpg" alt=""><br/>
+                <img src="../resource/img/icons/user.png" alt=""><br/>
                 <span>${memberLists[loop.index].id }</span>  <!-- 작성자 id -->
             </div>
             <div class="userRate">

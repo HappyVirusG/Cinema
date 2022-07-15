@@ -1,6 +1,8 @@
 package model;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +23,7 @@ public class ReviewWriteContoller extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException { 
 		ReviewDAO rdao = new ReviewDAO();
 		ReviewDTO rdto = new ReviewDTO();
+		BookingDAO bdao = new BookingDAO();
 		HttpSession session = req.getSession();
 		
 		req.setCharacterEncoding("UTF-8");
@@ -28,23 +31,30 @@ public class ReviewWriteContoller extends HttpServlet{
 		String moviecode = req.getParameter("moviecode");
 		String membercode = session.getAttribute("membercode").toString();
 		
+		BookingDTO bdto = bdao.getBookingDTO(membercode, moviecode);
+		
 		int mresult = rdao.multipleReview(moviecode, membercode);
 		if(mresult==1) {
 			JSFunction.alertBack(resp, "리뷰를 중복해서 작성할 수 없습니다.");
 		}else {
-			rdto.setContent(req.getParameter("content"));
-			rdto.setMembercode(membercode);
-			rdto.setScore(req.getParameter("score"));
-			
-			int result = rdao.insertReview(rdto, req.getParameter("moviecode"));
-			
-			if(result==1) {
-				System.out.println("리뷰 작성 성공");
-				resp.sendRedirect("movieDetail.do?moviecode="+moviecode);
+			if(bdto.getDatecode()==null) {
+				JSFunction.alertBack(resp, "영화 관람자만 작성 가능합니다.");
 			}else {
-				System.out.println("리뷰 작성 실패");
-				resp.sendRedirect("movieDetail.do?moviecode="+moviecode);
+				rdto.setContent(req.getParameter("content"));
+				rdto.setMembercode(membercode);
+				rdto.setScore(req.getParameter("score"));
+				
+				int result = rdao.insertReview(rdto, req.getParameter("moviecode"));
+				
+				if(result==1) {
+					System.out.println("리뷰 작성 성공");
+					resp.sendRedirect("movieDetail.do?moviecode="+moviecode);
+				}else {
+					System.out.println("리뷰 작성 실패");
+					resp.sendRedirect("movieDetail.do?moviecode="+moviecode);
+				}
 			}
+			
 		}
 		
 		rdao.close();

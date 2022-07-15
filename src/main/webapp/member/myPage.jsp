@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<th>아이디</th>
-				<td>admin</td>
+				<td>${dto.id}</td>
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -36,41 +36,57 @@
 			</tr>
 			<tr>
 				<th>이름<span class="necessary">*</span></th>
-				<td>
-					관리자
+				<td class="namePlc">
+					<span style="padding-left:0;">${dto.name}</span>
 					<button>이름변경</button>
 					<p>※개명으로 이름이 변경된 경우, 회원정보의 이름을 변경하실 수 있습니다.</p>
 				</td>
 			</tr>
 			<tr>
 				<th>생년월일<span class="necessary">*</span></th>
-				<td>1994-07-09</td>
+				<td>${dto.birth}</td>
 			</tr>
 			<tr>
 				<th>연락처<span class="necessary">*</span></th>
 				<td>
-					010-1111-2222
+					${dto.tel}
 					<button type="button">휴대폰번호 변경</button>
 				</td>
 			</tr>
 			<tr>
 				<th>이메일</th>
-				<td><input type="text"></td>
+				<td><input type="text" value="${dto.email }"></td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><button type="button">비밀번호 변경</button></td>
+				<td>
+					<button type="button" id="passChBtn" style="margin-left:0;">비밀번호 변경</button>
+					<input type="password" id="passChInput">
+				</td>
+				
 			</tr>
-			<tr>
+			<tr style="border-bottom:none;">
 				<td colspan="2" class="myPageBtns">
-					<button type="reset" class="resetBtn">취소</button>
 					<button type="submit" class="submitBtn">등록</button>
+					<button type="button" onclick="window.location.reload();" class="resetBtn">취소</button>
 				</td>
 			</tr>
 		</table>
 	</form>
-	
 </div>
 <%@include file="../main/footer.jsp" %>
+
+<script>
+document.querySelector("#passChBtn").onclick=function(){
+	if(document.querySelector("#passChInput").style.display="none"){
+		document.querySelector("#passChInput").style.display="inline-block";
+	}else if(document.querySelector("#passChInput").style.display="inline-block"){
+		document.querySelector("#passChInput").style.display="none";
+	}
+}
+
+	
+
+</script>
 </body>
 </html>
