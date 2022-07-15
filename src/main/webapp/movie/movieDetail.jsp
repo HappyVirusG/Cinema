@@ -20,8 +20,7 @@
 <%@include file="../main/header.jsp" %>
 <iframe width="100%" height="600px" src="${dto.youtube}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <!-- 예고편 -->
-
-   <div id="wrap">
+	<div id="wrap">
 	
        <div id="contents" class="contentsMovieDetail">
            <div class="movieSummary">
@@ -63,7 +62,9 @@
                </tr>
                <tr>
                    <th>등급</th>
-                   <td>${dto.ratingcode}</td>
+                   <td>
+                   	<span id="ratingAge"></span> 관람가
+                   </td>
                </tr>
                <tr>
                    <th>개봉</th>
@@ -74,6 +75,29 @@
                		<td>${dto.runningtime }분</td>
                </tr>
            </table> <!-- .movieInfo -->
+<script>
+	var ratingCode;
+	switch("${dto.ratingcode}"){
+	case "15":
+		ratingCode="15세";
+		break;
+	case "12":
+		ratingCode="12세";
+		break;
+	case "All":
+		ratingCode="전체";
+		break;
+	case "19":
+		ratingCode="19세";
+		break;
+	}
+	console.log(ratingCode);
+	let ratingCodeTxt = document.createTextNode(ratingCode);
+	var ratingAge = document.querySelector('#ratingAge');
+	ratingAge.appendChild(ratingCodeTxt);
+</script>
+
+
 
            <div class="movieBtns">
                <button class="bookingBtn">예매하기</button>
@@ -102,7 +126,6 @@
 </section>       
 <%@include file="../main/footer.jsp" %>
 </div>
-
 
 </body>
 </html>
