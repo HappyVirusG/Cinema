@@ -15,7 +15,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>그린시네마</title>
-   	</style>
     <!-- css연결 -->
     <link rel="stylesheet" href="../resource/css/minji_main.css?ver=5">
     <link rel="stylesheet" href="../resource/css/movie_info_modal.css?ver=3">

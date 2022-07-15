@@ -36,17 +36,18 @@
 						<li><a href="../member/join.jsp" id="a1">회원가입</a></li>		
 					<% } else { %>
 						<li><a href="../member/logout.jsp" id="a1">로그아웃</a></li>
-						<li><a href="../member/myPage.jsp" id="a1">마이페이지</a></li>		
+						<li><a href="../member/mypage.do" id="a1">마이페이지</a></li>		
 					<% } %>
                 
                 <li><a href="">고객센터</a></li>
             </ul>
         </div>
     </div>
-    <div class="headerLine"></div>
+    <!-- <div class="headerLine"></div> -->
     <div class="menu">
          <ul id="ul1">
             <li><a id="a1" href="../model/movieList.do">영화</a></li>
+            <div id="menuLine"></div>
             <li><a id="a1" href="../booking/Booking.jsp">예매</a></li>
             <li><a id="a1" href="../model/bookingList.do">예매 목록</a></li>
             <li><a id="a1" href="">스토어</a></li>

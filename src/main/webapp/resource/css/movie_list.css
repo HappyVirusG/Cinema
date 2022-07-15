@@ -57,7 +57,7 @@ h3{
 }
 
 .movieList .bookingBtn{
-    background-color: rgb(229, 37, 60);
+    background-color: #ff2841;
     color: white;
     border: none;
     width: 215px;
@@ -66,11 +66,13 @@ h3{
     font-weight: 500;
     margin-top: 10px;
     border-radius: 8px;
+    transition: 0.3s;
 }
 
 .bookingBtn:hover{
-    background-color: rgb(159, 24, 40);
+    background-color: #e02238;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .rating{

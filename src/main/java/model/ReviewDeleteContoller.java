@@ -20,9 +20,9 @@ public class ReviewDeleteContoller extends HttpServlet{
 			ReviewDAO dao = new ReviewDAO();
 			ReviewDTO dto = dao.selectReview(idx);
 		HttpSession session = req.getSession();
-		System.out.println(session.getAttribute("UserId").toString());
+		System.out.println(session.getAttribute("membercode").toString());
 		System.out.println(dto.getMembercode());
-		if(session.getAttribute("UserId").toString().equals(dto.getMembercode())) {
+		if(session.getAttribute("membercode").toString().equals(dto.getMembercode())) {
 			int result = dao.deleteReview(dto);
 			dao.close();
 			

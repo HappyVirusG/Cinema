@@ -96,7 +96,7 @@ a{
 }
 
 #contents .bookingBtn{
-    background-color: rgb(229, 37, 60);
+    background-color: #ff2841;
     color: #fff;
     border: none;
     width: 200px;
@@ -107,11 +107,13 @@ a{
     font-size: 20px;
     font-weight: 500;
 	border-radius: 10px;
+	transition: 0.3s;
 }
 
 #contents .bookingBtn:hover{
-    background-color: #c81425;
+    background-color: #e02238;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 
