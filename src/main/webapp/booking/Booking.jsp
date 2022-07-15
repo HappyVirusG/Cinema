@@ -478,57 +478,57 @@
                     <div class="normal-people age">
                         <span class="title">일반</span>
                         <ul>
-                            <li data-count="0" value="0" type="adult" class="adult people-count" id="clicked"><a href="#" id="text-clicked">0</a></li>
-                            <li data-count="1" value="1" type="adult" class="adult people-count"><a href="#">1</a></li>
-                            <li data-count="2" value="2" type="adult" class="adult people-count"><a href="#">2</a></li>
-                            <li data-count="3" value="3" type="adult" class="adult people-count"><a href="#">3</a></li>
-                            <li data-count="4" value="4" type="adult" class="adult people-count"><a href="#">4</a></li>
-                            <li data-count="5" value="5" type="adult" class="adult people-count"><a href="#">5</a></li>
-                            <li data-count="6" value="6" type="adult" class="adult people-count"><a href="#">6</a></li>
-                            <li data-count="7" value="7" type="adult" class="adult people-count"><a href="#">7</a></li>
-                            <li data-count="8" value="8" type="adult" class="adult people-count"><a href="#">8</a></li>
+                            <li data-count="0" value="0" class="adult people-count" id="clicked"><a href="#" id="text-clicked">0</a></li>
+                            <li data-count="1" value="1" class="adult people-count"><a href="#">1</a></li>
+                            <li data-count="2" value="2" class="adult people-count"><a href="#">2</a></li>
+                            <li data-count="3" value="3" class="adult people-count"><a href="#">3</a></li>
+                            <li data-count="4" value="4" class="adult people-count"><a href="#">4</a></li>
+                            <li data-count="5" value="5" class="adult people-count"><a href="#">5</a></li>
+                            <li data-count="6" value="6" class="adult people-count"><a href="#">6</a></li>
+                            <li data-count="7" value="7" class="adult people-count"><a href="#">7</a></li>
+                            <li data-count="8" value="8" class="adult people-count"><a href="#">8</a></li>
                         </ul>
                     </div>
                     <div class="young-people age">
                         <span class="title">학생</span>
                         <ul>
-                            <li data-count="0" value="0" type="youth" class="youth people-count" id="clicked"><a href="#" id="text-clicked">0</a></li>
-                            <li data-count="1" value="1" type="youth" class="youth people-count"><a href="#">1</a></li>
-                            <li data-count="2" value="2" type="youth" class="youth people-count"><a href="#">2</a></li>
-                            <li data-count="3" value="3" type="youth" class="youth people-count"><a href="#">3</a></li>
-                            <li data-count="4" value="4" type="youth" class="youth people-count"><a href="#">4</a></li>
-                            <li data-count="5" value="5" type="youth" class="youth people-count"><a href="#">5</a></li>
-                            <li data-count="6" value="6" type="youth" class="youth people-count"><a href="#">6</a></li>
-                            <li data-count="7" value="7" type="youth" class="youth people-count"><a href="#">7</a></li>
-                            <li data-count="8" value="8" type="youth" class="youth people-count"><a href="#">8</a></li>
+                            <li data-count="0" value="0" class="youth people-count" id="clicked"><a href="#" id="text-clicked">0</a></li>
+                            <li data-count="1" value="1" class="youth people-count"><a href="#">1</a></li>
+                            <li data-count="2" value="2" class="youth people-count"><a href="#">2</a></li>
+                            <li data-count="3" value="3" class="youth people-count"><a href="#">3</a></li>
+                            <li data-count="4" value="4" class="youth people-count"><a href="#">4</a></li>
+                            <li data-count="5" value="5" class="youth people-count"><a href="#">5</a></li>
+                            <li data-count="6" value="6" class="youth people-count"><a href="#">6</a></li>
+                            <li data-count="7" value="7" class="youth people-count"><a href="#">7</a></li>
+                            <li data-count="8" value="8" class="youth people-count"><a href="#">8</a></li>
                         </ul>
                     </div>
                     <div class="old-people age">
                         <span class="title">경로</span>
                         <ul>
-                            <li data-count="0" value="0" type="senior" class="senior people-count" id="clicked"><a href="#" id="text-clicked">0</a></li>
-                            <li data-count="1" value="1"type="senior" class="senior people-count"><a href="#">1</a></li>
-                            <li data-count="2" value="2"type="senior" class="senior people-count"><a href="#">2</a></li>
-                            <li data-count="3" value="3"type="senior" class="senior people-count"><a href="#">3</a></li>
-                            <li data-count="4" value="4"type="senior" class="senior people-count"><a href="#">4</a></li>
-                            <li data-count="5" value="5"type="senior" class="senior people-count"><a href="#">5</a></li>
-                            <li data-count="6" value="6"type="senior" class="senior people-count"><a href="#">6</a></li>
-                            <li data-count="7" value="7"type="senior" class="senior people-count"><a href="#">7</a></li>
-                            <li data-count="8" value="8"type="senior" class="senior people-count"><a href="#">8</a></li>
+                            <li data-count="0" value="0" class="senior people-count" id="clicked"><a href="#" id="text-clicked">0</a></li>
+                            <li data-count="1" value="1" class="senior people-count"><a href="#">1</a></li>
+                            <li data-count="2" value="2" class="senior people-count"><a href="#">2</a></li>
+                            <li data-count="3" value="3" class="senior people-count"><a href="#">3</a></li>
+                            <li data-count="4" value="4" class="senior people-count"><a href="#">4</a></li>
+                            <li data-count="5" value="5" class="senior people-count"><a href="#">5</a></li>
+                            <li data-count="6" value="6" class="senior people-count"><a href="#">6</a></li>
+                            <li data-count="7" value="7" class="senior people-count"><a href="#">7</a></li>
+                            <li data-count="8" value="8" class="senior people-count"><a href="#">8</a></li>
                         </ul>
                     </div>
                     <div class="great-peopleage age">
                         <span class="title">우대</span>
                         <ul>
-                            <li data-count="0" value="0" type="special" class="special people-count" id="clicked"><a href="#" id="text-clicked">0</a></li>
-                            <li data-count="1" value="1" type="special" class="special people-count"><a href="#">1</a></li>
-                            <li data-count="2" value="2" type="special" class="special people-count"><a href="#">2</a></li>
-                            <li data-count="3" value="3" type="special" class="special people-count"><a href="#">3</a></li>
-                            <li data-count="4" value="4" type="special" class="special people-count"><a href="#">4</a></li>
-                            <li data-count="5" value="5" type="special" class="special people-count"><a href="#">5</a></li>
-                            <li data-count="6" value="6" type="special" class="special people-count"><a href="#">6</a></li>
-                            <li data-count="7" value="7" type="special" class="special people-count"><a href="#">7</a></li>
-                            <li data-count="8" value="8" type="special" class="special people-count"><a href="#">8</a></li>
+                            <li data-count="0" value="0" class="special people-count" id="clicked"><a href="#" id="text-clicked">0</a></li>
+                            <li data-count="1" value="1" class="special people-count"><a href="#">1</a></li>
+                            <li data-count="2" value="2" class="special people-count"><a href="#">2</a></li>
+                            <li data-count="3" value="3" class="special people-count"><a href="#">3</a></li>
+                            <li data-count="4" value="4" class="special people-count"><a href="#">4</a></li>
+                            <li data-count="5" value="5" class="special people-count"><a href="#">5</a></li>
+                            <li data-count="6" value="6" class="special people-count"><a href="#">6</a></li>
+                            <li data-count="7" value="7" class="special people-count"><a href="#">7</a></li>
+                            <li data-count="8" value="8" class="special people-count"><a href="#">8</a></li>
                         </ul>
                     </div>
                 </div> <!-- .select-people -->
@@ -581,7 +581,7 @@
                     <div class="seat-name">좌석명</div><div class="select-seat-name" name="select-seat-name"></div>
                 </div>
                 <div class="seatNum">
-                    <div class="seat-num">좌석번호</div><div class="select-seat-num" name="select-seat-num"></div>
+                    <div class="seat-num">좌석</div><div class="select-seat-num" name="select-seat-num"></div>
                 </div>
             </div> <!-- .selected_seat -->
 
@@ -615,7 +615,7 @@
 			document.getElementById("frm").submit();
 		}
 		
-		let pValue = 0;
+		/* let pValue = 0; */
 		
 		//좌석선택 버튼 활성화
 		$('.selectMovie').click(function() {
@@ -633,8 +633,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 })                          	
-                                $('.selected_wrap').css('top', '675px');
-                                $('.selected_movie').css('top', '668px');
+                                $('.selected_wrap').css('top', '685px');
+                                $('.selected_movie').css('top', '678px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -658,8 +658,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 }) 
-                                $('.selected_wrap').css('top', '675px');
-                                $('.selected_movie').css('top', '668px');
+                                $('.selected_wrap').css('top', '685px');
+                                $('.selected_movie').css('top', '678px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -687,8 +687,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 }) 
-                                $('.selected_wrap').css('top', '675px');
-                                $('.selected_movie').css('top', '668px');
+                                $('.selected_wrap').css('top', '685px');
+                                $('.selected_movie').css('top', '678px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -712,8 +712,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 }) 
-                                $('.selected_wrap').css('top', '675px');
-                                $('.selected_movie').css('top', '668px');
+                                $('.selected_wrap').css('top', '685px');
+                                $('.selected_movie').css('top', '678px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -742,8 +742,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 }) 
-                                $('.selected_wrap').css('top', '675px');
-                                $('.selected_movie').css('top', '668px');
+                                $('.selected_wrap').css('top', '685px');
+                                $('.selected_movie').css('top', '678px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -767,8 +767,8 @@
                                 $('.btn_pay').css({
                                 	'display': 'block',
                                 }) 
-                                $('.selected_wrap').css('top', '675px');
-                                $('.selected_movie').css('top', '668px');
+                                $('.selected_wrap').css('top', '685px');
+                                $('.selected_movie').css('top', '678px');
                                 $('.btn_movie').css({
                                     'display': 'block',
                                 })
@@ -973,7 +973,10 @@
              $('.adult').not($(this)).removeAttr('id', 'clicked');
              
              $(this).find('a').attr('id', 'text-clicked');
-             $('.select-seat-name').text().concat('일반');
+
+             if(!$('.select-seat-name').text().includes('일반 ')) {
+		    	 $('.select-seat-name').append('일반 ');	 
+		     }
              
              return false;
 		 })
@@ -984,7 +987,10 @@
 		     $('.youth').not($(this)).removeAttr('id', 'clicked');
 		
 		     $(this).find('a').attr('id', 'text-clicked');
-		     $('.select-seat-name').text("학생");
+
+		     if(!$('.select-seat-name').text().includes('학생 ')) {
+		    	 $('.select-seat-name').append('학생 ');	 
+		     }
 		     
 		     return false;
 		 })
@@ -995,7 +1001,10 @@
 		     $('.senior').not($(this)).removeAttr('id', 'clicked');
 		
 		     $(this).find('a').attr('id', 'text-clicked');
-		     $('.select-seat-name').text("경로");
+		     
+		     if(!$('.select-seat-name').text().includes('경로 ')) {
+		    	 $('.select-seat-name').append('경로 ');	 
+		     }
 		     
 		     return false;
 		 })
@@ -1006,19 +1015,24 @@
 		     $('.special').not($(this)).removeAttr('id', 'clicked');
 		
 		     $(this).find('a').attr('id', 'text-clicked');
-		     $('.select-seat-name').text("우대");
+		     
+		     if(!$('.select-seat-name').text().includes('우대 ')) {
+		    	 $('.select-seat-name').append('우대 ');	 
+		     }
 		     
 		     return false;
 		 })
 		
 		 //다시하기 클릭
-		 $('.reset').click(function() {
-		     $('.select-seat-wrapper').load(location.href + '.select-seat-wrapper');
+		 $('.reset').on('click', function() {
+		     /* $('#select-seat-wrapper').load(location.href + '#select-seat-wrapper'); */
 		 })
 		
+		 let pValue = 0;
 		 //인원 및 좌석 선택
 		 $('.people-count').click(function() {
-			 let pValue = $(this).data("count");
+			 pValue += $(this).data("count");
+			 pValue -= $('.people-count').not($(this)).data("count");
 
              $('.seat').addClass('pc');
 
@@ -1040,9 +1054,11 @@
                      else if($('.movie_kind').text() == "IMAX LASER 2D")
                      	$('input[name=price]').attr('value', 20000*selectedSeats.length);
                  } else if(sValue > pValue){
-                     alert("지정한 인원수를 넘었습니다. 인원수 확인해주세요.")
+                     alert("지정한 인원수를 넘었습니다. 인원수 확인해주세요.");
                      $(this).removeClass('clicked');
+                     selectedSeats.splice(selectedSeats.indexOf($(this)), 1);
                  }
+                 
              })
 		 })
 		 
@@ -1053,7 +1069,7 @@
                 $(this).removeClass('clicked');
             }
 		})
-	       
+		
 		//영화선택 버튼
 		$('.btn_movie').click(function() {
 			location.reload();
