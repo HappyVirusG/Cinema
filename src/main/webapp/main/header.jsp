@@ -8,33 +8,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 
+<!-- main title용 font-family -->
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
 
 	<header id="header">
     <div class="headerTitle">
-        <h1 id="mainTitle"><a id="title_name" href="../main/main.jsp"><img src="" alt="">그린 시네마</a></h1>
+		<span class="subtitle"> TALK PLAY LOVE</span>
+        <a id="title_name" href="../main/main.jsp"><h1>GREEN CINEMA</h1></a>
     </div>
     <div class="headerSide">
         <div class="SNS">
             <!-- <img src="/img/icons/cinema/logoRed.png" alt="로고 임시"> -->
             <ul id="ul1">
-                <li><a id="a1" href=""><img src="../resource/img/icons/페이스북/facebook (1).png" alt=""> 페이스북</a></li>
-                <li><a id="a1" href=""><img src="../resource/img/icons/트위터/twitter (2).png" alt="">트위터</a></li>
-                <li><a id="a1" href=""><img src="../resource/img/icons/유튜브/youtube.png" alt=""> 유튜브</a></li>
-                <li><a id="a1" href=""><img src="../resource/img/icons/인스타그램/instagram.png" alt=""> 인스타그램</a></li>
+                <li><a id="a1" href=""><img src="../resource/img/icons/facebook.png" alt=""> 페이스북</a></li>
+                <li><a id="a1" href=""><img src="../resource/img/icons/twitter.png" alt=""> 트위터</a></li>
+                <li><a id="a1" href=""><img src="../resource/img/icons/youtube.png" alt=""> 유튜브</a></li>
+                <li><a id="a1" href=""><img src="../resource/img/icons/instagram.png" alt=""> 인스타그램</a></li>
             </ul>
         </div>
         <div class="myPage">
             <ul id="ul1">
-                <li>
-	                 <% if (session.getAttribute("UserId") == null) { %>
-						<a href="../member/login.jsp">로그인</a>
+						<!-- 로그아웃 시 로그인/회원가입
+						로그인 시 로그아웃/마이페이지 -->                
+	                <% if (session.getAttribute("UserId") == null) { %>
+						<li><a href="../member/login.jsp" id="a1">로그인</a> </li>
+						<li><a href="../member/join.jsp" id="a1">회원가입</a></li>		
 					<% } else { %>
-						<a href="../member/logout.jsp">로그아웃</a>
+						<li><a href="../member/logout.jsp" id="a1">로그아웃</a></li>
+						<li><a href="../member/myPage.jsp" id="a1">마이페이지</a></li>		
 					<% } %>
-                </li>
-                <li><a id="a1" href="../member/join.jsp">회원가입</a></li>
-                <li><a id="a1" href="">MY PAGE</a></li>
-                <li><a id="a1" href="">고객센터</a></li>
+                
+                <li><a href="">고객센터</a></li>
             </ul>
         </div>
     </div>
