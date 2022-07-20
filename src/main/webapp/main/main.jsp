@@ -241,7 +241,7 @@ if(!boardLists.isEmpty()){
        <section>
             <div class="event_title">
                 <a href=""><p class="EVENT">EVENT</p></a>
-                <a href = "./Hello.jsp">
+                <a href = "../event/event.jsp">
                      <button id="look_at_whole" type="button">
                       <p>전체보기</p>
                        <p>></p>
@@ -251,18 +251,18 @@ if(!boardLists.isEmpty()){
 
             <div id = "event">
                 <div class="eventin">
-                    <a href=""><img src="../resource/img/main/event_1.jpg" alt=""></a>
-                    <a href=""><p> [토르: 러브 앤 썬더] 마이티토르 묠니르컵 론칭!</p></a>
+                    <a href="../event/list1.jsp"><img src="../resource/img/main/event_1.jpg" alt=""></a>
+                    <a href="../event/list1.jsp"><p> [토르: 러브 앤 썬더] 마이티토르 묠니르컵 론칭!</p></a>
                 </div>
 
                 <div class="eventin">
-                    <a href=""><img src="../resource/img/main/event_2.jpg" alt=""></a>
-                    <a href=""><p> [엘비스] SX 리미티드 포스터</p></a>
+                    <a href="../event/list2.jsp"><img src="../resource/img/main/event_2.jpg" alt=""></a>
+                    <a href="../event/list2.jsp"><p> [엘비스] SX 리미티드 포스터</p></a>
                 </div>
 
                 <div class="eventin">
-                    <a href=""><img src="../resource/img/main/event_3.jpg" alt=""></a>
-                    <a href=""><p> [이달의 아이스콘] 7월 라인업 미리 만나보기</p></a>
+                    <a href="../event/list3.jsp"><img src="../resource/img/main/event_3.jpg" alt=""></a>
+                    <a href="../event/list3.jsp"><p> [이달의 아이스콘] 7월 라인업 미리 만나보기</p></a>
                 </div>
 
             </div><!--.event(이벤트)--> 
