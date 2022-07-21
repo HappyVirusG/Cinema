@@ -88,7 +88,7 @@
                 <img id="icon2" src="../resource/img/main/icon2.png" alt="">
                 <a><p>박스오피스</p></a>
                 <img id="icon3" src="../resource/img/main/icon34.png" alt="">
-                <a><p>빠른예매</p></a>
+                <a href="/model/booking.do"><p>빠른예매</p></a>
             </section> <!--.booking(빠른예매부분)--> 
             </section> <!--.main_slide(포스터부분)--> 
             
@@ -212,7 +212,7 @@ if(!boardLists.isEmpty()){
        	<a onclick="modalClose();">
 			<img class="closeBtn" src="../resource/img/icons/x-icon.png" alt="close">
        	</a>
-     	<button type="button" class="bookingBtn">예매하기</button>
+     	<button type="button" class="bookingBtn" onclick="location.href='/model/booking.do'">예매하기</button>
      </div>     
 </div> <!-- #modal -->
 <%

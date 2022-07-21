@@ -60,7 +60,7 @@
                     <p>예매율 <span class="boxOffice">46.2%</span> </p>
                     <p class="movieDate">${row.opendate}</p>
                 </a>
-                <button class="bookingBtn">예매하기</button>
+                <button class="bookingBtn" onclick="location.href='/model/booking.do'">예매하기</button>
             </li>
 
 			</c:forEach>
