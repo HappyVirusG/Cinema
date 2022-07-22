@@ -315,16 +315,6 @@
                         <div class="monthCommon">
                             <span class="year">2022</span>
                             <span class="seven month">7</span>
-                            <a href="#" class="selectDay seven"><span class="dayweek">화</span><span class="day">12</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">수</span><span class="day">13</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">목</span><span class="day">14</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">금</span><span class="day">15</span> </a>
-                            <a href="#" class="selectDay seven sat"><span class="dayweek">토</span><span class="day">16</span> </a>
-                            <a href="#" class="selectDay seven sun"><span class="dayweek">일</span><span class="day">17</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">월</span><span class="day">18</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">화</span><span class="day">19</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">수</span><span class="day">20</span> </a>
-                            <a href="#" class="selectDay seven"><span class="dayweek">목</span><span class="day">21</span> </a>
                             <a href="#" class="selectDay seven"><span class="dayweek">금</span><span class="day">22</span> </a>
                             <a href="#" class="selectDay seven sat"><span class="dayweek">토</span><span class="day">23</span> </a>
                             <a href="#" class="selectDay seven sun"><span class="dayweek">일</span><span class="day">24</span> </a>
@@ -350,6 +340,15 @@
                             <a href="#" class="selectDay eight"><span class="dayweek">수</span><span class="day">10</span></a>
                             <a href="#" class="selectDay eight"><span class="dayweek">목</span><span class="day">11</span></a>
                             <a href="#" class="selectDay eight"><span class="dayweek">금</span><span class="day">12</span></a>
+                            <a href="#" class="selectDay eight sat"><span class="dayweek">토</span><span class="day">13</span></a>
+                            <a href="#" class="selectDay eight sun"><span class="dayweek">일</span><span class="day">14</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">월</span><span class="day">15</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">화</span><span class="day">16</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">수</span><span class="day">17</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">목</span><span class="day">18</span></a>
+                            <a href="#" class="selectDay eight"><span class="dayweek">금</span><span class="day">19</span></a>
+                            <a href="#" class="selectDay eight sat"><span class="dayweek">토</span><span class="day">20</span></a>
+                            <a href="#" class="selectDay eight sun"><span class="dayweek">일</span><span class="day">21</span></a>
                         </div>
                     </div> <!-- .hallDate -->
                 </div> <!-- .date-list -->
