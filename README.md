@@ -36,25 +36,26 @@ booking 영화 예매 기능(유효성 검사 적용). (@applephile) <br/><br/>
 booking list 예매 내역에서 해당 계정의 실제 예매 내역을 확인할 수 있으며, 예매 취소가 가능. 예매 내역이 없을 경우 없다고 출력. (@applephile)<br/><br/>
 
 
-예상 project explorer<br/>
+예상 project explorer (@webyiyeon)<br/>
 ![image](https://user-images.githubusercontent.com/97453781/180714060-6cecaae3-4eac-4642-9979-6e110d0eca0b.png)<br/><br/>
 
 실제 project explorer<br/>
 ![image](https://user-images.githubusercontent.com/97453781/180714117-b6219b02-1bfa-492e-9a90-b657e2de88f8.png)<br/><br/>
 
-기능 구현 목표<br/>
+기능 구현 목표 (@webyiyeon)<br/>
 ![image](https://user-images.githubusercontent.com/97453781/180714137-77c7b7be-48c5-42ae-84e3-74c210dbbd99.png)<br/><br/>
 
 실제 구현 기능<br/>
 ![image](https://user-images.githubusercontent.com/97453781/180714227-91e1cdbe-6691-43c7-a832-49ce354a00d9.png)<br/><br/>
 
-DB 설계 및 구현 목표<br/>
+DB 설계 및 구현 목표 (@webyiyeon)<br/>
 ![image](https://user-images.githubusercontent.com/97453781/180714677-e6f3d4cb-3a9a-42f8-bb0b-917db29f8b6e.png)<br/><br/>
 
-실제 구현 DB<br/>
+실제 구현 DB (@webyiyeon) <br/>
 ![image](https://user-images.githubusercontent.com/97453781/180714716-5d65f0b5-3b3d-4116-94d7-598cc9e82667.png)<br/><br/>
 
 진행 중 작성했던 to-do list<br/>
 ![image](https://user-images.githubusercontent.com/97453781/180715162-01f43f97-4e40-491e-bf86-9d0a550de289.png)<br/><br/><br/>
 
 -written by @webyiyeon
+
