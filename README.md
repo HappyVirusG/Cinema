@@ -1,5 +1,5 @@
 # Cinema
-@webyiyeon(팀장), @aw7216, @applephile
+@webyiyeon(팀장), @aw7216, @applephile <br/>
 
 ![Honeycam 2022-07-25 15-24-06](https://user-images.githubusercontent.com/97453781/180711729-ebf66bc0-ce95-4586-b8d2-9009f9b585b5.gif)
 main page의 상단 슬라이드 bootstrap 이용. 부트스트랩 호환성을 고려해 javaScript로도 구현해두었음. (@aw7216)
