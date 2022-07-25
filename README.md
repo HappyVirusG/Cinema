@@ -21,7 +21,7 @@ login 로그인(유효성 검사 적용). (@aw7216)<br/><br/>
 movie list 현재 상영 중인 영화 목록 출력. (@webyiyeon)<br/><br/>
 
 ![image](https://user-images.githubusercontent.com/97453781/180713361-a1652f5f-532b-4bb5-9aa3-0e80ffa26b61.png)<br/>
-movie detail 각 영화의 상세보기 페이지, 포스터/스틸컷 이미지 슬라이드, 관람평/평점 작성 가능. (@webyiyeon)<br/>
+movie detail 각 영화의 상세보기 페이지, 포스터/스틸컷 이미지 슬라이드, 관람평/평점 작성 가능. (@webyiyeon)<br/><br/>
 ![KakaoTalk_20220721_230409458](https://user-images.githubusercontent.com/97453781/180713455-d627d202-40e7-4337-a936-b044ff98724a.gif)<br/>
 ![KakaoTalk_20220721_230403552](https://user-images.githubusercontent.com/97453781/180713465-ede0225c-58c2-4151-b054-7a228354f4a0.gif)<br/>
 ![KakaoTalk_20220721_230403150](https://user-images.githubusercontent.com/97453781/180713471-021e8d7c-894c-4543-8884-6722288dd18f.gif)<br/>
@@ -54,5 +54,7 @@ DB 설계 및 구현 목표<br/>
 실제 구현 DB<br/>
 ![image](https://user-images.githubusercontent.com/97453781/180714716-5d65f0b5-3b3d-4116-94d7-598cc9e82667.png)<br/><br/>
 
+진행 중 작성했던 to-do list<br/>
+![image](https://user-images.githubusercontent.com/97453781/180715162-01f43f97-4e40-491e-bf86-9d0a550de289.png)<br/><br/><br/>
 
 -written by @webyiyeon
